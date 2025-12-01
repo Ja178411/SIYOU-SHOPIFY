@@ -1,0 +1,322 @@
+/**
+ * Tutorial Slideshow Section Styles
+ */
+
+.tutorial-slideshow-wrapper {
+  max-width: var(--layout-width);
+  margin: 0 auto;
+  padding: var(--section-gap-top, 20px) 0 var(--section-gap-bottom, 20px);
+}
+
+/* Full Width Variation */
+.tutorial-slideshow-wrapper.tutorial-slideshow-full-width {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Tutorial Tabs */
+.tutorial-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tutorial-tab {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 2px solid var(--color-border, #e0e0e0);
+  border-radius: var(--border-radius, 4px);
+  font-family: var(--font-base);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-body-text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tutorial-tab:hover {
+  border-color: var(--color-links, #000);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.tutorial-tab.active {
+  background: var(--color-links, #000);
+  color: var(--color-background, #fff);
+  border-color: var(--color-links, #000);
+}
+
+/* Tutorial Content Containers */
+.tutorial-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tutorial-content.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Tutorial Slideshow */
+.tutorial-slideshow {
+  position: relative;
+  width: 100%;
+}
+
+.tutorial-swiper-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius, 4px);
+}
+
+/* Tutorial Slide Layout */
+.tutorial-slide {
+  width: 100%;
+}
+
+.tutorial-slide-inner {
+  display: grid;
+  grid-template-columns: var(--tutorial-image-width, 50%) 1fr;
+  gap: 0;
+  min-height: 400px;
+  background: var(--color-background, #fff);
+  border-radius: var(--border-radius, 4px);
+  overflow: hidden;
+}
+
+/* Image Side */
+.tutorial-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-background-2, #f5f5f5);
+}
+
+.tutorial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.tutorial-image .placeholder-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Side */
+.tutorial-content-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  background: var(--color-background, #fff);
+  color: var(--tutorial-text-color, var(--color-body-text));
+}
+
+.tutorial-step-label {
+  font-family: var(--font-base);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-links, #000);
+  margin: 0 0 0.75rem 0;
+  opacity: 0.7;
+}
+
+.tutorial-step-title {
+  font-family: var(--font-headline);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  color: var(--tutorial-heading-color, var(--color-body-text));
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.tutorial-step-description {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--tutorial-text-color, var(--color-body-text));
+  opacity: 0.9;
+}
+
+.tutorial-step-description p {
+  margin: 0 0 1rem 0;
+}
+
+.tutorial-step-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Navigation Buttons */
+.tutorial-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-nav-btn:hover {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tutorial-nav-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-body-text);
+}
+
+.tutorial-nav-next {
+  right: 1rem;
+}
+
+.tutorial-nav-prev {
+  left: 1rem;
+}
+
+.tutorial-nav-btn.swiper-button-disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Pagination */
+.tutorial-pagination {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-family: var(--font-base);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-body-text);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 749px) {
+  .tutorial-slide-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .tutorial-image {
+    min-height: 300px;
+  }
+
+  .tutorial-content-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .tutorial-step-title {
+    font-size: 1.5rem;
+  }
+
+  .tutorial-step-description {
+    font-size: 0.9375rem;
+  }
+
+  .tutorial-tabs {
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tutorial-tab {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .tutorial-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tutorial-nav-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tutorial-nav-next {
+    right: 0.5rem;
+  }
+
+  .tutorial-nav-prev {
+    left: 0.5rem;
+  }
+
+  .tutorial-pagination {
+    bottom: 1rem;
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .tutorial-content-box {
+    padding: 2.5rem;
+  }
+
+  .tutorial-step-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Animation for content switching */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tutorial-content.active {
+  animation: fadeIn 0.3s ease;
+}
+
+/* RTL Support */
+[dir="rtl"] .tutorial-slide-inner {
+  direction: rtl;
+}
+
+[dir="rtl"] .tutorial-nav-next {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .tutorial-nav-prev {
+  left: auto;
+  right: 1rem;
+}
+
+/* Theme Editor Support */
+.shopify-section-tutorial-slideshow-section {
+  position: relative;
+}

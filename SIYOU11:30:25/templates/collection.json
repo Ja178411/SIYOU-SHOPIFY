@@ -1,0 +1,295 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_placeholder_image": true,
+        "layout": "text_first",
+        "desktop-percentage-image-width": 50,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 200,
+        "full-width-enabled": true,
+        "size_heading": 150,
+        "size_heading_mobile": 120,
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "left",
+        "mobile_text_horizontal_position": "center",
+        "color-body-text": "#000000",
+        "color-overlay": "#e3f2e6",
+        "color-overlay-opacity": 100,
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "title": {
+      "type": "main-collection-title",
+      "settings": {
+        "full-width-enabled": true,
+        "show_collection_description": true,
+        "desktop_text_horizontal_position": "center",
+        "size_heading": 140,
+        "size_heading_mobile": 120,
+        "color-body-text": "#ffffff",
+        "background_color": "#ff9cb5",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "image_banner_d4k6xL": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading_DaqNEx": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "CYBER MONDAY SALE",
+            "subheading_disable_on_mobile": false
+          }
+        },
+        "heading_p6dMAA": {
+          "type": "heading",
+          "settings": {
+            "heading": "25% OFF+ FREE SHIPPING",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "countdown_timer_6FV9qd": {
+          "type": "countdown_timer",
+          "disabled": true,
+          "settings": {
+            "end_datetime": "2025-12-02 23:59",
+            "expired_message": "",
+            "labels_below": true,
+            "timer_style": "headline",
+            "scale_timer": 100,
+            "scale_timer_mobile": 100
+          }
+        },
+        "button_MUHBWD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_select": "link",
+            "button_label": "Shop Now",
+            "disable_on_mobile": false,
+            "button_link": "/",
+            "second_button_select": "primary",
+            "second_button_label": "Button label",
+            "second_disable_on_mobile": false,
+            "second_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_DaqNEx",
+        "heading_p6dMAA",
+        "countdown_timer_6FV9qd",
+        "button_MUHBWD"
+      ],
+      "custom_css": [],
+      "name": "t:sections.image-banner.presets.name__2",
+      "settings": {
+        "heading": "",
+        "full-width-enabled": false,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 200,
+        "mobile_fixed_height": 220,
+        "desktop_image": "shopify://shop_images/black-370118_960_720.png",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_vertical_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "color-heading": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "#ffffff",
+        "text-container-color": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "breadcrumbs": {
+      "type": "main-breadcrumbs",
+      "custom_css": [
+        ".breadcrumbs__item {text-transform: uppercase;}"
+      ],
+      "settings": {
+        "full-width-enabled": true,
+        "text_color": "#000000",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 12,
+        "margin-bottom": 8
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_mobile": "2",
+        "columns_desktop": "3",
+        "spacing_desktop": "8",
+        "full-width-enabled": true,
+        "spacing_mobile": "4",
+        "image_ratio": "square",
+        "show_video": false,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "enable_vendor_link": true,
+        "show_product_rating": false,
+        "enable_product_url_within_collection": true,
+        "enable_quick_add_button": true,
+        "text_alignment": "center",
+        "toolbar_style": "buttons",
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "filter_position": "drawer",
+        "margin-top": 16,
+        "margin-bottom": 0
+      }
+    },
+    "separator_qkXpB7": {
+      "type": "separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#dfdfdf",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_accniA": {
+      "type": "features-banner",
+      "blocks": {
+        "image_MEFXBP": {
+          "type": "image",
+          "settings": {
+            "select_icon": "search",
+            "heading": "Unique Designs",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_JyD8FA": {
+          "type": "image",
+          "settings": {
+            "select_icon": "star_fill",
+            "heading": "Easy to Use",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_BzMXeN": {
+          "type": "image",
+          "settings": {
+            "select_icon": "check",
+            "heading": "Reusable",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_RH9FEA": {
+          "type": "image",
+          "settings": {
+            "select_icon": "heart",
+            "heading": "Safe",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_MEFXBP",
+        "image_JyD8FA",
+        "image_BzMXeN",
+        "image_RH9FEA"
+      ],
+      "name": "Features Banner",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 60,
+        "icon_width_mobile": 32,
+        "icon_width_desktop": 44,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "slider",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "newsletter_xFUEzz": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_DdcAgz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Mailing List!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 160
+          }
+        },
+        "paragraph_w3XT3L": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_m7NBY3": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DdcAgz",
+        "paragraph_w3XT3L",
+        "email_form_m7NBY3"
+      ],
+      "name": "Email Signup",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "title",
+    "image_banner_d4k6xL",
+    "breadcrumbs",
+    "product-grid",
+    "separator_qkXpB7",
+    "features_banner_accniA",
+    "newsletter_xFUEzz"
+  ]
+}

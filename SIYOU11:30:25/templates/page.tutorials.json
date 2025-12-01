@@ -1,0 +1,715 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "#151515",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    },
+    "rich_text_KpieNy": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_73zyhT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tutorials",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_Geyyk6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tips and tricks for beautiful, long-lasting press-on nails.</p>",
+            "disable_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_73zyhT",
+        "text_Geyyk6"
+      ],
+      "custom_css": [
+        "h2 {font-size: 32px;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "#ffffff",
+        "background_color": "#ff9cb5",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "collapsible_menu_RiHjjE": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "collapsible_tab_apply_tabs": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Press-On Nail Application (Adhesive Tabs)",
+            "content": "<ul><li>Before getting started check each press-on nail for size by gently placing them (without any glue) against your natural nails. Our <a href=\"/pages/size-guide\">size guide</a> is designed to provide the best possible fit, but every hand is unique and there will be slight variations for each user. You can use the provided nail file to trim slight excess from the press-on nails.</li><li>Make sure to select the correct press-on nail for each corresponding finger, meaning thumb, index, middle, ring and pinky fingers for each hand. Tip: line them up on a flat surface in the right order before applying to avoid mistakes.</li><li>Clean your hands and buff the surface of your natural nails. Wipe nails with provided alcohol swabs to remove oils.</li><li>Select an adhesive tab that best matches the size of your natural nail, apply it smoothly onto your natural nail, and then peel off the protective plastic film.</li><li>Align the press-on nail with your cuticle line, leaving a tiny gap. Gently place the nail down onto the sticky tab.</li><li>Press down firmly for 15-30 seconds across the entire surface of the press-on nail, making sure all edges are sealed and no air is trapped.</li><li>Do not submerge your hands in water for at least one hour after application.</li></ul>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_apply_glue": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Glue-On Nail Application For Longer Holds (Using Nail Glue)",
+            "content": "<ul>\n<li>Buff and clean your natural nails with an alcohol wipe to ensure they are oil-free.</li>\n<li>Make sure to select the correct press-on nail for each corresponding finger, meaning thumb, index, middle, ring and pinky fingers for each hand. Tip: line them up on a flat surface in the right order before applying to avoid mistakes.</li>\n<li>Apply a small drop of nail glue directly to the back of the press on nail where it will meet your natural nail, and a small dot of glue on your natural nail. Be careful not to over-apply.</li>\n<li>Align the press-on nail with your cuticle line, leaving a tiny gap. Place the bottom edge of the press-on nail at the cuticle first, and then slowly and gently lower the rest of the nail.</li>\n<li>Press and hold the nail firmly for 15-30 seconds. Ensure the nail covers your natural nail edge-to-edge.</li>\n<li>Avoid submerging your hands in water for at least one hour after application.</li>\n<li><strong>Please note:</strong> If you use the glue-on method, the hold will last several days, but you will not be able to re-use the nails because they will dissolve during the removal process.</li>\n</ul>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_remove_tabs": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Removing Press-On Nails (Adhesive Tabs)",
+            "content": "<ul>\n<li>Fill a bowl with warm water and a few drops of dish soap, and optionally, a little olive oil. Soak your nails for 10-15 minutes.</li>\n<li>Gently wiggle and lift the sides and cuticle area of the press-on nail.</li>\n<li>Once the adhesive bond has softened, the press-on nail should gently peel away. Never force or rip the press-on nail off to avoid damaging them.</li>\n<li>If any residue remains, rub your natural nail with a warm, wet cloth or gently buff it clean.</li>\n</ul>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_care": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Care & Use Tips",
+            "content": "<p><strong>The First 24 Hours (Curing Time)</strong></p>\n<ul>\n<li>Do not submerge your hands in water for at least 1 hour after application. For maximum life, avoid excessive water exposure for the first 24 hours.</li>\n<li>Be careful not to bump your nails or use them for heavy tasks while wearing press-on nails.</li>\n<li>Make sure the glue/tabs are fully cured before applying any top coat or polish, as this can trap moisture and weaken the bond.</li>\n</ul>\n<p><strong>Daily Protection</strong></p>\n<ul>\n<li>Wear gloves when washing dishes, cleaning with harsh chemicals, or gardening. Prolonged water exposure is the number one cause of lifting.</li>\n<li>Never use your press-on nails to scrape stickers, open cans, or pry things open. This puts stress on the bond and can cause the nail to pop off or crack.</li>\n<li>Apply cuticle oil daily around the edges and under the free edge of the nail. This keeps your cuticles healthy and prevents lifting without dissolving the bond.</li>\n</ul>\n<p><strong>Maintenance & Repairs</strong></p>\n<ul>\n<li>Apply a clear top coat every 2-3 days to keep the finish shiny and seal the tips. It helps prevent chipping.</li>\n<li>If you used the glue-on method and an edge lifts, do not pull the nail off. Carefully clean the lifted area with an alcohol wipe, apply a small drop of fresh nail glue underneath, and press firmly for 30 seconds.</li>\n<li>If you used the adhesive tab and an edge lifts, do not pull the nail off. Use our removal guide to remove the single nail and re-apply.</li>\n<li>If the tip snags or you want to shorten the length slightly, use a gentle file. File from the sides toward the center.</li>\n</ul>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_apply_tabs",
+        "collapsible_tab_apply_glue",
+        "collapsible_tab_remove_tabs",
+        "collapsible_tab_care"
+      ],
+      "name": "t:sections.collapsible_menu.presets.name",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "rich_text_CFgTCN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9Wx3pM": {
+          "type": "heading",
+          "settings": {
+            "heading": "Using Adhesive Tabs",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_9Wx3pM"
+      ],
+      "disabled": true,
+      "name": "Using Adhesive Tabs",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 16,
+        "margin-bottom": 0
+      }
+    },
+    "collapsible_menu_AHfrfb": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "collapsible_tab_gJrg3W": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Application Guide",
+            "content": "<ol><li>Clean your hands and buff the surface of your natural nails. Wipe nails with alcohol to remove oils. Select the correct false nail size for each finger.</li><li>Select the adhesive tab that matches your natural nail size, apply it smoothly onto your natural nail, and then peel off the protective plastic film.</li><li>Align the false nail with your cuticle line (leaving a tiny gap). Place the nail down onto the sticky tab.</li><li>Press down firmly for 15-30 seconds across the entire surface of the false nail, making sure all edges are sealed and no air is trapped.</li></ol>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_Wbc6Vg": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Removal Guide",
+            "content": "<p><strong>Removing Press-On Nails (Adhesive Tabs)</strong></p><ol><li>Fill a bowl with warm water and a few drops of dish soap (and optionally, a little olive oil). Soak your nails for 10-15 minutes.</li><li>Gently wiggle and lift the sides and cuticle area of the press-on nail.</li><li>Once the adhesive bond has softened, the false nail should gently peel away from your natural nail. <strong>Never force or rip the nail off.</strong></li><li>If any residue remains, rub your natural nail with an oily cloth or gently buff it clean.<br/></li></ol><p><strong>Removing Glue-On Nails (Nail Glue)</strong></p><ol><li>Trim the excess length of the false nail and file off as much of the top coat and color as possible. This allows the acetone to penetrate faster.</li><li>Place a cotton ball soaked in 100% pure acetone directly on the false nail. Wrap each finger tightly with a small piece of aluminum foil to hold the cotton ball in place and trap heat.</li><li>Wait 15-20 minutes. The glue and acrylic should become soft and gummy.</li><li>Remove the foil and cotton. Use an orange wood stick to gently scrape the dissolved residue off your natural nail. Repeat the process if necessary, then wash and moisturize your hands.</li></ol>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_n7pTCT": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Care & Use Tips",
+            "content": "<p><strong>The First 24 Hours (Curing Time)</strong></p><ul><li>Do not submerge your hands in water for at least 1 hour after application. For maximum life, avoid excessive water exposure for the first 24 hours.</li><li>Be careful not to bump your nails or use them for heavy tasks during this period.</li><li>Make sure the glue/tabs are fully cured before applying any top coat or polish, as this can trap moisture and weaken the bond.</li></ul><p><strong>Daily Protection</strong></p><ul><li>Wear gloves when washing dishes, cleaning with harsh chemicals, or gardening. Prolonged water exposure is the number one cause of lifting.</li><li>Never use your false nails to scrape stickers, open cans, or pry things open. This puts stress on the bond and can cause the nail to pop off or crack.</li><li>Apply cuticle oil daily around the edges and under the free edge of the nail. This keeps your cuticles healthy and prevents lifting without dissolving the bond.</li></ul><p><strong>Maintenance & Repairs</strong></p><ul><li>Apply a clear top coat every 2-3 days to keep the finish shiny and seal the tips, which helps prevent chipping.</li><li>If an edge lifts, do not pull the nail off. Carefully clean the lifted area with an alcohol wipe, apply a small drop of fresh nail glue underneath, and press firmly for 30 seconds.</li><li>If the tip snags or you want to shorten the length slightly, use a gentle file. File from the sides toward the center.</li></ul>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_gJrg3W",
+        "collapsible_tab_Wbc6Vg",
+        "collapsible_tab_n7pTCT"
+      ],
+      "disabled": true,
+      "name": "Adhesive Tabs",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "separator_VXct3x": {
+      "type": "separator",
+      "disabled": true,
+      "name": "Separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#b1b1b1",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "rich_text_dtyb4R": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wJtnyN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Using Nail Glue",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_wJtnyN"
+      ],
+      "disabled": true,
+      "name": "Using Nail Glue",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "collapsible_menu_f4UjLH": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "collapsible_tab_XApgWA": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Application Guide",
+            "content": "<p><strong>Press-On Nail Application (Adhesive Tabs)</strong></p><ol><li>Clean your hands and buff the surface of your natural nails. Wipe nails with alcohol to remove oils. Select the correct false nail size for each finger.</li><li>Select the adhesive tab that matches your natural nail size, apply it smoothly onto your natural nail, and then peel off the protective plastic film.</li><li>Align the false nail with your cuticle line (leaving a tiny gap). Place the nail down onto the sticky tab.</li><li>Press down firmly for 15-30 seconds across the entire surface of the false nail, making sure all edges are sealed and no air is trapped.<br/></li></ol><p><strong>Glue-On Nail Application (Using Nail Glue)</strong></p><ol><li>Clean and buff your natural nails, and ensure they are oil-free with an alcohol wipe. Match the false nail size to your natural nails.</li><li>Apply a small drop of nail glue directly to the back of the false nail where it will meet your natural nail, and a small dot of glue on your natural nail. Be careful not to over-apply.</li><li>Align the false nail with your cuticle line (leaving a tiny gap). Place the bottom edge of the false nail at the cuticle first, and then slowly lower the rest of the nail.</li><li>Press and hold the nail firmly for 15-30 seconds. Ensure the nail covers your natural nail edge-to-edge. Avoid water for at least one hour for the strongest bond.</li></ol>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_GMUdij": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Removal Guide",
+            "content": "<p><strong>Removing Press-On Nails (Adhesive Tabs)</strong></p><ol><li>Fill a bowl with warm water and a few drops of dish soap (and optionally, a little olive oil). Soak your nails for 10-15 minutes.</li><li>Gently wiggle and lift the sides and cuticle area of the press-on nail.</li><li>Once the adhesive bond has softened, the false nail should gently peel away from your natural nail. <strong>Never force or rip the nail off.</strong></li><li>If any residue remains, rub your natural nail with an oily cloth or gently buff it clean.<br/></li></ol><p><strong>Removing Glue-On Nails (Nail Glue)</strong></p><ol><li>Trim the excess length of the false nail and file off as much of the top coat and color as possible. This allows the acetone to penetrate faster.</li><li>Place a cotton ball soaked in 100% pure acetone directly on the false nail. Wrap each finger tightly with a small piece of aluminum foil to hold the cotton ball in place and trap heat.</li><li>Wait 15-20 minutes. The glue and acrylic should become soft and gummy.</li><li>Remove the foil and cotton. Use an orange wood stick to gently scrape the dissolved residue off your natural nail. Repeat the process if necessary, then wash and moisturize your hands.</li></ol>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_BbnUat": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Care & Use Tips",
+            "content": "<p><strong>The First 24 Hours (Curing Time)</strong></p><ul><li>Do not submerge your hands in water for at least 1 hour after application. For maximum life, avoid excessive water exposure for the first 24 hours.</li><li>Be careful not to bump your nails or use them for heavy tasks during this period.</li><li>Make sure the glue/tabs are fully cured before applying any top coat or polish, as this can trap moisture and weaken the bond.</li></ul><p><strong>Daily Protection</strong></p><ul><li>Wear gloves when washing dishes, cleaning with harsh chemicals, or gardening. Prolonged water exposure is the number one cause of lifting.</li><li>Never use your false nails to scrape stickers, open cans, or pry things open. This puts stress on the bond and can cause the nail to pop off or crack.</li><li>Apply cuticle oil daily around the edges and under the free edge of the nail. This keeps your cuticles healthy and prevents lifting without dissolving the bond.</li></ul><p><strong>Maintenance & Repairs</strong></p><ul><li>Apply a clear top coat every 2-3 days to keep the finish shiny and seal the tips, which helps prevent chipping.</li><li>If an edge lifts, do not pull the nail off. Carefully clean the lifted area with an alcohol wipe, apply a small drop of fresh nail glue underneath, and press firmly for 30 seconds.</li><li>If the tip snags or you want to shorten the length slightly, use a gentle file. File from the sides toward the center.</li></ul>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_XApgWA",
+        "collapsible_tab_GMUdij",
+        "collapsible_tab_BbnUat"
+      ],
+      "disabled": true,
+      "name": "Nail Glue",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "slideshow_RUBA9Q": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_cGrYji": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Adhesive Tabs",
+            "subheading_disable_on_mobile": false,
+            "heading": "Step 1: Prep & Size",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p>Clean your hands and <strong>wipe the surface of your natural nails</strong> with alcohol to remove oils. Select the correct false nail size for each finger.</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_UfkJpk": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Adhesive Tabs",
+            "subheading_disable_on_mobile": false,
+            "heading": "Step 2: Apply Tab",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p><strong>Select the correct adhesive tab</strong> that matches your natural nail size. Apply it smoothly onto your natural nail and peel off the protective plastic film.</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_GFkWXM": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Adhesive Tabs",
+            "subheading_disable_on_mobile": false,
+            "heading": "Step 3: Position Nail",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p>Align the false nail with your cuticle line (leaving a tiny gap). Place the nail down onto the sticky tab.</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_bMXQqX": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Adhesive Tabs",
+            "subheading_disable_on_mobile": false,
+            "heading": "Step 4: Press & Secure",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p><strong>Press down firmly for 15-30 seconds</strong> across the entire surface of the false nail, making sure all edges are sealed and no air is trapped.</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_cGrYji",
+        "slide_UfkJpk",
+        "slide_GFkWXM",
+        "slide_bMXQqX"
+      ],
+      "disabled": true,
+      "name": "Application (Adhesive)",
+      "settings": {
+        "heading": "Application Guides",
+        "full-width-enabled": false,
+        "auto-rotate": false,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "out_hero_mobile": false,
+        "margin-top": 20,
+        "margin-bottom": 0
+      }
+    },
+    "slideshow_BAaH9Q": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_mzVkKB": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Using Nail Glue",
+            "subheading_disable_on_mobile": false,
+            "heading": "Step 1: Prep & Size",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p>Clean and buff your natural nails, and ensure they are oil-free with an alcohol wipe. <strong>Match the false nail size</strong> to your natural nails.</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_THaJUK": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Using Nail Glue",
+            "subheading_disable_on_mobile": false,
+            "heading": "Step 2: Apply Glue",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p>Apply a <strong>small drop of nail glue directly to the back of the false nail </strong>where it will meet your natural nail, and <strong>another small dot of glue on your natural nail</strong>. <em>Be careful not to over-apply.</em></p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_4yhwMz": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Using Nail Glue",
+            "subheading_disable_on_mobile": false,
+            "heading": "Step 3: Position Nail",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p><strong>Align the false nail </strong>with your cuticle line (leaving a tiny gap). Place the bottom edge of the false nail at the cuticle first, then <strong>slowly lower the rest of the nail.</strong></p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        },
+        "slide_6FAw8T": {
+          "type": "slide",
+          "settings": {
+            "subheading": "Using Nail Glue",
+            "subheading_disable_on_mobile": false,
+            "heading": "Step 4: Press & Secure",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "<p><strong>Press and hold the nail firmly for 15-30 seconds. </strong>Ensure the nail covers your natural nail edge-to-edge. Avoid water for at least one hour for the strongest bond.</p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "second_button_select": "primary",
+            "second_button_label": "",
+            "button_disable_on_mobile_second": false,
+            "second_button_link": "",
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center",
+            "out-background-color": "rgba(0,0,0,0)",
+            "out-text-color": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "slide_mzVkKB",
+        "slide_THaJUK",
+        "slide_4yhwMz",
+        "slide_6FAw8T"
+      ],
+      "disabled": true,
+      "name": "Application (Glue)",
+      "settings": {
+        "heading": "",
+        "full-width-enabled": false,
+        "auto-rotate": false,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "heading_color": "rgba(0,0,0,0)",
+        "text_color": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "out_hero_mobile": false,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "separator_DK79LP": {
+      "type": "separator",
+      "name": "Separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#b1b1b1",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_6XB8xz": {
+      "type": "features-banner",
+      "blocks": {
+        "image_p36Apx": {
+          "type": "image",
+          "settings": {
+            "select_icon": "search",
+            "heading": "Unique Designs",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_qhVyj6": {
+          "type": "image",
+          "settings": {
+            "select_icon": "star_fill",
+            "heading": "Easy to Use",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_WCYJNa": {
+          "type": "image",
+          "settings": {
+            "select_icon": "check",
+            "heading": "Reusable",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_GHqpkt": {
+          "type": "image",
+          "settings": {
+            "select_icon": "heart",
+            "heading": "Safe",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_p36Apx",
+        "image_qhVyj6",
+        "image_WCYJNa",
+        "image_GHqpkt"
+      ],
+      "name": "Features Banner",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 60,
+        "icon_width_mobile": 32,
+        "icon_width_desktop": 44,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "slider",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "newsletter_n4ByUV": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_qzizFm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Mailing List!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 150
+          }
+        },
+        "paragraph_9jVhHt": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_4yEjmf": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qzizFm",
+        "paragraph_9jVhHt",
+        "email_form_4yEjmf"
+      ],
+      "name": "Email Signup",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_KpieNy",
+    "collapsible_menu_RiHjjE",
+    "rich_text_CFgTCN",
+    "collapsible_menu_AHfrfb",
+    "separator_VXct3x",
+    "rich_text_dtyb4R",
+    "collapsible_menu_f4UjLH",
+    "slideshow_RUBA9Q",
+    "slideshow_BAaH9Q",
+    "separator_DK79LP",
+    "features_banner_6XB8xz",
+    "newsletter_n4ByUV"
+  ]
+}

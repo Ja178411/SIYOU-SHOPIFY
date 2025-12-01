@@ -1,0 +1,629 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "rich_text_FH33fr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yX8x7k": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Us",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_yX8x7k"
+      ],
+      "custom_css": [
+        "h2 {font-size: 32px;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "#ffffff",
+        "background_color": "#ff9cb5",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "brand_story": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Story",
+            "disable_on_mobile": false,
+            "size_heading": 120,
+            "size_heading_mobile": 80
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We're SIYOU, a press-on nail business! We create instant style upgrades: small, wearable luxuries that make you feel confident and amazing every day.<br\/><br\/>At SIYOU, beauty starts at your fingertips. Our press-on nails are individually made by hand with premium, safe gel and hours of detailed work to give that salon quality and finish.<br\/><br\/>We make only limited quantities of each model to ensure you are getting a truly unique set, an expression of your own style and sensibilities.<\/p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "name": "Our Story",
+      "settings": {
+        "title": "",
+        "layout": "image_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 480,
+        "mobile_fixed_height": 400,
+        "section-color-body-text": "#000000",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "desktop_image": "shopify:\/\/shop_images\/SiYou4701_optimized.jpg",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "left",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "image_with_text_how_it_works": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_how_it_works": {
+          "type": "heading",
+          "settings": {
+            "heading": "How It Works",
+            "disable_on_mobile": false,
+            "size_heading": 120,
+            "size_heading_mobile": 80
+          }
+        },
+        "text_how_it_works": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Each set of SIYOU nails comes with everything you will need to make your hands an expression of yourself.<\/strong><\/p><p>Each set comes with 10 reusable press-on nails, 22 adhesive tabs, a nail file, a cuticle pusher, and alcohol prep pads. Full instructions on how to apply the nails can be found <a href=\"\/pages\/tutorials\">here<\/a>.<br\/><br\/>We also provide the most precise <a href=\"\/pages\/size-guide\">sizing chart<\/a> in the market to ensure you are getting the right set for your unique hands.<br\/><br\/>The press-on nails are designed to last up to 3 days, and they are reusable. For longer lasting hold, you can apply the nails using nail glue (sold separately).<br\/><br\/>Because press-on nails are designed for temporary use, you should be cautious about tapping your nails against hard surfaces or applying undo pressure on the tips of your fingers. If they do come off, you can reapply them with the additional adhesive tabs provided.<br\/><br\/>If you run into any issues, please do not hesitate to use our customer support chatbot or you can email us at info@siyounails.com<\/p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_how_it_works",
+        "text_how_it_works"
+      ],
+      "name": "How It Works",
+      "settings": {
+        "title": "",
+        "layout": "text_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 480,
+        "mobile_fixed_height": 400,
+        "section-color-body-text": "#000000",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "desktop_image": "shopify:\/\/shop_images\/SiYou4785_optimized.jpg",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "left",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "image_with_text_6QDaWF": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_g7f3NK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Mission",
+            "disable_on_mobile": false,
+            "size_heading": 120,
+            "size_heading_mobile": 80
+          }
+        },
+        "text_BhA4ta": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SIYOU nails is about creating a space where self-expression is easy and being your authentic self is simple. It may start at your fingertips, but we are continuously researching and looking for beauty products to develop a supportive community where every aspect of your style is celebrated.<br\/><br\/>Please come back often and join our mailing list to receive product updates and exclusive offers. We are here to support your most confident self.<\/p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_g7f3NK",
+        "text_BhA4ta"
+      ],
+      "name": "Our Mission",
+      "settings": {
+        "title": "",
+        "layout": "image_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 480,
+        "mobile_fixed_height": 400,
+        "section-color-body-text": "#000000",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "desktop_image": "shopify:\/\/shop_images\/SiYou4687_optimized.jpg",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "left",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "rich_text_AWhtpf": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wPx6tj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ready to Get Started?",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "button_P8UbFH": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Shop Nail Sets",
+            "button_link": "shopify:\/\/collections\/nail-sets",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wPx6tj",
+        "button_P8UbFH"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "image_banner_gxNG4e": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_xHMJPf": {
+          "type": "heading",
+          "settings": {
+            "heading": "WE MAKE BEAUTY AND SELF-LOVE \nFEEL EFFORTLESS AND CONNECTED",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 80
+          }
+        },
+        "text_WHNeWc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We don't just make press-on nails. We craft wearable moments of joy — designed to make you smile and celebrate your uniqueness, one nail at a time.<\/p>",
+            "disable_on_mobile": false
+          }
+        },
+        "button_jagmWg": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Shop Our Designs",
+            "disable_on_mobile": false,
+            "button_link": "\/",
+            "second_button_select": "primary",
+            "second_button_label": "Button label",
+            "second_disable_on_mobile": false,
+            "second_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_xHMJPf",
+        "text_WHNeWc",
+        "button_jagmWg"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "heading": "",
+        "full-width-enabled": false,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 420,
+        "mobile_fixed_height": 360,
+        "desktop_image": "shopify:\/\/shop_images\/SiYou4711.jpg",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_vertical_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "color-heading": "#151515",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "#ffffff",
+        "text-container-color": "#151515",
+        "color-overlay-opacity": 35,
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "image_with_text_DTMdpc": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_edzcpb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Mission",
+            "disable_on_mobile": false,
+            "size_heading": 120,
+            "size_heading_mobile": 80
+          }
+        },
+        "text_N8BmKq": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We're building more than a beauty brand — we're creating a movement where self-expression feels effortless and every individual can celebrate their unique style.<\/p><p>From our handmade press-on nails to future beauty innovations, SIYOU is your partner in embracing authenticity, one beautiful moment at a time. Join us in redefining what it means to feel confident, creative, and completely yourself.<\/p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_edzcpb",
+        "text_N8BmKq"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "layout": "text_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 480,
+        "mobile_fixed_height": 400,
+        "section-color-body-text": "#000000",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "desktop_image": "shopify:\/\/shop_images\/SiYou4687.jpg",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "left",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "image_with_text_AKtdEP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_RjzWda": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Story",
+            "disable_on_mobile": false,
+            "size_heading": 120,
+            "size_heading_mobile": 80
+          }
+        },
+        "text_k7XcGG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At SIYOU, beauty doesn't ask for perfection. It starts gently, right at your fingertips — and flows into every part of how you move through the world.<\/p><p>We don't just make press-on nails. We craft tiny, wearable moments of joy — ones designed to make you smile and remind you to celebrate your uniqueness, one nail at a time.<\/p><p>Each set is handmade with quality materials, safe for natural nails, and designed for reuse. Every design is a celebration of individuality, created with care and attention to detail that shows in every application.<\/p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_RjzWda",
+        "text_k7XcGG"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "layout": "image_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 480,
+        "mobile_fixed_height": 400,
+        "section-color-body-text": "#000000",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "desktop_image": "shopify:\/\/shop_images\/SiYou4701.jpg",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "left",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "mission": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Mission",
+            "disable_on_mobile": false,
+            "size_heading": 120,
+            "size_heading_mobile": 80
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We're building more than a beauty brand — we're creating a movement where self-expression feels effortless and every individual can celebrate their unique style.<\/p><p>From our handmade press-on nails to future beauty innovations, SIYOU is your partner in embracing authenticity, one beautiful moment at a time. Join us in redefining what it means to feel confident, creative, and completely yourself.<\/p><p><\/p><p><\/p>",
+            "disable_on_mobile": false
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Shop Our Collections",
+            "button_link": "\/collections\/all",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "#000000",
+        "background_color": "#ffffff",
+        "margin-top": 48,
+        "margin-bottom": 48
+      }
+    },
+    "multicolumn_DTCyxb": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_ejNVnC": {
+          "type": "column",
+          "settings": {
+            "heading": "We believe in Quality.",
+            "heading_disable_on_mobile": false,
+            "text": "<p>Each piece is made using high-quality gel and hours of detailed work by our talented SIYOU artists. Nothing here is mass produced. Every set is unique — just like you.<\/p><p>We treat every set like a mini art piece. It all begins with inspiration: a color mood, a song, a flower, a fleeting vibe. Then comes the meticulous process — mixing and matching shades, sketching layouts, hand-painting each detail, and finishing the set with care. Once complete, each design is gently placed onto a love card to ship, with everything packaged lovingly, from whimsy to you.<\/p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify:\/\/shop_images\/SiYou4785_ver_2.jpg"
+          }
+        },
+        "column_nxxCQB": {
+          "type": "column",
+          "settings": {
+            "heading": "Becoming, Together",
+            "heading_disable_on_mobile": false,
+            "text": "<p>We're just getting started.<\/p><p>At SIYOU nails were only the beginning. We're dreaming bigger — expanding into more beauty rituals, more creative expression, and a growing community that celebrates every version of you.<\/p><p>From future product drops to the unfiltered feel-good moments we share on TikTok, we're building a space where beauty lovers can show up as they are, real, raw, and radiant. Whether you're feeling soft and minimal or bold and unapologetic, SIYOU is here to meet your vibe and elevate it.<\/p>",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify:\/\/shop_images\/SiYou5151.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "column_ejNVnC",
+        "column_nxxCQB"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "heading": "",
+        "swipe_on_mobile": false,
+        "full-width-enabled": false,
+        "image_ratio": "square",
+        "column_alignment": "center",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "separator_DBitUW": {
+      "type": "separator",
+      "name": "t:sections.separator.presets.name",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator<\/h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#717171",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_Jpwc8j": {
+      "type": "features-banner",
+      "blocks": {
+        "image_pfBaBG": {
+          "type": "image",
+          "settings": {
+            "select_icon": "search",
+            "heading": "Unique Designs",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_rKjwyT": {
+          "type": "image",
+          "settings": {
+            "select_icon": "star_fill",
+            "heading": "Easy to Use",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_AV3VqG": {
+          "type": "image",
+          "settings": {
+            "select_icon": "check",
+            "heading": "Reusable",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_q7iFpQ": {
+          "type": "image",
+          "settings": {
+            "select_icon": "heart",
+            "heading": "Safe",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_pfBaBG",
+        "image_rKjwyT",
+        "image_AV3VqG",
+        "image_q7iFpQ"
+      ],
+      "name": "Features Banner",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 60,
+        "icon_width_mobile": 32,
+        "icon_width_desktop": 44,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "slider",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "newsletter_4efcDY": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_LWLkXi": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Mailing List!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 160
+          }
+        },
+        "paragraph_BzagWW": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.<\/p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_AbPqy4": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LWLkXi",
+        "paragraph_BzagWW",
+        "email_form_AbPqy4"
+      ],
+      "name": "Email Signup",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_FH33fr",
+    "brand_story",
+    "image_with_text_how_it_works",
+    "image_with_text_6QDaWF",
+    "rich_text_AWhtpf",
+    "image_banner_gxNG4e",
+    "image_with_text_DTMdpc",
+    "image_with_text_AKtdEP",
+    "mission",
+    "multicolumn_DTCyxb",
+    "separator_DBitUW",
+    "features_banner_Jpwc8j",
+    "newsletter_4efcDY"
+  ]
+}
+

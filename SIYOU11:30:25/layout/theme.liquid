@@ -1,0 +1,441 @@
+{%- assign lang_code = request.locale.iso_code | slice: 0,2 -%}
+<!doctype html>
+<html
+  class="no-js"
+  lang="{{ request.locale.iso_code }}"
+  dir="{%- if lang_code == 'ar' or lang_code == 'he' or lang_code == 'fa' or lang_code == 'ur' or lang_code == 'ps' or lang_code == 'sd' or lang_code == 'dv' or lang_code == 'ug' or lang_code == 'yi' -%}rtl{%- else -%}ltr{%- endif -%}"
+>
+  <head>
+    <!-- Preconnect to GTM before the script loads -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+	<!-- Google Tag Manager -->
+	<script>
+	// Initialize dataLayer and configure Google Consent Mode v2
+	window.dataLayer = window.dataLayer || [];
+
+	// Set default consent state before GTM loads
+	function gtag(){dataLayer.push(arguments);}
+	gtag('consent', 'default', {
+		'analytics_storage': 'denied',
+		'ad_storage': 'denied',
+		'ad_user_data': 'denied',
+		'ad_personalization': 'denied',
+		'wait_for_update': 500
+	});
+
+	// Push Shopify consent state to dataLayer
+	{% if customer_privacy %}
+		gtag('consent', 'update', {
+			'analytics_storage': {% if customer_privacy.tracking_allowed %}'granted'{% else %}'denied'{% endif %},
+			'ad_storage': {% if customer_privacy.marketing_allowed %}'granted'{% else %}'denied'{% endif %},
+			'ad_user_data': {% if customer_privacy.marketing_allowed %}'granted'{% else %}'denied'{% endif %},
+			'ad_personalization': {% if customer_privacy.marketing_allowed %}'granted'{% else %}'denied'{% endif %}
+		});
+	{% endif %}
+
+	// Load GTM
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-T6TT66MQ');
+	</script>
+	<!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://monorail-edge.shopifysvc.com" crossorigin>
+
+    <link rel="dns-prefetch" href="https://monorail-edge.shopifysvc.com">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+      <link rel="icon" type="image/png" sizes="192x192" href="{{ settings.favicon | image_url: width: 192, height: 192 }}">
+      <link rel="icon" type="image/png" sizes="512x512" href="{{ settings.favicon | image_url: width: 512, height: 512 }}">
+    {%- endif -%}
+
+    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    {%- comment -%} Preload LCP hero image on homepage for better performance {%- endcomment -%}
+    {%- if template == 'index' -%}
+      <link rel="preload" as="image" href="https://siyounails.com/cdn/shop/files/SiYou4658_optimized_final.webp?v=1763481735&width=750" imagesrcset="https://siyounails.com/cdn/shop/files/SiYou4658_optimized_final.webp?v=1763481735&width=375 375w, https://siyounails.com/cdn/shop/files/SiYou4658_optimized_final.webp?v=1763481735&width=750 750w, https://siyounails.com/cdn/shop/files/SiYou4658_optimized_final.webp?v=1763481735&width=1100 1100w" imagesizes="100vw" fetchpriority="high">
+    {%- endif -%}
+
+    <title>{{ page_title }}</title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    {%- comment -%} WebSite Schema for SEO - Site Search {%- endcomment -%}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ shop.name | escape }}",
+      "url": "{{ shop.url }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ shop.url }}/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    {%- comment -%} Organization Schema for SEO {%- endcomment -%}
+    {%- if template == 'index' -%}
+      {%- liquid
+        assign org_social_fields = 'social_facebook_link,social_instagram_link,social_twitter_link,social_pinterest_link,social_tiktok_link,social_youtube_link,social_tumblr_link,social_snapchat_link,social_vimeo_link' | split: ','
+        capture org_same_as
+          assign first_link = true
+          for field in org_social_fields
+            assign social_url = settings[field]
+            if social_url != blank
+              unless first_link
+                echo ','
+              endunless
+              echo social_url | strip | json
+              assign first_link = false
+            endif
+          endfor
+        endcapture
+        assign org_same_as = org_same_as | strip | strip_newlines | strip
+        assign default_address = shop.address
+      -%}
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": {{ shop.name | json }},
+        "url": {{ shop.url | json }}
+        {%- if shop.brand.logo -%}
+        ,"logo": {
+          "@type": "ImageObject",
+          "url": {{ shop.brand.logo | image_url: width: 600 | prepend: 'https:' | json }}
+        }
+        {%- endif -%}
+        {%- if org_same_as != blank -%}
+        ,"sameAs": [
+          {{ org_same_as }}
+        ]
+        {%- endif -%}
+        {%- if shop.phone != blank -%}
+        ,"contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": {{ shop.phone | json }},
+            "contactType": "customer service"
+          }
+        ]
+        {%- endif -%}
+        {%- if default_address != blank -%}
+        ,"address": {
+          "@type": "PostalAddress"
+          {%- if default_address.address1 != blank -%}
+          ,"streetAddress": {{ default_address.address1 | json }}
+          {%- endif -%}
+          {%- if default_address.city != blank -%}
+          ,"addressLocality": {{ default_address.city | json }}
+          {%- endif -%}
+          {%- if default_address.province_code != blank -%}
+          ,"addressRegion": {{ default_address.province_code | json }}
+          {%- elsif default_address.province != blank -%}
+          ,"addressRegion": {{ default_address.province | json }}
+          {%- endif -%}
+          {%- if default_address.zip != blank -%}
+          ,"postalCode": {{ default_address.zip | json }}
+          {%- endif -%}
+          {%- if default_address.country_code != blank -%}
+          ,"addressCountry": {{ default_address.country_code | json }}
+          {%- endif -%}
+        }
+        {%- endif -%}
+      }
+      </script>
+    {%- endif -%}
+
+    {%- comment -%} Swiper CSS - async load to avoid render-blocking {%- endcomment -%}
+    <link rel="preload" href="{{ 'swiper.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}"></noscript>
+
+    {{ 'settings.css' | asset_url | stylesheet_tag }}
+    {{ 'critical.css' | asset_url | stylesheet_tag }}
+
+    <script src="{{ 'variants.js' | asset_url }}" defer="defer"></script>
+
+    <link rel="preload" href="{{ 'main.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'main.css' | asset_url }}"></noscript>
+    {{ 'custom.css' | asset_url | stylesheet_tag }}
+
+    <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'base.js' | asset_url }}" defer="defer"></script>
+
+    <script src="{{ 'color-swatch.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'drawer-select.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'model_element.js' | asset_url }}" defer="defer"></script>
+
+    {%- if template == 'product' -%}
+      <script type="module" src="{{ 'gallery.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    {{ content_for_header }}
+
+    {%- liquid
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+    %}
+
+    {% style %}  
+      /* custom fontfaces/imports */
+      {{ settings.fontfaces }}
+
+      /* default fonts */
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ body_font_italic | font_face: font_display: 'swap' }}
+      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+      {{ settings.type_headings_font | font_face: font_display: 'swap' }}
+      {{ settings.type_navigation_font | font_face: font_display: 'swap' }}
+      {{ settings.type_buttons_font | font_face: font_display: 'swap' }}
+      {{ settings.type_price_font | font_face: font_display: 'swap' }}
+      {{ settings.type_breadcrumbs_font | font_face: font_display: 'swap' }}
+
+      @font-face {
+        font-family: 'icomoon';
+        src:  url('{{ 'icomoon.eot' | asset_url }}?6k4fkf');
+        src:  url('{{ 'icomoon.eot' | asset_url }}?6k4fkf#iefix') format('embedded-opentype'),
+          url('{{ 'icomoon.ttf' | asset_url }}?6k4fkf') format('truetype'),
+          url('{{ 'icomoon.woff' | asset_url }}?6k4fkf') format('woff'),
+          url('{{ 'icomoon.svg' | asset_url }}?6k4fkf#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* override fonts */
+      body{
+        {%- if settings.custom_font_base != blank -%}
+          --font-base: {{ settings.custom_font_base }},{{ settings.type_body_font.family }},{{ settings.type_body_font.fallback_families }};
+        {%- endif -%}
+        {%- if settings.custom_font_base_weight != blank -%}
+          --font-base-weight: {{ settings.custom_font_base_weight }};
+        {%- endif -%}
+
+        {%- if settings.custom_font_heading != blank -%}
+          --font-headline: {{ settings.custom_font_heading }},{{ settings.type_headings_font.family }},{{ settings.type_headings_font.fallback_families }};
+        {%- endif -%}
+        {%- if settings.custom_font_heading_weight != blank -%}
+          --font-headline-weight: {{ settings.custom_font_heading_weight }};
+        {%- endif -%}
+
+        {%- if settings.custom_font_navigation != blank -%}
+          --font-navigation: {{ settings.custom_font_navigation }},{{ settings.type_navigation_font.family }},{{ settings.type_navigation_font.fallback_families }};
+        {%- endif -%}
+
+        {%- if settings.custom_font_navigation_weight != blank -%}
+          --font-navigation-weight: {{ settings.custom_font_navigation_weight }};
+        {%- endif -%}
+
+        {%- if settings.custom_font_button != blank -%}
+          --font-button: {{ settings.custom_font_button }},{{ settings.type_buttons_font.family }},{{ settings.type_buttons_font.fallback_families }};
+        {%- endif -%}
+
+        {%- if settings.custom_font_button_weight != blank -%}
+          --font-button-weight: {{ settings.custom_font_button_weight }};
+        {%- endif -%}
+
+        {%- if settings.custom_font_price != blank -%}  
+          --font-price: {{ settings.custom_font_price }},{{ settings.type_price_font.family }},{{ settings.type_price_font.fallback_families }};
+        {%- endif -%}
+
+        {%- if settings.custom_font_price_weight != blank -%}  
+          --font-price-weight: {{ settings.custom_font_price_weight }};
+        {%- endif -%}
+      }
+
+    {% endstyle %}
+    <style>
+      [data-custom-badge="{{ settings.custom-badge-1-input }}"]{
+        background-color: {{ settings.custom-badge-1-background }};
+        color: {{ settings.custom-badge-1-text }};
+        }
+      [data-custom-badge="{{ settings.custom-badge-2-input }}"]{
+        background-color: {{ settings.custom-badge-2-background }};
+        color: {{ settings.custom-badge-2-text }};
+        }
+      [data-custom-badge="{{ settings.custom-badge-3-input }}"]{
+        background-color: {{ settings.custom-badge-3-background }};
+        color: {{ settings.custom-badge-3-text }};
+        }
+      [data-custom-badge="{{ settings.custom-badge-4-input }}"]{
+        background-color: {{ settings.custom-badge-4-background }};
+        color: {{ settings.custom-badge-4-text }};
+        }
+    </style>
+
+    {%- unless settings.type_body_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_headings_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_headings_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_navigation_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_navigation_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_buttons_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_buttons_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {%- unless settings.type_price_font.system? -%}
+      <link rel="preload" as="font" href="{{ settings.type_price_font | font_url }}" type="font/woff2" crossorigin>
+    {%- endunless -%}
+    {% comment %}
+      {%- unless settings.type_breadcrumbs_font.system? -%}
+        <link
+          rel="preload"
+          as="font"
+          href="{{ settings.type_breadcrumbs_font | font_url }}"
+          type="font/woff2"
+          crossorigin
+        >
+      {%- endunless -%}
+    {% endcomment %}
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    </script>
+  </head>
+
+  {% assign template_name = template | handleize %}
+  {% if template_name.size < 1 %}
+    {% assign template_name = 'empty' | handleize %}
+  {% endif %}
+
+	  <body class="template-{{ template_name }} nav-drawer-big mobile-nav" {% if settings.animations_pictures %}data-animate-picures-onhover{% endif %}>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6TT66MQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <a href="#root" class="skip-to-content-link">{{ 'accessibility.skip_to_text' | t }}</a>
+    {% if settings.sticky_header %}<div class="sticky-header__threshold"></div>{% endif %}
+    {% sections 'header-group' %}
+
+    <main id="root" class="" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    {% if template != 'cart' %}
+      {% render 'cart-drawer' %}
+    {% else %}
+      <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
+
+    {% render 'localization-drawer' %}
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
+    </ul>
+
+    <script>
+      window.shopUrl = '{{ request.origin }}';
+      window.routes = {
+        cart_add_url: '{{ routes.cart_add_url }}',
+        cart_change_url: '{{ routes.cart_change_url }}',
+        cart_update_url: '{{ routes.cart_update_url }}',
+        cart_url: '{{ routes.cart_url }}',
+        predictive_search_url: '{{ routes.predictive_search_url }}',
+      };
+
+      window.cartStrings = {
+        error: `{{ 'sections.cart.cart_error' | t }}`,
+        quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
+      };
+
+      window.variantStrings = {
+        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+        soldOut: `{{ 'products.product.sold_out' | t }}`,
+        unavailable: `{{ 'products.product.unavailable' | t }}`,
+        unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
+      };
+
+      window.accessibilityStrings = {
+        imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+        shareSuccess: `{{ 'general.share.success_message' | t }}`,
+        pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
+        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+        recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
+        recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
+      };
+    </script>
+
+
+    <div class="pickup-availability--page-overlay"></div>
+    <div class="wt__quick-buy--page-overlay"></div>
+    <div class="wt__quick-buy">
+      <div class="wt__quick-buy__container">
+        <nav>
+          <div class="close-btn" role="button" aria-label="{{ 'aria-label.close-button' | t }}" tabindex="-1">
+            {% render 'icons', id: 'close' %}
+          </div>
+        </nav>
+        <div class="wt__quick-buy--wrapper">
+          <div class="wt__quick-buy-loader">
+            {% render 'loader' %}
+          </div>
+          <div class="wt__quick-buy__view-all-container hidden">
+            <a href="#">
+              {{ 'general.quick_add.view_all_details' | t }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="model-container hidden">
+      <nav>
+        <div class="close-btn" role="button" aria-label="{{ 'aria-label.close-button' | t }}" tabindex="-1">
+          {% render 'icons', id: 'close', icon_class: 'wt-cart__drawer__close' %}
+        </div>
+      </nav>
+      <div class="model">
+        <button class="hero__button--link" role="button" aria-label="{{ 'aria-label.back-button' | t }}">
+          <span>
+            {{ 'aria-label.back-button' | t }}
+          </span>
+        </button>
+      </div>
+    </div>
+    {% if request.design_mode %}
+      <script src="{{ 'parallax.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'page-header-logo-banner.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'page-header-image-banner.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'low-power-video.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'video-controls.js' | asset_url }}" defer="defer"></script>
+      <script type="module" src="{{ 'pdp.js' | asset_url }}" defer="defer"></script>
+      <script type="module" src="{{ 'gallery.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'countdown-timer.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'img-comparison-slider-v8.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
+    <!-- Wonder Theme v2.1.2 -->
+  </body>
+</html>

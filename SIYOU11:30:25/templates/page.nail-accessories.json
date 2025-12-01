@@ -1,0 +1,135 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "#151515",
+        "color-bg-overlay": "#ff9cb5",
+        "color-overlay-opacity": 100,
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    },
+    "rich_text_GEzPVa": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rWNzzN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Coming Soon",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_mkEypC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Fresh arrivals are coming! Check back for new products.</p>",
+            "disable_on_mobile": false
+          }
+        },
+        "button_M48ctN": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Shop Nail Sets",
+            "button_link": "shopify://collections/nail-sets",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_rWNzzN",
+        "text_mkEypC",
+        "button_M48ctN"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "separator_y9YRe3": {
+      "type": "separator",
+      "name": "Separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#b1b1b1",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "newsletter_gnFfTw": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_cXfMFh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Mailing List!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 150
+          }
+        },
+        "paragraph_hBT9wr": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Get 10% off and be the first to know about new collections and exclusive offers.</p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_CQrHJd": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cXfMFh",
+        "paragraph_hBT9wr",
+        "email_form_CQrHJd"
+      ],
+      "name": "Email Signup",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_GEzPVa",
+    "separator_y9YRe3",
+    "newsletter_gnFfTw"
+  ]
+}

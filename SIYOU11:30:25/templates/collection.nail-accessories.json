@@ -1,0 +1,219 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_placeholder_image": true,
+        "layout": "text_first",
+        "desktop-percentage-image-width": 50,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 200,
+        "full-width-enabled": true,
+        "size_heading": 150,
+        "size_heading_mobile": 120,
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "left",
+        "mobile_text_horizontal_position": "center",
+        "color-body-text": "#000000",
+        "color-overlay": "#e3f2e6",
+        "color-overlay-opacity": 100,
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "title": {
+      "type": "main-collection-title",
+      "settings": {
+        "full-width-enabled": true,
+        "show_collection_description": true,
+        "desktop_text_horizontal_position": "center",
+        "size_heading": 140,
+        "size_heading_mobile": 120,
+        "color-body-text": "#ffffff",
+        "background_color": "#ffbccd",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "breadcrumbs": {
+      "type": "main-breadcrumbs",
+      "custom_css": [
+        ".breadcrumbs__item {text-transform: uppercase;}"
+      ],
+      "settings": {
+        "full-width-enabled": false,
+        "text_color": "#000000",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 12,
+        "margin-bottom": 8
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 24,
+        "columns_mobile": "2",
+        "columns_desktop": "3",
+        "spacing_desktop": "16",
+        "full-width-enabled": false,
+        "spacing_mobile": "16",
+        "image_ratio": "square",
+        "show_video": false,
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "enable_vendor_link": false,
+        "show_product_rating": false,
+        "enable_product_url_within_collection": true,
+        "enable_quick_add_button": true,
+        "text_alignment": "center",
+        "toolbar_style": "buttons",
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "filter_position": "always",
+        "margin-top": 16,
+        "margin-bottom": 0
+      }
+    },
+    "separator_qkXpB7": {
+      "type": "separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#dfdfdf",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_Fp4LEh": {
+      "type": "features-banner",
+      "blocks": {
+        "image_wBjh38": {
+          "type": "image",
+          "settings": {
+            "select_icon": "search",
+            "heading": "Handmade Quality",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_i7NGVi": {
+          "type": "image",
+          "settings": {
+            "select_icon": "star_fill",
+            "heading": "Super Easy to Use and Apply",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_y4RybK": {
+          "type": "image",
+          "settings": {
+            "select_icon": "check",
+            "heading": "Reusable up to 3+ Times",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_pjnKE4": {
+          "type": "image",
+          "settings": {
+            "select_icon": "heart",
+            "heading": "Safe for Natural Nails",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_wBjh38",
+        "image_i7NGVi",
+        "image_y4RybK",
+        "image_pjnKE4"
+      ],
+      "name": "Features Banner",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 60,
+        "icon_width_mobile": 32,
+        "icon_width_desktop": 44,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "slider",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "newsletter_xFUEzz": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_DdcAgz": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Mailing List!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 160
+          }
+        },
+        "paragraph_w3XT3L": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_m7NBY3": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DdcAgz",
+        "paragraph_w3XT3L",
+        "email_form_m7NBY3"
+      ],
+      "name": "Email Signup",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "title",
+    "breadcrumbs",
+    "product-grid",
+    "separator_qkXpB7",
+    "features_banner_Fp4LEh",
+    "newsletter_xFUEzz"
+  ]
+}

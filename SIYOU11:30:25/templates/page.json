@@ -1,0 +1,581 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "#151515",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    },
+    "rich_text_JhKULW": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_FgtBrF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_94HLeL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make annuncements, or welcome customers to your store.</p>",
+            "disable_on_mobile": false
+          }
+        },
+        "button_TEFqpr": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Button label",
+            "button_link": "/",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_FgtBrF",
+        "text_94HLeL",
+        "button_TEFqpr"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "transparent",
+        "background_color": "transparent",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "1761219981f43b70b0": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_480ce72_6awh6z": {
+          "type": "ai_gen_block_480ce72",
+          "settings": {
+            "section_heading": "Tutorials",
+            "heading_size": 40,
+            "section_background": "#ffffff",
+            "heading_color": "#151515",
+            "tab_background": "#ffffff",
+            "tab_text_color": "#151515",
+            "tab_border_color": "#e7e7e7",
+            "tab_hover_background": "#f9f9f9",
+            "tab_hover_text_color": "#151515",
+            "tab_active_text_color": "#ffffff",
+            "accent_color": "#ffbccd",
+            "tab_font_size": 16,
+            "tab_border_radius": 16,
+            "card_background": "#ffffff",
+            "card_border_radius": 16,
+            "image_border_radius": 14,
+            "text_color": "#151515",
+            "subtitle_color": "#717171",
+            "tutorial_title_size": 36,
+            "subtitle_size": 18,
+            "step_title_size": 24,
+            "step_description_size": 17,
+            "button_background": "#fc809f",
+            "button_hover_background": "#151515",
+            "button_text_color": "#ffffff",
+            "button_border_radius": 16,
+            "tutorial_1_title": "How to Apply With Sticky Tabs",
+            "tutorial_1_subtitle": "Follow these simple steps for a perfect application that lasts up to 2 weeks.",
+            "tutorial_1_step_1_title": "Prepare Your Nails",
+            "tutorial_1_step_1_description": "Start with clean, dry nails. Gently push back your cuticles using a cuticle pusher. Lightly buff the surface of your natural nails to remove shine and create a better adhesive surface. Wipe each nail with an alcohol pad or nail cleanser to remove any oils, dust, or residue. This step is crucial for long-lasting wear.",
+            "tutorial_1_step_1_image": "shopify://shop_images/MJS-00450_2_a5c9726c-5feb-479a-b926-33bb40d9df1c.png",
+            "tutorial_1_step_2_title": "Apply Sticky Tab",
+            "tutorial_1_step_2_description": "Select the correct size sticky tab for each nail—it should cover your entire nail bed without touching the cuticles or sides. Peel off the protective film and press the sticky tab firmly onto your natural nail, starting from the cuticle and smoothing toward the tip. Use your finger or a cuticle stick to press out any air bubbles for a smooth, secure base.",
+            "tutorial_1_step_3_title": "Press and Hold",
+            "tutorial_1_step_3_description": "Remove the top film from the sticky tab. Align the press-on nail with your cuticle at a 45-degree angle, then gently press down and forward. Apply firm, even pressure for 30 seconds, focusing on the center and edges. For best results, avoid water and excessive hand use for at least 2 hours after application to allow the adhesive to fully bond.",
+            "tutorial_2_title": "How to Remove Press-On Nails Safely",
+            "tutorial_2_subtitle": "Remove your press-on nails gently to protect your natural nails and keep them healthy.",
+            "tutorial_2_step_1_title": "Soak in Warm Water",
+            "tutorial_2_step_1_description": "Fill a bowl with warm water and add a few drops of gentle soap or cuticle oil. Soak your nails for 10-15 minutes to soften the adhesive. The warm water will help loosen the bond between the press-on nail and the sticky tab. For stubborn nails, you can soak a bit longer, but avoid using hot water as it can damage your natural nails.",
+            "tutorial_2_step_2_title": "Gently Lift Edges",
+            "tutorial_2_step_2_description": "After soaking, use a wooden cuticle stick or orange stick to gently lift the edges of the press-on nail. Start from the sides and work your way around. Never force or pull the nail off aggressively—if it doesn't come off easily, soak for a few more minutes. Patience is key to avoiding damage to your natural nail bed.",
+            "tutorial_2_step_3_title": "Clean and Moisturize",
+            "tutorial_2_step_3_description": "Once removed, clean your natural nails with a gentle nail polish remover or rubbing alcohol to remove any remaining adhesive residue. Wash your hands with soap and water, then apply cuticle oil to your nail beds and massage it in. Follow up with a rich hand cream to restore moisture. Give your nails a break between applications to keep them strong and healthy.",
+            "tutorial_3_title": "How to Reuse Press-On Nails",
+            "tutorial_3_subtitle": "Get more wear out of your favorite press-on nails by cleaning and storing them properly.",
+            "tutorial_3_step_1_title": "Remove Old Adhesive",
+            "tutorial_3_step_1_description": "After carefully removing your press-on nails, it's time to clean them for reuse. Use a cotton pad soaked in acetone-based nail polish remover or rubbing alcohol to gently wipe away all adhesive residue from the back of each nail. For stubborn adhesive, let the cotton pad sit on the nail for a few seconds to dissolve it. Make sure the surface is completely clean and smooth before storing.",
+            "tutorial_3_step_2_title": "Store Properly",
+            "tutorial_3_step_2_description": "Once your press-on nails are clean and dry, place them back in their original packaging or store them in a small container or nail storage box. Organize them by size to make your next application easier. Keep the container in a cool, dry place away from direct sunlight, heat, and moisture. Proper storage will help maintain the quality and shape of your press-on nails for multiple uses.",
+            "tutorial_3_step_3_title": "Reapply When Ready",
+            "tutorial_3_step_3_description": "When you're ready to wear your press-on nails again, simply follow the application instructions using fresh sticky tabs or nail glue. Inspect each nail before reapplying to ensure there's no damage or warping. With proper care and storage, quality press-on nails can be reused 5-10 times or more, making them an eco-friendly and cost-effective beauty choice."
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_480ce72_6awh6z"
+      ],
+      "disabled": true,
+      "settings": {
+        "section-margin": 0
+      }
+    },
+    "1761224963e620641f": {
+      "type": "_blocks",
+      "disabled": true,
+      "settings": {
+        "section-margin": 0
+      }
+    },
+    "siyou_size_guide": {
+      "type": "siyou-size-guide",
+      "blocks": {
+        "nail_shape_1": {
+          "type": "nail_shape",
+          "settings": {
+            "name_english": "Short Almond",
+            "name_chinese": "短杏仁",
+            "s_thumb": "22.94×11.91",
+            "s_index": "20.46×9.17",
+            "s_middle": "21.42×10.47",
+            "s_ring": "20.46×9.17",
+            "s_pinky": "17.65×7.33",
+            "m_thumb": "23.17×12.52",
+            "m_index": "20.46×9.17",
+            "m_middle": "21.98×10.77",
+            "m_ring": "20.88×9.78",
+            "m_pinky": "19.07×8.37",
+            "l_thumb": "23.6×13.53",
+            "l_index": "21.37×10.47",
+            "l_middle": "22.31×11.09",
+            "l_ring": "21.37×10.47",
+            "l_pinky": "19.64×8.68"
+          }
+        },
+        "nail_shape_2": {
+          "type": "nail_shape",
+          "settings": {
+            "name_english": "Medium Coffin",
+            "name_chinese": "中棺材",
+            "s_thumb": "24.5×12.5",
+            "s_index": "22.5×9.5",
+            "s_middle": "23.5×10.5",
+            "s_ring": "22.5×9.5",
+            "s_pinky": "20.5×8.5",
+            "m_thumb": "25×13",
+            "m_index": "23×10",
+            "m_middle": "24×11",
+            "m_ring": "23×10",
+            "m_pinky": "21×9",
+            "l_thumb": "25.5×13.5",
+            "l_index": "23.5×10.5",
+            "l_middle": "24.5×11.5",
+            "l_ring": "23.5×10.5",
+            "l_pinky": "21.5×9.5"
+          }
+        },
+        "nail_shape_3": {
+          "type": "nail_shape",
+          "settings": {
+            "name_english": "Long Coffin",
+            "name_chinese": "长棺材",
+            "s_thumb": "26×12.5",
+            "s_index": "24×9.5",
+            "s_middle": "25×10.5",
+            "s_ring": "24×9.5",
+            "s_pinky": "22×8.5",
+            "m_thumb": "26.5×13",
+            "m_index": "24.5×10",
+            "m_middle": "25.5×11",
+            "m_ring": "24.5×10",
+            "m_pinky": "22.5×9",
+            "l_thumb": "27×13.5",
+            "l_index": "25×10.5",
+            "l_middle": "26×11.5",
+            "l_ring": "25×10.5",
+            "l_pinky": "23×9.5"
+          }
+        },
+        "nail_shape_4": {
+          "type": "nail_shape",
+          "settings": {
+            "name_english": "European Medium Almond",
+            "name_chinese": "欧洲中杏仁",
+            "s_thumb": "23.5×12",
+            "s_index": "21×9.2",
+            "s_middle": "22×10.2",
+            "s_ring": "21×9.2",
+            "s_pinky": "18.5×7.5",
+            "m_thumb": "24×12.7",
+            "m_index": "21.5×9.5",
+            "m_middle": "22.5×10.5",
+            "m_ring": "21.5×9.5",
+            "m_pinky": "19×8",
+            "l_thumb": "24.5×13.3",
+            "l_index": "22×10",
+            "l_middle": "23×11",
+            "l_ring": "22×10",
+            "l_pinky": "19.5×8.5"
+          }
+        },
+        "nail_shape_5": {
+          "type": "nail_shape",
+          "settings": {
+            "name_english": "Long Almond",
+            "name_chinese": "长杏仁",
+            "s_thumb": "25×12",
+            "s_index": "22.5×9.3",
+            "s_middle": "23.5×10.3",
+            "s_ring": "22.5×9.3",
+            "s_pinky": "20×7.8",
+            "m_thumb": "25.5×12.8",
+            "m_index": "23×9.8",
+            "m_middle": "24×10.8",
+            "m_ring": "23×9.8",
+            "m_pinky": "20.5×8.5",
+            "l_thumb": "26×13.5",
+            "l_index": "23.5×10.3",
+            "l_middle": "24.5×11.3",
+            "l_ring": "23.5×10.3",
+            "l_pinky": "21×9"
+          }
+        },
+        "nail_shape_6": {
+          "type": "nail_shape",
+          "settings": {
+            "name_english": "Medium Almond",
+            "name_chinese": "中杏仁",
+            "s_thumb": "23×11.8",
+            "s_index": "20.8×9.1",
+            "s_middle": "21.8×10.3",
+            "s_ring": "20.8×9.1",
+            "s_pinky": "18×7.4",
+            "m_thumb": "23.5×12.4",
+            "m_index": "21.2×9.5",
+            "m_middle": "22.3×10.6",
+            "m_ring": "21.2×9.5",
+            "m_pinky": "18.5×8.1",
+            "l_thumb": "24×13.2",
+            "l_index": "21.8×10.2",
+            "l_middle": "22.8×11",
+            "l_ring": "21.8×10.2",
+            "l_pinky": "19.2×8.5"
+          }
+        },
+        "nail_shape_7": {
+          "type": "nail_shape",
+          "settings": {
+            "name_english": "Prefabricated Long Coffin",
+            "name_chinese": "预制长棺材",
+            "s_thumb": "29.8×12",
+            "s_index": "27.2×9.1",
+            "s_middle": "27.9×9.6",
+            "s_ring": "27.2×9.1",
+            "s_pinky": "25.3×7.4",
+            "m_thumb": "30.2×12.9",
+            "m_index": "27.9×9.8",
+            "m_middle": "28.4×10.2",
+            "m_ring": "27.9×9.8",
+            "m_pinky": "25.8×8.2",
+            "l_thumb": "31×13.8",
+            "l_index": "28.5×10.5",
+            "l_middle": "29.1×10.9",
+            "l_ring": "28.5×10.5",
+            "l_pinky": "26.3×8.6"
+          }
+        },
+        "tip_1": {
+          "type": "tip",
+          "settings": {
+            "tip_text": "Measure each nail individually for the best fit"
+          }
+        },
+        "tip_2": {
+          "type": "tip",
+          "settings": {
+            "tip_text": "Press-on nails can be gently filed for a custom fit"
+          }
+        },
+        "tip_3": {
+          "type": "tip",
+          "settings": {
+            "tip_text": "If between sizes, choose the larger size and file down"
+          }
+        }
+      },
+      "block_order": [
+        "nail_shape_1",
+        "nail_shape_2",
+        "nail_shape_3",
+        "nail_shape_4",
+        "nail_shape_5",
+        "nail_shape_6",
+        "nail_shape_7",
+        "tip_1",
+        "tip_2",
+        "tip_3"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Size Guide",
+        "subtitle": "Find Your Perfect Nail Size",
+        "show_logo": true,
+        "logo_text": "SIYOU",
+        "logo_color": "#c41e3a",
+        "primary_color": "#ffbccd",
+        "background_color": "#ffffff",
+        "show_interactive": true,
+        "controls_title": "Select Nail Shape",
+        "print_text": "Print",
+        "reset_text": "Reset",
+        "show_keyboard_hints": true,
+        "keyboard_hint_text": "Tip: Press number keys 1-7 for quick switching",
+        "step1_title": "Step 1: How to Measure Your Nails",
+        "instruction1": "Place a piece of paper on your nail bed",
+        "instruction2": "Mark the widest point of your nail on the paper",
+        "instruction3": "Use a ruler to measure the width in millimeters",
+        "step2_title": "Step 2: Find Your Size",
+        "size_header": "Size",
+        "thumb_label": "Thumb",
+        "index_label": "Index",
+        "middle_label": "Middle",
+        "ring_label": "Ring",
+        "pinky_label": "Pinky",
+        "show_tips": true,
+        "tips_title": "Pro Tips for Perfect Fit",
+        "font_family": "'Inter', -apple-system, sans-serif",
+        "title_size": 38,
+        "max_width": 1200,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "before_and_after_Nxc8wA": {
+      "type": "before-and-after",
+      "blocks": {
+        "subheading_hztHe6": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Tell you story",
+            "subheading_disable_on_mobile": false
+          }
+        },
+        "heading_DCQfBf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_jM6NeL": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        },
+        "button_4KYxfT": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Button label",
+            "button_link": "/",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_hztHe6",
+        "heading_DCQfBf",
+        "text_jM6NeL",
+        "button_4KYxfT"
+      ],
+      "disabled": true,
+      "name": "t:sections.before_and_after.name",
+      "settings": {
+        "title": "Beauty At Your Fingertips",
+        "layout": "image_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "enable_badges": true,
+        "before_badge": "Before",
+        "after_badge": "After",
+        "section-color-body-text": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "custom_liquid_MhayG9": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
+    "separator_VXct3x": {
+      "type": "separator",
+      "name": "Separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#b1b1b1",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_RNACUh": {
+      "type": "features-banner",
+      "blocks": {
+        "image_pYw4YP": {
+          "type": "image",
+          "settings": {
+            "select_icon": "search",
+            "heading": "Handmade Quality",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_3peQkb": {
+          "type": "image",
+          "settings": {
+            "select_icon": "star_fill",
+            "heading": "Super Easy to Use and Apply",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_TmmfNQ": {
+          "type": "image",
+          "settings": {
+            "select_icon": "check",
+            "heading": "Reusable up to 3+ Times",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_AAMH6i": {
+          "type": "image",
+          "settings": {
+            "select_icon": "heart",
+            "heading": "Safe for Natural Nails",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_pYw4YP",
+        "image_3peQkb",
+        "image_TmmfNQ",
+        "image_AAMH6i"
+      ],
+      "name": "Features Banner",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 60,
+        "icon_width_mobile": 32,
+        "icon_width_desktop": 44,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "slider",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "newsletter_n4ByUV": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_qzizFm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Mailing List!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 150
+          }
+        },
+        "paragraph_9jVhHt": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_4yEjmf": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qzizFm",
+        "paragraph_9jVhHt",
+        "email_form_4yEjmf"
+      ],
+      "name": "Email Signup",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_JhKULW",
+    "1761219981f43b70b0",
+    "1761224963e620641f",
+    "siyou_size_guide",
+    "before_and_after_Nxc8wA",
+    "custom_liquid_MhayG9",
+    "separator_VXct3x",
+    "features_banner_RNACUh",
+    "newsletter_n4ByUV"
+  ]
+}

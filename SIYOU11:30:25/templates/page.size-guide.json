@@ -1,0 +1,563 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 120,
+        "size_heading_mobile": 100,
+        "color-body-text": "#ffffff",
+        "color-bg-overlay": "#ffbccd",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 28
+      }
+    },
+    "rich_text_ADCEDm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kVFiF9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Size Guides",
+            "disable_on_mobile": false,
+            "size_heading": 190,
+            "size_heading_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "heading_kVFiF9"
+      ],
+      "custom_css": [
+        "h2 {font-size: 32px;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "#ffffff",
+        "background_color": "#ff9cb5",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "image_with_text_dpUrQ7": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_K9NyJ3": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Tell you story",
+            "subheading_disable_on_mobile": false
+          }
+        },
+        "heading_Cjw8jb": {
+          "type": "heading",
+          "settings": {
+            "heading": "Measure Your Nails",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_pQKJBe": {
+          "type": "text",
+          "settings": {
+            "text": "<p>See below for the list of our size guides. Our nails vary slightly, so please review these sizing charts to make sure our nails fit!</p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        },
+        "button_Di4q3T": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/nail-sets",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_K9NyJ3",
+        "heading_Cjw8jb",
+        "text_pQKJBe",
+        "button_Di4q3T"
+      ],
+      "name": "Instructions",
+      "settings": {
+        "title": "",
+        "layout": "image_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "section-color-body-text": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "desktop_image": "shopify://shop_images/Screenshot_2025-11-17_at_6.21.46_PM.webp",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "separator_MrqKrY": {
+      "type": "separator",
+      "name": "Separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#717171",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "multicolumn_jkaHzT": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_m6fL8D": {
+          "type": "column",
+          "settings": {
+            "heading": "Short Almond",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Shop Now",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/short-almond-nail-sets",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/Screenshot_2025-11-12_at_10.36.13_PM.png"
+          }
+        },
+        "column_Gt9KKK": {
+          "type": "column",
+          "settings": {
+            "heading": "Medium Almond",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Shop Now",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/medium-almond-nail-sets",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/Screenshot_2025-11-12_at_10.37.47_PM.png"
+          }
+        },
+        "column_Cc4U9X": {
+          "type": "column",
+          "settings": {
+            "heading": "Long Almond",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Shop Now",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/long-almond-nail-sets",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/Screenshot_2025-11-12_at_10.36.53_PM.png"
+          }
+        }
+      },
+      "block_order": [
+        "column_m6fL8D",
+        "column_Gt9KKK",
+        "column_Cc4U9X"
+      ],
+      "name": "Almond Shapes",
+      "settings": {
+        "heading": "",
+        "swipe_on_mobile": true,
+        "full-width-enabled": false,
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "separator_e9BWwi": {
+      "type": "separator",
+      "name": "Separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#717171",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "multicolumn_TM4Pzp": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_9kym77": {
+          "type": "column",
+          "settings": {
+            "heading": "Medium Coffin",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Shop Now",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/medium-coffin-nail-sets",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/Screenshot_2025-11-12_at_10.37.13_PM.png"
+          }
+        },
+        "column_RmQimM": {
+          "type": "column",
+          "settings": {
+            "heading": "Long Coffin",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Shop Now",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/long-coffin-nail-sets",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/Screenshot_2025-11-12_at_10.37.30_PM.png"
+          }
+        },
+        "column_ghLqYd": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "heading": "Short Coffin",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/comingsoon.jpg"
+          }
+        },
+        "column_eAtbDJ": {
+          "type": "column",
+          "settings": {
+            "heading": "Medium Stiletto",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Shop Now",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/medium-stiletto-nail-sets",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/Screenshot_2025-11-12_at_10.36.38_PM.png"
+          }
+        }
+      },
+      "block_order": [
+        "column_9kym77",
+        "column_RmQimM",
+        "column_ghLqYd",
+        "column_eAtbDJ"
+      ],
+      "name": "Coffin Shapes",
+      "settings": {
+        "heading": "",
+        "swipe_on_mobile": true,
+        "full-width-enabled": false,
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "separator_MKXAJm": {
+      "type": "separator",
+      "name": "Separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#717171",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "rich_text_aiKqig": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wEHhz6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Coming Soon",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_MzjDiW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>More shapes are coming! Check back for new products.</p>",
+            "disable_on_mobile": false
+          }
+        },
+        "button_fdKrp9": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Shop Nail Sets",
+            "button_link": "shopify://collections/nail-sets",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_wEHhz6",
+        "text_MzjDiW",
+        "button_fdKrp9"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "section_width": "regular",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "features_banner_3GJKdW": {
+      "type": "features-banner",
+      "blocks": {
+        "image_K7JWVY": {
+          "type": "image",
+          "settings": {
+            "select_icon": "search",
+            "heading": "Unique Designs",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_8FcWkd": {
+          "type": "image",
+          "settings": {
+            "select_icon": "star_fill",
+            "heading": "Easy to Use",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_PB4Qka": {
+          "type": "image",
+          "settings": {
+            "select_icon": "check",
+            "heading": "Reusable",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_PeDVam": {
+          "type": "image",
+          "settings": {
+            "select_icon": "heart",
+            "heading": "Safe",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_K7JWVY",
+        "image_8FcWkd",
+        "image_PB4Qka",
+        "image_PeDVam"
+      ],
+      "name": "Features Banner",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 60,
+        "icon_width_mobile": 32,
+        "icon_width_desktop": 44,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "slider",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "multicolumn_m9rVNX": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_UxLiqk": {
+          "type": "column",
+          "settings": {
+            "heading": "Medium Stiletto",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Shop Now",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/Medium_Stiletto.png"
+          }
+        },
+        "column_FDWzMa": {
+          "type": "column",
+          "settings": {
+            "heading": "Short Stiletto",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/comingsoon.jpg"
+          }
+        },
+        "column_TpYr9h": {
+          "type": "column",
+          "settings": {
+            "heading": "Long Stiletto",
+            "heading_disable_on_mobile": false,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "",
+            "button_disable_on_mobile": false,
+            "button_link": "",
+            "button_link_in_new_window": false,
+            "desktop_image": "shopify://shop_images/comingsoon.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "column_UxLiqk",
+        "column_FDWzMa",
+        "column_TpYr9h"
+      ],
+      "disabled": true,
+      "name": "Stiletto Shapes",
+      "settings": {
+        "heading": "",
+        "swipe_on_mobile": true,
+        "full-width-enabled": false,
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "newsletter_Ugnqjx": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_gjJ7np": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Mailing List!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 150
+          }
+        },
+        "paragraph_j7dLPy": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.</p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_xx93eX": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gjJ7np",
+        "paragraph_j7dLPy",
+        "email_form_xx93eX"
+      ],
+      "name": "Email Signup",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_ADCEDm",
+    "image_with_text_dpUrQ7",
+    "separator_MrqKrY",
+    "multicolumn_jkaHzT",
+    "separator_e9BWwi",
+    "multicolumn_TM4Pzp",
+    "separator_MKXAJm",
+    "rich_text_aiKqig",
+    "features_banner_3GJKdW",
+    "multicolumn_m9rVNX",
+    "newsletter_Ugnqjx"
+  ]
+}

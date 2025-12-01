@@ -1,0 +1,61 @@
+{% assign items = "" | split: "" %}
+{% assign pos = 1 %}
+{% capture home_item %}{
+  "@type": "ListItem",
+  "position": {{ pos }},
+  "name": "Home",
+  "item": "{{ shop.url }}/"
+}{% endcapture %}
+{% assign items = items | push: home_item %}
+{% assign pos = pos | plus: 1 %}
+{% if template.name == 'collection' and collection %}
+  {% capture coll_item %}{
+    "@type": "ListItem",
+    "position": {{ pos }},
+    "name": "{{ collection.title | strip | escape }}",
+    "item": "{{ collection.url | absolute_url }}"
+  }{% endcapture %}
+  {% assign items = items | push: coll_item %}
+  {% assign pos = pos | plus: 1 %}
+{% endif %}
+{% if template.name == 'product' and product %}
+  {% capture prod_item %}{
+    "@type": "ListItem",
+    "position": {{ pos }},
+    "name": "{{ product.title | strip | escape }}",
+    "item": "{{ product.url | absolute_url }}"
+  }{% endcapture %}
+  {% assign items = items | push: prod_item %}
+  {% assign pos = pos | plus: 1 %}
+{% endif %}
+{% if template.name == 'article' and article %}
+  {% capture blog_item %}{
+    "@type": "ListItem",
+    "position": {{ pos }},
+    "name": "{{ article.blog.title | strip | escape }}",
+    "item": "{{ article.blog.url | absolute_url }}"
+  }{% endcapture %}
+  {% assign items = items | push: blog_item %}
+  {% assign pos = pos | plus: 1 %}
+  {% capture art_item %}{
+    "@type": "ListItem",
+    "position": {{ pos }},
+    "name": "{{ article.title | strip | escape }}",
+    "item": "{{ article.url | absolute_url }}"
+  }{% endcapture %}
+  {% assign items = items | push: art_item %}
+{% endif %}
+{% if template.name == 'page' and page %}
+  {% capture page_item %}{
+    "@type": "ListItem",
+    "position": {{ pos }},
+    "name": "{{ page.title | strip | escape }}",
+    "item": "{{ page.url | absolute_url }}"
+  }{% endcapture %}
+  {% assign items = items | push: page_item %}
+{% endif %}
+{% if items.size > 1 %}
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{{ items | join: "," }}] }
+</script>
+{% endif %}

@@ -1,0 +1,1155 @@
+{% comment %}
+  SIYOU Nails Size Guide Section for Shopify
+
+  Usage: Add this file to your theme's sections folder
+  File location: sections/siyou-size-guide.liquid
+
+  To add to a page:
+  1. Go to Online Store > Themes > Customize
+  2. Add Section > SIYOU Size Guide
+  3. Configure settings in the customizer
+{% endcomment %}
+
+<div class="siyou-size-guide-wrapper" data-section-id="{{ section.id }}">
+  <style>
+    #shopify-section-{{ section.id }} {
+      padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+      background: {{ section.settings.background_color }};
+    }
+
+    #shopify-section-{{ section.id }} * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #shopify-section-{{ section.id }} .size-guide-container {
+      max-width: {{ section.settings.max_width }}px;
+      margin: 0 auto;
+      padding: 0 20px;
+      font-family: {{ section.settings.font_family }};
+    }
+
+    /* Header Styles */
+    #shopify-section-{{ section.id }} .guide-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    #shopify-section-{{ section.id }} .guide-logo {
+      font-size: 32px;
+      font-weight: 800;
+      color: {{ section.settings.logo_color }};
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    #shopify-section-{{ section.id }} .guide-title {
+      font-size: {{ section.settings.title_size }}px;
+      font-weight: 800;
+      color: {{ section.settings.primary_color }};
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .guide-subtitle {
+      font-size: 20px;
+      color: #666;
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    /* Navigation Controls */
+    #shopify-section-{{ section.id }} .controls-section {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+    }
+
+    #shopify-section-{{ section.id }} .controls-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    #shopify-section-{{ section.id }} .controls-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    #shopify-section-{{ section.id }} .quick-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .action-button {
+      padding: 8px 16px;
+      background: transparent;
+      color: #666;
+      border: 2px solid #E5E5E5;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    #shopify-section-{{ section.id }} .action-button:hover {
+      border-color: {{ section.settings.primary_color }};
+      color: {{ section.settings.primary_color }};
+    }
+
+    #shopify-section-{{ section.id }} .keyboard-hint {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #shopify-section-{{ section.id }} .keyboard-hint kbd {
+      background: #F5F5F5;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #DDD;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .button-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .nav-button {
+      padding: 0;
+      background: white;
+      color: #333;
+      border: 2px solid #E5E5E5;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      position: relative;
+      font-family: inherit;
+    }
+
+    #shopify-section-{{ section.id }} .nav-button-content {
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      position: relative;
+    }
+
+    #shopify-section-{{ section.id }} .button-main {
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    #shopify-section-{{ section.id }} .button-sub {
+      font-size: 12px;
+      color: #999;
+      font-weight: 400;
+    }
+
+    #shopify-section-{{ section.id }} .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 188, 205, 0.25);
+      border-color: {{ section.settings.primary_color }};
+    }
+
+    #shopify-section-{{ section.id }} .nav-button.active {
+      background: linear-gradient(135deg, {{ section.settings.primary_color }}, #FFD4E1);
+      border-color: {{ section.settings.primary_color }};
+      color: white;
+    }
+
+    #shopify-section-{{ section.id }} .nav-button.active .button-main,
+    #shopify-section-{{ section.id }} .nav-button.active .button-sub {
+      color: white;
+    }
+
+    #shopify-section-{{ section.id }} .nav-button.active::after {
+      content: '✓';
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 16px;
+      color: white;
+      font-weight: 700;
+    }
+
+    /* Step Sections */
+    #shopify-section-{{ section.id }} .step-section {
+      margin-bottom: 40px;
+    }
+
+    #shopify-section-{{ section.id }} .step-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: {{ section.settings.primary_color }};
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Measurement Instructions */
+    #shopify-section-{{ section.id }} .instructions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    #shopify-section-{{ section.id }} .instruction-box {
+      background: #FFEEF3;
+      border: 2px solid {{ section.settings.primary_color }};
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    #shopify-section-{{ section.id }} .instruction-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255, 188, 205, 0.3);
+    }
+
+    #shopify-section-{{ section.id }} .instruction-number {
+      font-weight: 700;
+      color: {{ section.settings.primary_color }};
+      font-size: 24px;
+      margin-right: 12px;
+    }
+
+    #shopify-section-{{ section.id }} .instruction-text {
+      font-size: 14px;
+      color: #1A0F14;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    /* Nail Display */
+    #shopify-section-{{ section.id }} .nail-display {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      margin-bottom: 35px;
+    }
+
+    #shopify-section-{{ section.id }} .nail-item {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    #shopify-section-{{ section.id }} .nail-item:hover {
+      transform: scale(1.1);
+    }
+
+    #shopify-section-{{ section.id }} .nail-shape {
+      width: 55px;
+      height: 70px;
+      background: linear-gradient(180deg, #FFD4E1 0%, {{ section.settings.primary_color }} 100%);
+      border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+      margin: 0 auto 12px;
+      border: 2px solid {{ section.settings.primary_color }};
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(255, 188, 205, 0.3);
+    }
+
+    #shopify-section-{{ section.id }} .nail-shape::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 13px;
+      width: 18px;
+      height: 25px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      filter: blur(6px);
+    }
+
+    #shopify-section-{{ section.id }} .finger-label {
+      font-size: 13px;
+      color: #333;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Size Chart */
+    #shopify-section-{{ section.id }} .size-chart-container {
+      overflow-x: auto;
+      margin: 30px 0;
+    }
+
+    #shopify-section-{{ section.id }} .size-chart {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(255, 188, 205, 0.2);
+      border: 2px solid {{ section.settings.primary_color }};
+    }
+
+    #shopify-section-{{ section.id }} .size-chart thead {
+      background: {{ section.settings.primary_color }};
+    }
+
+    #shopify-section-{{ section.id }} .size-chart th {
+      padding: 14px;
+      text-align: center;
+      font-weight: 600;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    #shopify-section-{{ section.id }} .size-chart th:last-child {
+      border-right: none;
+    }
+
+    #shopify-section-{{ section.id }} .size-chart tbody tr {
+      background: white;
+      transition: all 0.2s ease;
+    }
+
+    #shopify-section-{{ section.id }} .size-chart tbody tr:nth-child(even) {
+      background: #FFF5F8;
+    }
+
+    #shopify-section-{{ section.id }} .size-chart tbody tr:hover {
+      background: #FFE5EC;
+      transform: scale(1.02);
+    }
+
+    #shopify-section-{{ section.id }} .size-chart td {
+      padding: 14px;
+      text-align: center;
+      color: #1A0F14;
+      font-size: 14px;
+      font-weight: 500;
+      border-right: 1px solid #FFE5EC;
+      border-bottom: 1px solid #FFE5EC;
+    }
+
+    #shopify-section-{{ section.id }} .size-label {
+      font-weight: 700;
+      background: {{ section.settings.primary_color }};
+      color: white;
+      padding: 8px;
+      border-radius: 5px;
+      display: inline-block;
+      min-width: 40px;
+    }
+
+    /* Tips Section */
+    #shopify-section-{{ section.id }} .tips-section {
+      background: #FFFBFC;
+      border-left: 4px solid {{ section.settings.primary_color }};
+      border-radius: 8px;
+      padding: 25px;
+      margin: 35px 0;
+    }
+
+    #shopify-section-{{ section.id }} .tips-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: {{ section.settings.primary_color }};
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #shopify-section-{{ section.id }} .tips-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #shopify-section-{{ section.id }} .tips-content li {
+      padding: 8px 0;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.6;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    #shopify-section-{{ section.id }} .tips-content li::before {
+      content: '✨';
+      position: absolute;
+      left: 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      #shopify-section-{{ section.id }} .guide-title {
+        font-size: 28px;
+      }
+
+      #shopify-section-{{ section.id }} .instructions-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      #shopify-section-{{ section.id }} .nail-display {
+        gap: 15px;
+      }
+
+      #shopify-section-{{ section.id }} .nail-shape {
+        width: 45px;
+        height: 58px;
+      }
+
+      #shopify-section-{{ section.id }} .button-group {
+        grid-template-columns: 1fr;
+      }
+
+      #shopify-section-{{ section.id }} .controls-header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      #shopify-section-{{ section.id }} .quick-actions {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #shopify-section-{{ section.id }} .nail-display {
+        gap: 10px;
+      }
+
+      #shopify-section-{{ section.id }} .nail-shape {
+        width: 38px;
+        height: 50px;
+      }
+
+      #shopify-section-{{ section.id }} .finger-label {
+        font-size: 11px;
+      }
+    }
+
+    @media print {
+      #shopify-section-{{ section.id }} .controls-section {
+        display: none;
+      }
+    }
+  </style>
+
+  <div class="size-guide-container">
+    <!-- Header Section -->
+    {% if section.settings.show_logo %}
+    <div class="guide-header">
+      <div class="guide-logo">{{ section.settings.logo_text }}</div>
+      <h2 class="guide-title">{{ section.settings.title }}</h2>
+      <div class="guide-subtitle">{{ section.settings.subtitle }}</div>
+    </div>
+    {% endif %}
+
+    <!-- Interactive Controls (if enabled) -->
+    {% if section.settings.show_interactive %}
+    <div class="controls-section">
+      <div class="controls-header">
+        <h3 class="controls-title">{{ section.settings.controls_title }}</h3>
+        <div class="quick-actions">
+          <button class="action-button" onclick="window.print()">
+            📄 {{ section.settings.print_text }}
+          </button>
+          <button class="action-button" onclick="siyouResetView_{{ section.id | replace: '-', '_' }}()">
+            ↺ {{ section.settings.reset_text }}
+          </button>
+        </div>
+      </div>
+
+      {% if section.settings.show_keyboard_hints %}
+      <div class="keyboard-hint">
+        💡 {{ section.settings.keyboard_hint_text }}
+      </div>
+      {% endif %}
+
+      <div class="button-group">
+        {% for nail_type in section.blocks %}
+          {% if nail_type.type == 'nail_shape' %}
+          <button
+            class="nav-button {% if forloop.first %}active{% endif %}"
+            onclick="siyouLoadGuide_{{ section.id | replace: '-', '_' }}('{{ nail_type.id }}', this)"
+            data-guide-id="{{ nail_type.id }}"
+          >
+            <div class="nav-button-content">
+              <div class="button-main">{{ forloop.index }}. {{ nail_type.settings.name_english }}</div>
+              <div class="button-sub">{{ nail_type.settings.name_chinese }}</div>
+            </div>
+          </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Step 1: Measurement Instructions -->
+    <div class="step-section">
+      <h3 class="step-title">{{ section.settings.step1_title }}</h3>
+      <div class="instructions-grid">
+        <div class="instruction-box">
+          <span class="instruction-number">1</span>
+          <span class="instruction-text">{{ section.settings.instruction1 }}</span>
+        </div>
+        <div class="instruction-box">
+          <span class="instruction-number">2</span>
+          <span class="instruction-text">{{ section.settings.instruction2 }}</span>
+        </div>
+        <div class="instruction-box">
+          <span class="instruction-number">3</span>
+          <span class="instruction-text">{{ section.settings.instruction3 }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Size Chart -->
+    <div class="step-section">
+      <h3 class="step-title">{{ section.settings.step2_title }}</h3>
+
+      <div class="nail-display">
+        <div class="nail-item">
+          <div class="nail-shape"></div>
+          <div class="finger-label">{{ section.settings.thumb_label }}</div>
+        </div>
+        <div class="nail-item">
+          <div class="nail-shape"></div>
+          <div class="finger-label">{{ section.settings.index_label }}</div>
+        </div>
+        <div class="nail-item">
+          <div class="nail-shape"></div>
+          <div class="finger-label">{{ section.settings.middle_label }}</div>
+        </div>
+        <div class="nail-item">
+          <div class="nail-shape"></div>
+          <div class="finger-label">{{ section.settings.ring_label }}</div>
+        </div>
+        <div class="nail-item">
+          <div class="nail-shape"></div>
+          <div class="finger-label">{{ section.settings.pinky_label }}</div>
+        </div>
+      </div>
+
+      <div class="size-chart-container">
+        <table class="size-chart">
+          <thead>
+            <tr>
+              <th>{{ section.settings.size_header }}</th>
+              <th>{{ section.settings.thumb_label }}</th>
+              <th>{{ section.settings.index_label }}</th>
+              <th>{{ section.settings.middle_label }}</th>
+              <th>{{ section.settings.ring_label }}</th>
+              <th>{{ section.settings.pinky_label }}</th>
+            </tr>
+          </thead>
+          <tbody id="siyou-size-table-{{ section.id }}">
+            <!-- Size data will be populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tips Section -->
+    {% if section.settings.show_tips %}
+    <div class="tips-section">
+      <h3 class="tips-title">
+        <span>💡</span>
+        {{ section.settings.tips_title }}
+      </h3>
+      <div class="tips-content">
+        <ul>
+          {% for tip_block in section.blocks %}
+            {% if tip_block.type == 'tip' %}
+            <li>{{ tip_block.settings.tip_text }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <script>
+    (function() {
+      // Sanitize section ID for JavaScript variable name
+      const sectionId = '{{ section.id | replace: "-", "_" }}';
+
+      // Size data for all nail shapes
+      const siyouSizeGuides = {
+        {% for nail_type in section.blocks %}
+          {% if nail_type.type == 'nail_shape' %}
+          '{{ nail_type.id }}': {
+            title: '{{ nail_type.settings.name_english }} ({{ nail_type.settings.name_chinese }})',
+            sizes: {
+              s: {
+                thumb: '{{ nail_type.settings.s_thumb }}',
+                index: '{{ nail_type.settings.s_index }}',
+                middle: '{{ nail_type.settings.s_middle }}',
+                ring: '{{ nail_type.settings.s_ring }}',
+                pinky: '{{ nail_type.settings.s_pinky }}'
+              },
+              m: {
+                thumb: '{{ nail_type.settings.m_thumb }}',
+                index: '{{ nail_type.settings.m_index }}',
+                middle: '{{ nail_type.settings.m_middle }}',
+                ring: '{{ nail_type.settings.m_ring }}',
+                pinky: '{{ nail_type.settings.m_pinky }}'
+              },
+              l: {
+                thumb: '{{ nail_type.settings.l_thumb }}',
+                index: '{{ nail_type.settings.l_index }}',
+                middle: '{{ nail_type.settings.l_middle }}',
+                ring: '{{ nail_type.settings.l_ring }}',
+                pinky: '{{ nail_type.settings.l_pinky }}'
+              }
+            }
+          }{% unless forloop.last %},{% endunless %}
+          {% endif %}
+        {% endfor %}
+      };
+
+      // Function to load size guide data
+      window['siyouLoadGuide_' + sectionId] = function(guideId, buttonElement) {
+        const guide = siyouSizeGuides[guideId];
+        if (!guide) return;
+
+        // Update active button
+        const buttons = document.querySelectorAll('#shopify-section-{{ section.id }} .nav-button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        if (buttonElement) {
+          buttonElement.classList.add('active');
+        }
+
+        // Update table
+        const tableBody = document.getElementById('siyou-size-table-{{ section.id }}');
+        tableBody.innerHTML = `
+          <tr>
+            <td><span class="size-label">S</span></td>
+            <td>${guide.sizes.s.thumb}</td>
+            <td>${guide.sizes.s.index}</td>
+            <td>${guide.sizes.s.middle}</td>
+            <td>${guide.sizes.s.ring}</td>
+            <td>${guide.sizes.s.pinky}</td>
+          </tr>
+          <tr>
+            <td><span class="size-label">M</span></td>
+            <td>${guide.sizes.m.thumb}</td>
+            <td>${guide.sizes.m.index}</td>
+            <td>${guide.sizes.m.middle}</td>
+            <td>${guide.sizes.m.ring}</td>
+            <td>${guide.sizes.m.pinky}</td>
+          </tr>
+          <tr>
+            <td><span class="size-label">L</span></td>
+            <td>${guide.sizes.l.thumb}</td>
+            <td>${guide.sizes.l.index}</td>
+            <td>${guide.sizes.l.middle}</td>
+            <td>${guide.sizes.l.ring}</td>
+            <td>${guide.sizes.l.pinky}</td>
+          </tr>
+        `;
+      };
+
+      // Reset function
+      window['siyouResetView_' + sectionId] = function() {
+        const firstButton = document.querySelector('#shopify-section-{{ section.id }} .nav-button');
+        if (firstButton) {
+          firstButton.click();
+        }
+      };
+
+      // Keyboard shortcuts
+      {% if section.settings.show_keyboard_hints %}
+      document.addEventListener('keydown', function(e) {
+        const keys = ['1', '2', '3', '4', '5', '6', '7'];
+        const index = keys.indexOf(e.key);
+        if (index !== -1) {
+          const buttons = document.querySelectorAll('#shopify-section-{{ section.id }} .nav-button');
+          if (buttons[index]) {
+            buttons[index].click();
+          }
+        }
+      });
+      {% endif %}
+
+      // Initialize with first guide
+      document.addEventListener('DOMContentLoaded', function() {
+        const firstButton = document.querySelector('#shopify-section-{{ section.id }} .nav-button');
+        if (firstButton) {
+          const guideId = firstButton.getAttribute('data-guide-id');
+          window['siyouLoadGuide_' + sectionId](guideId, firstButton);
+        }
+      });
+    })();
+  </script>
+</div>
+
+{% schema %}
+{
+  "name": "SIYOU Size Guide",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General Settings"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Title",
+      "default": "Size Guide"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Find Your Perfect Nail Size"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_logo",
+      "label": "Show Logo",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "SIYOU"
+    },
+    {
+      "type": "color",
+      "id": "logo_color",
+      "label": "Logo Color",
+      "default": "#C41E3A"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary Color",
+      "default": "#FFBCCD"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FAFAFA"
+    },
+    {
+      "type": "header",
+      "content": "Interactive Controls"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_interactive",
+      "label": "Show Interactive Controls",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "controls_title",
+      "label": "Controls Title",
+      "default": "Select Nail Shape"
+    },
+    {
+      "type": "text",
+      "id": "print_text",
+      "label": "Print Button Text",
+      "default": "Print"
+    },
+    {
+      "type": "text",
+      "id": "reset_text",
+      "label": "Reset Button Text",
+      "default": "Reset"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_keyboard_hints",
+      "label": "Show Keyboard Shortcuts",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "keyboard_hint_text",
+      "label": "Keyboard Hint Text",
+      "default": "Tip: Press number keys 1-7 for quick switching"
+    },
+    {
+      "type": "header",
+      "content": "Instructions"
+    },
+    {
+      "type": "text",
+      "id": "step1_title",
+      "label": "Step 1 Title",
+      "default": "Step 1: How to Measure Your Nails"
+    },
+    {
+      "type": "text",
+      "id": "instruction1",
+      "label": "Instruction 1",
+      "default": "Place a piece of paper on your nail bed"
+    },
+    {
+      "type": "text",
+      "id": "instruction2",
+      "label": "Instruction 2",
+      "default": "Mark the widest point of your nail on the paper"
+    },
+    {
+      "type": "text",
+      "id": "instruction3",
+      "label": "Instruction 3",
+      "default": "Use a ruler to measure the width in millimeters"
+    },
+    {
+      "type": "text",
+      "id": "step2_title",
+      "label": "Step 2 Title",
+      "default": "Step 2: Choose Your Size (Length × Width)"
+    },
+    {
+      "type": "header",
+      "content": "Labels"
+    },
+    {
+      "type": "text",
+      "id": "size_header",
+      "label": "Size Column Header",
+      "default": "Size"
+    },
+    {
+      "type": "text",
+      "id": "thumb_label",
+      "label": "Thumb Label",
+      "default": "Thumb"
+    },
+    {
+      "type": "text",
+      "id": "index_label",
+      "label": "Index Label",
+      "default": "Index"
+    },
+    {
+      "type": "text",
+      "id": "middle_label",
+      "label": "Middle Label",
+      "default": "Middle"
+    },
+    {
+      "type": "text",
+      "id": "ring_label",
+      "label": "Ring Label",
+      "default": "Ring"
+    },
+    {
+      "type": "text",
+      "id": "pinky_label",
+      "label": "Pinky Label",
+      "default": "Pinky"
+    },
+    {
+      "type": "header",
+      "content": "Tips Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tips",
+      "label": "Show Tips",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tips_title",
+      "label": "Tips Section Title",
+      "default": "Pro Tips for Perfect Fit"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "font_family",
+      "label": "Font Family",
+      "options": [
+        {
+          "value": "'Inter', -apple-system, sans-serif",
+          "label": "Inter (Modern)"
+        },
+        {
+          "value": "-apple-system, 'Segoe UI', sans-serif",
+          "label": "System Default"
+        },
+        {
+          "value": "'Helvetica Neue', Arial, sans-serif",
+          "label": "Helvetica"
+        }
+      ],
+      "default": "'Inter', -apple-system, sans-serif"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title Size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 38
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum Width",
+      "min": 800,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "nail_shape",
+      "name": "Nail Shape",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name_english",
+          "label": "English Name",
+          "default": "Short Almond"
+        },
+        {
+          "type": "text",
+          "id": "name_chinese",
+          "label": "Chinese Name",
+          "default": "短杏仁"
+        },
+        {
+          "type": "header",
+          "content": "Size S Measurements"
+        },
+        {
+          "type": "text",
+          "id": "s_thumb",
+          "label": "S - Thumb",
+          "default": "22.94×11.91"
+        },
+        {
+          "type": "text",
+          "id": "s_index",
+          "label": "S - Index",
+          "default": "20.46×9.17"
+        },
+        {
+          "type": "text",
+          "id": "s_middle",
+          "label": "S - Middle",
+          "default": "21.42×10.47"
+        },
+        {
+          "type": "text",
+          "id": "s_ring",
+          "label": "S - Ring",
+          "default": "20.46×9.17"
+        },
+        {
+          "type": "text",
+          "id": "s_pinky",
+          "label": "S - Pinky",
+          "default": "17.65×7.33"
+        },
+        {
+          "type": "header",
+          "content": "Size M Measurements"
+        },
+        {
+          "type": "text",
+          "id": "m_thumb",
+          "label": "M - Thumb",
+          "default": "23.17×12.52"
+        },
+        {
+          "type": "text",
+          "id": "m_index",
+          "label": "M - Index",
+          "default": "20.46×9.17"
+        },
+        {
+          "type": "text",
+          "id": "m_middle",
+          "label": "M - Middle",
+          "default": "21.98×10.77"
+        },
+        {
+          "type": "text",
+          "id": "m_ring",
+          "label": "M - Ring",
+          "default": "20.88×9.78"
+        },
+        {
+          "type": "text",
+          "id": "m_pinky",
+          "label": "M - Pinky",
+          "default": "19.07×8.37"
+        },
+        {
+          "type": "header",
+          "content": "Size L Measurements"
+        },
+        {
+          "type": "text",
+          "id": "l_thumb",
+          "label": "L - Thumb",
+          "default": "23.6×13.53"
+        },
+        {
+          "type": "text",
+          "id": "l_index",
+          "label": "L - Index",
+          "default": "21.37×10.47"
+        },
+        {
+          "type": "text",
+          "id": "l_middle",
+          "label": "L - Middle",
+          "default": "22.31×11.09"
+        },
+        {
+          "type": "text",
+          "id": "l_ring",
+          "label": "L - Ring",
+          "default": "21.37×10.47"
+        },
+        {
+          "type": "text",
+          "id": "l_pinky",
+          "label": "L - Pinky",
+          "default": "19.64×8.68"
+        }
+      ]
+    },
+    {
+      "type": "tip",
+      "name": "Tip",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tip_text",
+          "label": "Tip Text",
+          "default": "Measure each nail individually for the best fit"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "blocks": [
+        {
+          "type": "nail_shape",
+          "settings": {
+            "name_english": "Short Almond",
+            "name_chinese": "短杏仁",
+            "s_thumb": "22.94×11.91",
+            "s_index": "20.46×9.17",
+            "s_middle": "21.42×10.47",
+            "s_ring": "20.46×9.17",
+            "s_pinky": "17.65×7.33",
+            "m_thumb": "23.17×12.52",
+            "m_index": "20.46×9.17",
+            "m_middle": "21.98×10.77",
+            "m_ring": "20.88×9.78",
+            "m_pinky": "19.07×8.37",
+            "l_thumb": "23.6×13.53",
+            "l_index": "21.37×10.47",
+            "l_middle": "22.31×11.09",
+            "l_ring": "21.37×10.47",
+            "l_pinky": "19.64×8.68"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "tip_text": "Measure each nail individually for the best fit"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "tip_text": "Press-on nails can be gently filed for a custom fit"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "tip_text": "When in doubt, size up – it's easier to file down"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "tip_text": "Store your measurements for easy reordering"
+          }
+        },
+        {
+          "type": "tip",
+          "settings": {
+            "tip_text": "Measure at the widest part of your nail bed"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

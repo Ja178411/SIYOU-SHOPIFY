@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer Group",
+  "sections": {
+    "footer": {
+      "type": "page-footer",
+      "blocks": {
+        "menu_fAnG6i": {
+          "type": "menu",
+          "settings": {
+            "heading_links": "Quick Links",
+            "links": "quick-links"
+          }
+        },
+        "menu_TyWCqJ": {
+          "type": "menu",
+          "settings": {
+            "heading_links": "Account",
+            "links": "customer-account-main-menu"
+          }
+        },
+        "menu_9YUhCX": {
+          "type": "menu",
+          "settings": {
+            "heading_links": "Customer Service",
+            "links": "about-siyou-nails"
+          }
+        },
+        "menu_FV3znC": {
+          "type": "menu",
+          "settings": {
+            "heading_links": "Our Brand",
+            "links": "our-brand"
+          }
+        },
+        "text_DY7pny": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading_text": "About SIYOU",
+            "text": "<p>At SIYOU Nails, we specialize in premium press-on nails that combine artistry with convenience. Each design is carefully crafted to help you express your unique style with salon-quality results at home.</p><p><a href=\"/pages/about-us\" title=\"About SIYOU Nails\">Learn More</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "menu_fAnG6i",
+        "menu_TyWCqJ",
+        "menu_9YUhCX",
+        "menu_FV3znC",
+        "text_DY7pny"
+      ],
+      "settings": {
+        "show-scroll-effect": false,
+        "show-social-media-icons": true,
+        "show_country_selector": false,
+        "show_country_selector_label": false,
+        "show_country_selector_flag": false,
+        "show_language_selector": false,
+        "enable_follow_on_shop": true,
+        "show-payments-icons": true,
+        "show-copyright": true,
+        "text": "© 2025 SIYOU.",
+        "big-logo-width": 10,
+        "margin-top": 56,
+        "margin-bottom": 8
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

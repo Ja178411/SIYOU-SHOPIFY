@@ -1,0 +1,417 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "main-breadcrumbs",
+      "custom_css": [
+        ".breadcrumbs__item {text-transform: uppercase;}"
+      ],
+      "settings": {
+        "full-width-enabled": true,
+        "text_color": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 12,
+        "margin-bottom": 12
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "brand": "{{ product.vendor }}",
+            "enable_vendor_link": false,
+            "size_text": 180,
+            "size_text_mobile": 160
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {}
+        },
+        "feature_tags_44iTGm": {
+          "type": "feature_tags",
+          "settings": {
+            "metafield": "custom.feature_tags",
+            "limit": 4,
+            "text_color": "rgba(0,0,0,0)",
+            "border_color": "rgba(0,0,0,0)"
+          }
+        },
+        "separator_Qt7zAY": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": true,
+            "color-background": "#dfdfdf",
+            "margin-top": 8,
+            "margin-bottom": 8
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_tax_included": true,
+            "show_shipping_policy": false,
+            "size_text": 140,
+            "size_text_mobile": 140
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "color_swatch_names": "",
+            "variant_picture_swatch_names": "",
+            "thumb_size": 60,
+            "radius": "default",
+            "border_radius": 0,
+            "dropdown_swatch_names": "",
+            "margin-top": 8,
+            "margin-bottom": 8,
+            "size_icon": "check_mark",
+            "size_link": "",
+            "variant_name": "",
+            "size_content": "",
+            "metafield": "",
+            "enable-striped-rows": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "show_qty_selector": true,
+            "text_color": "rgba(0,0,0,0)",
+            "background_color": "rgba(0,0,0,0)"
+          }
+        },
+        "promo_iicpA4": {
+          "type": "promo",
+          "disabled": true,
+          "settings": {
+            "content": "<p>🎟️ Use code \"Beauty\" for 10% OFF!<\/p>",
+            "text_alignment": "center",
+            "color-body-text": "#a04848",
+            "background_color": "#f6f2ea"
+          }
+        },
+        "e23830b4-3ca6-452f-a7d1-cb245a3e9282": {
+          "type": "bulletpoints",
+          "settings": {
+            "metafield": "custom.features",
+            "default_text": ""
+          }
+        },
+        "00841757-ace4-48f5-8edb-08c8c579a24f": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": true,
+            "color-background": "#e0dedb",
+            "margin-top": 0,
+            "margin-bottom": 0
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_open": false,
+            "icon": "star"
+          }
+        },
+        "a8e9c281-a34c-4fe4-94a1-ea9a3880dc33": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": true,
+            "color-background": "#e0dedb",
+            "margin-top": 0,
+            "margin-bottom": 0
+          }
+        },
+        "1c9b0bb2-fe62-4649-9439-76836162d773": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How to Apply",
+            "content": "<ol><li>Clean and prep your natural nails thoroughly.<\/li><li>Select the right size press-on nail for each finger.<\/li><li>Peel off a sticky tab and place it on the back of the press-on nail.<\/li><li>Align the press-on nail with your natural nail and press firmly.<\/li><li>Hold the nail in place for a few seconds to ensure a strong bond.<\/li><\/ol>",
+            "metafield_variables": "",
+            "page": "how-to-use",
+            "icon": "question_mark"
+          }
+        },
+        "2ce0b4b1-3440-40cd-92c2-15d46e61dfca": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": true,
+            "color-background": "#e0dedb",
+            "margin-top": 0,
+            "margin-bottom": 0
+          }
+        },
+        "complete_kit_includes_NEW": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Kit Includes",
+            "content": "<p>10 handmade reusable press-on nails, adhesive tabs, nail file, cuticle pusher, alcohol prep pad<\/p>",
+            "metafield_variables": "",
+            "page": "",
+            "icon": "box"
+          }
+        },
+        "separator_complete_kit_NEW": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": true,
+            "color-background": "#e0dedb",
+            "margin-top": 0,
+            "margin-bottom": 0
+          }
+        },
+        "5fed6e0f-fb7e-4874-8ba9-3321623fc828": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Removal Instructions",
+            "content": "<ul><li>Soak your nails gently in warm soapy water for several minutes to loosen the adhesive.<\/li><li>Carefully lift the edges of the press-on nails using your fingers or a cuticle stick.<\/li><li>Slowly peel off the nails to avoid damaging your natural nails.<\/li><li>Clean your nails and moisturize after removal.<\/li><\/ul>",
+            "metafield_variables": "",
+            "page": "",
+            "icon": "leaf"
+          }
+        },
+        "video_reels_fUDDgA": {
+          "type": "video_reels",
+          "disabled": true,
+          "settings": {
+            "heading": "Complete your beauty ritual",
+            "show_play_pause": true,
+            "show_unmute": true,
+            "auto_advanced": false,
+            "enable_quick_add": true,
+            "hide_brand": false,
+            "video_reels_1": "shopify:\/\/files\/videos\/video1_salon_at_home.mp4",
+            "video_reels_1_product": "aquarius-pore-purifying-clarity-cream",
+            "video_reels_2_product": "active-toning-essence-white-rose-100-ml",
+            "video_reels_3_product": "algae-peel-off-mask-with-soothing-properties",
+            "video_reels_4_product": "body-balm-chocolate-cherry-180ml",
+            "video_reels_5_product": "body-balm-cranberry-180-ml",
+            "video_reels_6_product": ""
+          }
+        },
+        "78809992-2318-4893-9402-6cfd49f50b6a": {
+          "type": "separator",
+          "settings": {
+            "show-separator-line": true,
+            "color-background": "#e0dedb",
+            "margin-top": 0,
+            "margin-bottom": 0
+          }
+        },
+        "d162f900-ee92-4311-b27d-d5f312fa73f2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Delivery and return policy",
+            "content": "<p>Orders are processed within 1-2 business days. Our team will ship your order within 5 business days. The time it takes to receive your order depends on the shipping method chosen at checkout.<\/p><p><a href=\"\/policies\/refund-policy\" title=\"Refund Policy\">Return & Exchange Policy<\/a><\/p>",
+            "metafield_variables": "",
+            "page": "",
+            "icon": "box"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "rating",
+        "feature_tags_44iTGm",
+        "separator_Qt7zAY",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "promo_iicpA4",
+        "e23830b4-3ca6-452f-a7d1-cb245a3e9282",
+        "00841757-ace4-48f5-8edb-08c8c579a24f",
+        "description",
+        "a8e9c281-a34c-4fe4-94a1-ea9a3880dc33",
+        "1c9b0bb2-fe62-4649-9439-76836162d773",
+        "2ce0b4b1-3440-40cd-92c2-15d46e61dfca",
+        "complete_kit_includes_NEW",
+        "separator_complete_kit_NEW",
+        "5fed6e0f-fb7e-4874-8ba9-3321623fc828",
+        "video_reels_fUDDgA",
+        "78809992-2318-4893-9402-6cfd49f50b6a",
+        "d162f900-ee92-4311-b27d-d5f312fa73f2"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_buy_button": true,
+        "full-width-enabled": false,
+        "desktop-media-size": "normal",
+        "desktop-layout": "carousel-horizontal",
+        "desktop-image-ratio": "square",
+        "enable_video_looping": false,
+        "video_controls": false,
+        "video_custom_play_controls": false,
+        "video_custom_mute_controls": false,
+        "enable-preselected-variant": true,
+        "enable-image-zoom": true,
+        "mobile-image": "normal",
+        "show-thumbnails-mobile": true,
+        "text_color": "#151515",
+        "background_color": "#ffffff",
+        "margin-top": 4,
+        "margin-bottom": 4
+      }
+    },
+    "image_with_text_WxXpEB": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_WcihaF": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your Daily Routine",
+            "disable_on_mobile": false,
+            "size_heading": 200,
+            "size_heading_mobile": 100
+          }
+        },
+        "text_gYtHLC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover products for daily care.<\/p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        },
+        "button_KUwMHB": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "Check now",
+            "button_link": "\/",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_WcihaF",
+        "text_gYtHLC",
+        "button_KUwMHB"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "layout": "image_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": true,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "section-color-body-text": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-overlay": "#e5f8f8",
+        "color-overlay-opacity": 100,
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 0,
+        "margin-bottom": 60
+      }
+    },
+    "separator_xNzzDf": {
+      "type": "separator",
+      "name": "t:sections.separator.presets.name",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator<\/h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#717171",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "product_recommendations_iQXCwG": {
+      "type": "product-recommendations",
+      "name": "t:sections.product-recommendations.presets.name",
+      "settings": {
+        "heading": "Product recommendations",
+        "disable_on_mobile": true,
+        "products_to_show": 6,
+        "number_of_column_desktop": 5,
+        "make_products_full_width": true,
+        "show_secondary_image_on_hover": true,
+        "number_of_column_mobile": 2.1,
+        "text_alignment": "center",
+        "image_ratio": "square",
+        "show_vendor": true,
+        "enable_vendor_link": false,
+        "show_product_rating": false,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "newsletter_jFFYic": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_DNDwGq": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Mailing List!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 150
+          }
+        },
+        "paragraph_k9eJwf": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers.<\/p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_CNCfN9": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_DNDwGq",
+        "paragraph_k9eJwf",
+        "email_form_CNCfN9"
+      ],
+      "name": "Email Signup",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "image_with_text_WxXpEB",
+    "separator_xNzzDf",
+    "product_recommendations_iQXCwG",
+    "newsletter_jFFYic"
+  ]
+}
+

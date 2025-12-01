@@ -1,0 +1,420 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".wt-page__title {display: none;}"
+      ],
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "page-header": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Terms of Service",
+            "disable_on_mobile": false,
+            "size_heading": 150,
+            "size_heading_mobile": 120
+          }
+        },
+        "subheading": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Effective Date: January 1, 2025 | Last Updated: January 1, 2025</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "subheading"
+      ],
+      "settings": {
+        "section_width": "short",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "#ffffff",
+        "background_color": "#ff9cb5",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "agreement-overview": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "agreement-to-terms": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "1. Agreement to Terms",
+            "content": "<p>By accessing and using the SIYOU NAILS website (siyounails.com) and purchasing our products, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, you may not use our services or purchase our products.</p><p>These Terms of Service constitute a legally binding agreement between you and <strong>Camber Shops LLC d/b/a SIYOU NAILS</strong>.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "modifications": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "2. Modifications to Terms",
+            "content": "<p>We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting to our website. Your continued use of our website and services after any modifications constitutes acceptance of the updated terms.</p><p>We recommend reviewing these terms periodically to stay informed of any updates.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "agreement-to-terms",
+        "modifications"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "product-information": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "product-descriptions": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "3. Product Descriptions and Availability",
+            "content": "<p>We strive to provide accurate product descriptions, colors, and images. However, we do not warrant that product descriptions, colors, or other content available on our site are accurate, complete, reliable, current, or error-free.</p><p><strong>Color Variations:</strong> Product colors displayed on your screen may vary from actual product colors due to monitor settings and lighting conditions. Press-on nail colors are represented as accurately as possible.</p><p><strong>Product Availability:</strong> All products are subject to availability. We reserve the right to limit quantities or discontinue any product at any time without prior notice.</p><p><strong>Handmade Products:</strong> As our press-on nails are handcrafted by artists, slight variations in design, pattern placement, and embellishments may occur. These variations are part of the handmade nature of our products and are not considered defects.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "pricing": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "4. Pricing and Payment",
+            "content": "<p><strong>Pricing:</strong> All prices are listed in US Dollars (USD) and are subject to change without notice. We reserve the right to correct pricing errors on our website or in orders already placed.</p><p><strong>Payment Methods:</strong> We accept major credit cards, debit cards, and other payment methods as displayed at checkout. Payment is processed securely through trusted third-party payment processors.</p><p><strong>Pricing Errors:</strong> If a product is listed at an incorrect price due to typographical error or other mistake, we reserve the right to refuse or cancel any orders placed for that product, whether or not the order has been confirmed and your credit card charged. If your card has been charged and your order is canceled, we will issue a full refund.</p><p><strong>Sales Tax:</strong> Applicable sales tax will be calculated and added to your order based on your shipping address and local tax regulations.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "product-descriptions",
+        "pricing"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "orders-shipping": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "order-acceptance": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "5. Order Acceptance and Fulfillment",
+            "content": "<p><strong>Order Confirmation:</strong> Receipt of an order confirmation email does not constitute acceptance of your order. We reserve the right to accept or decline any order for any reason, including but not limited to product availability, errors in pricing or product information, or suspected fraudulent activity.</p><p><strong>Order Processing:</strong> Orders are typically processed within 1-2 business days. Orders placed before 2 PM EST ship the same business day when possible.</p><p><strong>Cancellation Rights:</strong> You may cancel your order within 2 hours of placement by contacting us at info@siyounails.com. Once an order has been processed and shipped, it cannot be canceled.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "shipping-policy": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "6. Shipping and Delivery",
+            "content": "<p><strong>Shipping Methods:</strong> We offer Standard (3-5 business days), Priority (1-3 business days), and Express (1-2 business days) shipping via USPS to all 50 US states.</p><p><strong>Free Shipping:</strong> Orders $35 and above qualify for free standard shipping.</p><p><strong>Shipping Restrictions:</strong> We currently ship only within the United States. We do not ship to US territories, PO Boxes (for express shipping), or international addresses.</p><p><strong>Delivery Timeframes:</strong> Delivery timeframes are estimates and not guarantees. We are not responsible for shipping delays caused by weather, carrier issues, or other circumstances beyond our control.</p><p>For complete shipping information, please refer to our <a href='/pages/shipping-policy'>Shipping Policy</a>.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "order-acceptance",
+        "shipping-policy"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "returns-refunds": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "return-policy": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "7. Returns, Refunds, and Exchanges",
+            "content": "<p><strong>Final Sale Policy:</strong> Due to the nature of our products as personal hygiene items, all sales are final. We cannot accept returns or exchanges for hygienic reasons once a product has been opened or used.</p><p><strong>Damaged or Defective Products:</strong> If you receive a damaged or defective product, please contact us within 7 days of delivery at info@siyounails.com with photos of the damaged items. We will review your claim and, if approved, provide a replacement or store credit at our discretion.</p><p><strong>Missing Items:</strong> If items are missing from your order, please contact us within 7 days of delivery for resolution.</p><p><strong>Incorrect Orders:</strong> If you receive the wrong product due to our error, please contact us within 7 days of delivery. We will arrange for the correct item to be sent at no additional cost.</p><p><strong>Non-Refundable Items:</strong><br>• Opened or used press-on nail sets<br>• Products not in original packaging<br>• Items damaged by misuse or improper application<br>• Sale or clearance items (unless defective)</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "refund-processing": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "8. Refund Processing",
+            "content": "<p><strong>Approved Refunds:</strong> If a refund is approved for a qualifying claim (damaged, defective, or incorrect items), we will process the refund to your original payment method within 7-10 business days of approval.</p><p><strong>Shipping Costs:</strong> Original shipping costs are non-refundable except in cases where we shipped an incorrect or defective product.</p><p><strong>Partial Refunds:</strong> We may issue partial refunds for products that are returned in less than perfect condition or missing original packaging.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "return-policy",
+        "refund-processing"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "user-conduct": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "prohibited-uses": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "9. Prohibited Uses and User Conduct",
+            "content": "<p>You agree not to use our website or services for any unlawful purpose or in any way that could damage, disable, or impair our services. Prohibited activities include but are not limited to:</p><p>• Violating any local, state, national, or international law<br>• Transmitting any harmful code, viruses, or malicious software<br>• Attempting unauthorized access to our systems or networks<br>• Harassing, abusing, or threatening other users or our staff<br>• Impersonating another person or entity<br>• Engaging in any automated use of the system (bots, scrapers, etc.)<br>• Interfering with or disrupting our website or servers<br>• Reselling our products as your own brand without written permission</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "account-security": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "10. Account Security",
+            "content": "<p>If you create an account on our website, you are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p><p>You agree to:<br>• Provide accurate and complete information when creating an account<br>• Update your information promptly if it changes<br>• Notify us immediately of any unauthorized use of your account<br>• Not share your account credentials with others</p><p>We reserve the right to suspend or terminate accounts that violate these Terms of Service or engage in fraudulent activity.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "prohibited-uses",
+        "account-security"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "intellectual-property": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "trademarks-copyright": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "11. Intellectual Property Rights",
+            "content": "<p><strong>Copyright:</strong> All content on this website, including but not limited to text, graphics, logos, images, product designs, and software, is the property of Camber Shops LLC d/b/a SIYOU NAILS or its content suppliers and is protected by US and international copyright laws.</p><p><strong>Trademarks:</strong> SIYOU NAILS and all related logos, product names, and service marks are trademarks of Camber Shops LLC. You may not use these trademarks without our prior written permission.</p><p><strong>Limited License:</strong> We grant you a limited, non-exclusive, non-transferable license to access and use our website for personal, non-commercial purposes. This license does not include:<br>• Reproduction or modification of website content<br>• Use of content for commercial purposes<br>• Collection or use of product listings or descriptions<br>• Derivative use of our website or its contents</p><p><strong>User Content:</strong> If you submit reviews, photos, or other content to our website, you grant us a perpetual, royalty-free, worldwide license to use, reproduce, modify, and display that content for marketing and promotional purposes.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "trademarks-copyright"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "disclaimers-liability": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "product-disclaimer": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "12. Product Disclaimer and Warranty",
+            "content": "<p><strong>Product Use:</strong> Our press-on nails are designed for cosmetic use only. While our products are made with safe materials, we recommend following application instructions carefully and discontinuing use if irritation occurs.</p><p><strong>Allergies and Sensitivities:</strong> If you have known allergies to adhesives, acrylics, or nail products, please review our product ingredients before purchasing. We are not responsible for allergic reactions or sensitivities to our products.</p><p><strong>As-Is Warranty:</strong> Products are provided \"as is\" without warranties of any kind, either express or implied. We do not warrant that products will be error-free or meet your specific requirements.</p><p><strong>Product Safety:</strong> Our products are intended for adult use or use by minors under adult supervision. Keep small parts away from children under 3 years old to prevent choking hazards.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "limitation-of-liability": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "13. Limitation of Liability",
+            "content": "<p>To the maximum extent permitted by law, Camber Shops LLC d/b/a SIYOU NAILS shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from:</p><p>• Your use or inability to use our products or website<br>• Unauthorized access to or alteration of your data<br>• Any third-party conduct or content on the website<br>• Product performance or results<br>• Errors, mistakes, or inaccuracies of content<br>• Personal injury or property damage from use of our products or services</p><p><strong>Maximum Liability:</strong> Our total liability to you for any claims arising from your use of our products or website shall not exceed the amount you paid for the product giving rise to the claim.</p><p><strong>Indemnification:</strong> You agree to indemnify and hold harmless Camber Shops LLC d/b/a SIYOU NAILS from any claims, losses, damages, liabilities, and expenses (including legal fees) arising from your use of our products or violation of these Terms of Service.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "product-disclaimer",
+        "limitation-of-liability"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "privacy-data": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "privacy-policy": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "14. Privacy and Data Protection",
+            "content": "<p>Your privacy is important to us. Our collection, use, and disclosure of personal information is governed by our Privacy Policy, which is incorporated into these Terms of Service by reference.</p><p><strong>Information We Collect:</strong><br>• Name, email address, shipping address, and phone number<br>• Payment information (processed securely by third-party payment processors)<br>• Order history and preferences<br>• Website usage data and cookies</p><p><strong>How We Use Your Information:</strong><br>• Process and fulfill your orders<br>• Communicate with you about orders and promotions<br>• Improve our products and services<br>• Comply with legal obligations</p><p>For complete information about our data practices, please review our Privacy Policy.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "privacy-policy"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "legal-provisions": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "governing-law": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "15. Governing Law and Jurisdiction",
+            "content": "<p><strong>Governing Law:</strong> These Terms of Service shall be governed by and construed in accordance with the laws of the State of Delaware and the United States, without regard to conflict of law principles.</p><p><strong>Jurisdiction:</strong> Any disputes arising from these Terms of Service or your use of our website shall be subject to the exclusive jurisdiction of the state and federal courts located in Delaware.</p><p><strong>Dispute Resolution:</strong> We encourage you to contact us first at info@siyounails.com to resolve any disputes informally before pursuing legal action.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "severability": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "16. Severability and Waiver",
+            "content": "<p><strong>Severability:</strong> If any provision of these Terms of Service is found to be unlawful, void, or unenforceable, that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions.</p><p><strong>Waiver:</strong> Our failure to enforce any right or provision of these Terms of Service shall not constitute a waiver of such right or provision. No waiver of any provision shall be deemed a further or continuing waiver of such provision or any other provision.</p><p><strong>Entire Agreement:</strong> These Terms of Service, together with our Privacy Policy and Shipping Policy, constitute the entire agreement between you and SIYOU NAILS regarding the use of our website and purchase of our products.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "governing-law",
+        "severability"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "contact-info": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Questions About These Terms?",
+            "disable_on_mobile": false,
+            "size_heading": 120,
+            "size_heading_mobile": 100
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Camber Shops LLC d/b/a SIYOU NAILS</strong><br>Email: <a href='mailto:info@siyounails.com'>info@siyounails.com</a><br>Response Time: Within 24 hours during business days</p><p>These Terms of Service were last updated on January 1, 2025. By using our website and purchasing our products, you acknowledge that you have read, understood, and agree to be bound by these terms.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "section_width": "short",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 40,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "page-header",
+    "main",
+    "agreement-overview",
+    "product-information",
+    "orders-shipping",
+    "returns-refunds",
+    "user-conduct",
+    "intellectual-property",
+    "disclaimers-liability",
+    "privacy-data",
+    "legal-provisions",
+    "contact-info"
+  ]
+}

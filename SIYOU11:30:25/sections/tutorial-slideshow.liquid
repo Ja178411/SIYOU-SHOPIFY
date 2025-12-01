@@ -1,0 +1,520 @@
+{{ 'tutorial-slideshow.css' | asset_url | stylesheet_tag }}
+
+{% assign heading_rgb = section.settings.heading_color | color_to_rgb %}
+{% assign background_rgb = section.settings.background_color | color_to_rgb %}
+{% assign text_rgb = section.settings.text_color | color_to_rgb %}
+
+<style>
+  [data-section-id="{{ section.id }}"] {
+    {% if section.settings.margin-top %}
+      --section-gap-top: {{ section.settings.margin-top }}px;
+    {% endif %}
+
+    {% if section.settings.margin-bottom %}
+      --section-gap-bottom: {{ section.settings.margin-bottom }}px;
+    {% endif %}
+
+    {% if section.settings.full-width-enabled %}
+      --border-radius: 0;
+    {% endif %}
+
+    {% if background_rgb != 'rgba(0, 0, 0, 0.0)' %}
+      --color-background: {{ section.settings.background_color }};
+    {% endif %}
+
+    {% if heading_rgb != 'rgba(0, 0, 0, 0.0)' %}
+      --tutorial-heading-color: {{ section.settings.heading_color }};
+    {% endif %}
+
+    {% if text_rgb != 'rgba(0, 0, 0, 0.0)' %}
+      --tutorial-text-color: {{ section.settings.text_color }};
+    {% endif %}
+
+    --tutorial-image-width: {{ section.settings.image_width }}%;
+  }
+</style>
+
+{% comment %} Group blocks by tutorial {% endcomment %}
+{% assign tutorial_1_steps = section.blocks | where: 'settings.tutorial_group', 'tutorial_1' %}
+{% assign tutorial_2_steps = section.blocks | where: 'settings.tutorial_group', 'tutorial_2' %}
+{% assign tutorial_3_steps = section.blocks | where: 'settings.tutorial_group', 'tutorial_3' %}
+
+<div
+  data-section-id="{{ section.id }}"
+  class="tutorial-slideshow-wrapper {% if settings.animations %} scroll-trigger animate--slide-in {% endif %} {% if settings.disabled_animations_on_mobile %} disabled-on-mobile {% endif %} {% if section.settings.full-width-enabled %}tutorial-slideshow-full-width{% endif %}"
+>
+  {% comment %} Main Heading {% endcomment %}
+  {% if section.settings.main_heading != blank %}
+    {% render 'headline', title: section.settings.main_heading %}
+  {% endif %}
+
+  {% comment %} Tutorial Content Containers {% endcomment %}
+  <tutorial-slideshow-section
+    data-section-id="{{ section.id }}"
+    {% if settings.animations %}data-enable-animation="true"{% endif %}
+    {% if settings.disabled_animations_on_mobile %}data-disable-animation-mobile="true"{% endif %}
+  >
+    {% comment %} Tutorial Tabs {% endcomment %}
+    <div class="tutorial-tabs" role="tablist">
+      {% if tutorial_1_steps.size > 0 %}
+        <button
+          class="tutorial-tab active"
+          data-tutorial="tutorial-1"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tutorial-1-content"
+          id="tutorial-1-tab"
+        >
+          {{ tutorial_1_steps.first.settings.tutorial_title }}
+        </button>
+      {% endif %}
+
+      {% if tutorial_2_steps.size > 0 %}
+        <button
+          class="tutorial-tab"
+          data-tutorial="tutorial-2"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tutorial-2-content"
+          id="tutorial-2-tab"
+        >
+          {{ tutorial_2_steps.first.settings.tutorial_title }}
+        </button>
+      {% endif %}
+
+      {% if tutorial_3_steps.size > 0 %}
+        <button
+          class="tutorial-tab"
+          data-tutorial="tutorial-3"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tutorial-3-content"
+          id="tutorial-3-tab"
+        >
+          {{ tutorial_3_steps.first.settings.tutorial_title }}
+        </button>
+      {% endif %}
+    </div>
+    {% comment %} Tutorial 1 {% endcomment %}
+    {% if tutorial_1_steps.size > 0 %}
+      <div class="tutorial-content active" data-tutorial-content="tutorial-1" role="tabpanel" id="tutorial-1-content" aria-labelledby="tutorial-1-tab">
+        <div class="tutorial-slideshow">
+          <div data-swiper class="tutorial-swiper-container">
+            <div data-swiper-container class="swiper-wrapper">
+              {%- for block in tutorial_1_steps -%}
+                <div data-swiper-slide class="swiper-slide tutorial-slide" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
+                  <div class="tutorial-slide-inner">
+                    {% comment %} Image Side {% endcomment %}
+                    <div class="tutorial-image">
+                      {% if block.settings.desktop_image != blank %}
+                        <picture>
+                          {% if block.settings.mobile_image != blank %}
+                            <source
+                              media="(max-width: 749px)"
+                              srcset="{{ block.settings.mobile_image | image_url: width: 800 }}"
+                            >
+                          {% endif %}
+                          <img
+                            src="{{ block.settings.desktop_image | image_url: width: 1200 }}"
+                            alt="{{ block.settings.step_title }}"
+                            loading="lazy"
+                            width="{{ block.settings.desktop_image.width }}"
+                            height="{{ block.settings.desktop_image.height }}"
+                          >
+                        </picture>
+                      {% else %}
+                        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {% endif %}
+                    </div>
+
+                    {% comment %} Content Side {% endcomment %}
+                    <div class="tutorial-content-box">
+                      {% if block.settings.step_number != blank %}
+                        <p class="tutorial-step-label">{{ 'sections.tutorial_slideshow.step_label' | t }} {{ block.settings.step_number }}</p>
+                      {% endif %}
+
+                      {% if block.settings.step_title != blank %}
+                        <h3 class="tutorial-step-title">{{ block.settings.step_title }}</h3>
+                      {% endif %}
+
+                      {% if block.settings.step_description != blank %}
+                        <div class="tutorial-step-description">
+                          {{ block.settings.step_description }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div>
+
+            {% comment %} Navigation {% endcomment %}
+            <div class="swiper-button-next tutorial-nav-btn tutorial-nav-next" data-tutorial="tutorial-1">
+              {% render 'icons', id: 'arrow-right' %}
+            </div>
+            <div class="swiper-button-prev tutorial-nav-btn tutorial-nav-prev" data-tutorial="tutorial-1">
+              {% render 'icons', id: 'arrow-left' %}
+            </div>
+            <div class="swiper-pagination tutorial-pagination" data-tutorial="tutorial-1"></div>
+          </div>
+
+          <script data-swiper-configuration data-tutorial="tutorial-1" type="text/json">
+            {
+              "slidesPerView": 1,
+              "spaceBetween": 20,
+              "loop": false
+            }
+          </script>
+        </div>
+      </div>
+    {% endif %}
+
+    {% comment %} Tutorial 2 {% endcomment %}
+    {% if tutorial_2_steps.size > 0 %}
+      <div class="tutorial-content" data-tutorial-content="tutorial-2" role="tabpanel" id="tutorial-2-content" aria-labelledby="tutorial-2-tab" hidden>
+        <div class="tutorial-slideshow">
+          <div data-swiper class="tutorial-swiper-container">
+            <div data-swiper-container class="swiper-wrapper">
+              {%- for block in tutorial_2_steps -%}
+                <div data-swiper-slide class="swiper-slide tutorial-slide" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
+                  <div class="tutorial-slide-inner">
+                    <div class="tutorial-image">
+                      {% if block.settings.desktop_image != blank %}
+                        <picture>
+                          {% if block.settings.mobile_image != blank %}
+                            <source
+                              media="(max-width: 749px)"
+                              srcset="{{ block.settings.mobile_image | image_url: width: 800 }}"
+                            >
+                          {% endif %}
+                          <img
+                            src="{{ block.settings.desktop_image | image_url: width: 1200 }}"
+                            alt="{{ block.settings.step_title }}"
+                            loading="lazy"
+                            width="{{ block.settings.desktop_image.width }}"
+                            height="{{ block.settings.desktop_image.height }}"
+                          >
+                        </picture>
+                      {% else %}
+                        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {% endif %}
+                    </div>
+
+                    <div class="tutorial-content-box">
+                      {% if block.settings.step_number != blank %}
+                        <p class="tutorial-step-label">{{ 'sections.tutorial_slideshow.step_label' | t }} {{ block.settings.step_number }}</p>
+                      {% endif %}
+
+                      {% if block.settings.step_title != blank %}
+                        <h3 class="tutorial-step-title">{{ block.settings.step_title }}</h3>
+                      {% endif %}
+
+                      {% if block.settings.step_description != blank %}
+                        <div class="tutorial-step-description">
+                          {{ block.settings.step_description }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div>
+
+            <div class="swiper-button-next tutorial-nav-btn tutorial-nav-next" data-tutorial="tutorial-2">
+              {% render 'icons', id: 'arrow-right' %}
+            </div>
+            <div class="swiper-button-prev tutorial-nav-btn tutorial-nav-prev" data-tutorial="tutorial-2">
+              {% render 'icons', id: 'arrow-left' %}
+            </div>
+            <div class="swiper-pagination tutorial-pagination" data-tutorial="tutorial-2"></div>
+          </div>
+
+          <script data-swiper-configuration data-tutorial="tutorial-2" type="text/json">
+            {
+              "slidesPerView": 1,
+              "spaceBetween": 20,
+              "loop": false
+            }
+          </script>
+        </div>
+      </div>
+    {% endif %}
+
+    {% comment %} Tutorial 3 {% endcomment %}
+    {% if tutorial_3_steps.size > 0 %}
+      <div class="tutorial-content" data-tutorial-content="tutorial-3" role="tabpanel" id="tutorial-3-content" aria-labelledby="tutorial-3-tab" hidden>
+        <div class="tutorial-slideshow">
+          <div data-swiper class="tutorial-swiper-container">
+            <div data-swiper-container class="swiper-wrapper">
+              {%- for block in tutorial_3_steps -%}
+                <div data-swiper-slide class="swiper-slide tutorial-slide" data-block-id="{{ block.id }}" {{ block.shopify_attributes }}>
+                  <div class="tutorial-slide-inner">
+                    <div class="tutorial-image">
+                      {% if block.settings.desktop_image != blank %}
+                        <picture>
+                          {% if block.settings.mobile_image != blank %}
+                            <source
+                              media="(max-width: 749px)"
+                              srcset="{{ block.settings.mobile_image | image_url: width: 800 }}"
+                            >
+                          {% endif %}
+                          <img
+                            src="{{ block.settings.desktop_image | image_url: width: 1200 }}"
+                            alt="{{ block.settings.step_title }}"
+                            loading="lazy"
+                            width="{{ block.settings.desktop_image.width }}"
+                            height="{{ block.settings.desktop_image.height }}"
+                          >
+                        </picture>
+                      {% else %}
+                        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {% endif %}
+                    </div>
+
+                    <div class="tutorial-content-box">
+                      {% if block.settings.step_number != blank %}
+                        <p class="tutorial-step-label">{{ 'sections.tutorial_slideshow.step_label' | t }} {{ block.settings.step_number }}</p>
+                      {% endif %}
+
+                      {% if block.settings.step_title != blank %}
+                        <h3 class="tutorial-step-title">{{ block.settings.step_title }}</h3>
+                      {% endif %}
+
+                      {% if block.settings.step_description != blank %}
+                        <div class="tutorial-step-description">
+                          {{ block.settings.step_description }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {%- endfor -%}
+            </div>
+
+            <div class="swiper-button-next tutorial-nav-btn tutorial-nav-next" data-tutorial="tutorial-3">
+              {% render 'icons', id: 'arrow-right' %}
+            </div>
+            <div class="swiper-button-prev tutorial-nav-btn tutorial-nav-prev" data-tutorial="tutorial-3">
+              {% render 'icons', id: 'arrow-left' %}
+            </div>
+            <div class="swiper-pagination tutorial-pagination" data-tutorial="tutorial-3"></div>
+          </div>
+
+          <script data-swiper-configuration data-tutorial="tutorial-3" type="text/json">
+            {
+              "slidesPerView": 1,
+              "spaceBetween": 20,
+              "loop": false
+            }
+          </script>
+        </div>
+      </div>
+    {% endif %}
+  </tutorial-slideshow-section>
+
+  <script type="module" src="{{ 'tutorial-slideshow.js' | asset_url }}" defer="defer"></script>
+
+  {%- if request.design_mode -%}
+    <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.tutorial_slideshow.name",
+  "tag": "section",
+  "class": "tutorial-slideshow-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.tutorial_slideshow.settings.header_general.content"
+    },
+    {
+      "type": "textarea",
+      "id": "main_heading",
+      "label": "t:sections.tutorial_slideshow.settings.main_heading.label",
+      "default": "How to Use"
+    },
+    {
+      "type": "checkbox",
+      "id": "full-width-enabled",
+      "label": "t:sections.tutorial_slideshow.settings.full_width.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 30,
+      "max": 70,
+      "step": 5,
+      "unit": "%",
+      "default": 50,
+      "label": "t:sections.tutorial_slideshow.settings.image_width.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.tutorial_slideshow.settings.header_colors.content"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "default": "transparent",
+      "label": "t:sections.tutorial_slideshow.settings.heading_color.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "default": "transparent",
+      "label": "t:sections.tutorial_slideshow.settings.text_color.label"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "default": "transparent",
+      "label": "t:sections.tutorial_slideshow.settings.background_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.tutorial_slideshow.settings.header_spacing.content"
+    },
+    {
+      "type": "range",
+      "id": "margin-top",
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "step": 4,
+      "default": 20,
+      "label": "t:sections.tutorial_slideshow.settings.margin_top.label"
+    },
+    {
+      "type": "range",
+      "id": "margin-bottom",
+      "min": 0,
+      "max": 100,
+      "unit": "px",
+      "step": 4,
+      "default": 20,
+      "label": "t:sections.tutorial_slideshow.settings.margin_bottom.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tutorial_step",
+      "name": "t:sections.tutorial_slideshow.blocks.tutorial_step.name",
+      "limit": 9,
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.header_assignment.content"
+        },
+        {
+          "type": "select",
+          "id": "tutorial_group",
+          "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.tutorial_group.label",
+          "options": [
+            {
+              "value": "tutorial_1",
+              "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.tutorial_group.option_1"
+            },
+            {
+              "value": "tutorial_2",
+              "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.tutorial_group.option_2"
+            },
+            {
+              "value": "tutorial_3",
+              "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.tutorial_group.option_3"
+            }
+          ],
+          "default": "tutorial_1",
+          "info": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.tutorial_group.info"
+        },
+        {
+          "type": "text",
+          "id": "tutorial_title",
+          "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.tutorial_title.label",
+          "default": "How to Apply with Sticky Tabs",
+          "info": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.tutorial_title.info"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.header_content.content"
+        },
+        {
+          "type": "text",
+          "id": "step_number",
+          "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.step_number.label",
+          "default": "1",
+          "info": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.step_number.info"
+        },
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.step_title.label",
+          "default": "Prepare Your Natural Nails"
+        },
+        {
+          "type": "richtext",
+          "id": "step_description",
+          "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.step_description.label",
+          "default": "<p>Use the cuticle pusher to push back cuticles. Buff your nails to remove oils and shine. Clean with an alcohol pad to ensure they are dry and oil-free.</p>"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.header_images.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.desktop_image.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "t:sections.tutorial_slideshow.blocks.tutorial_step.settings.mobile_image.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.tutorial_slideshow.presets.name",
+      "blocks": [
+        {
+          "type": "tutorial_step",
+          "settings": {
+            "tutorial_group": "tutorial_1",
+            "tutorial_title": "How to Apply with Sticky Tabs",
+            "step_number": "1",
+            "step_title": "Prepare Your Natural Nails"
+          }
+        },
+        {
+          "type": "tutorial_step",
+          "settings": {
+            "tutorial_group": "tutorial_1",
+            "tutorial_title": "How to Apply with Sticky Tabs",
+            "step_number": "2",
+            "step_title": "Apply the Sticky Tab"
+          }
+        },
+        {
+          "type": "tutorial_step",
+          "settings": {
+            "tutorial_group": "tutorial_1",
+            "tutorial_title": "How to Apply with Sticky Tabs",
+            "step_number": "3",
+            "step_title": "Press and Secure"
+          }
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  }
+}
+{% endschema %}

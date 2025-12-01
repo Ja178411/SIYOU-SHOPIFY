@@ -1,0 +1,226 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "b1762d2f-c545-46f9-ab66-b0f6dc390c56": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15329436369096__b1762d2f-c545-46f9-ab66-b0f6dc390c56-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Frequently Asked Questions",
+            "disable_on_mobile": false,
+            "size_heading": 150,
+            "size_heading_mobile": 120
+          }
+        }
+      },
+      "block_order": [
+        "template--15329436369096__b1762d2f-c545-46f9-ab66-b0f6dc390c56-heading-1"
+      ],
+      "settings": {
+        "section_width": "short",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "#ffffff",
+        "background_color": "#ff9cb5",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".wt-page__title {display: none;}"
+      ],
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "19343041-49f3-4eb8-918f-d93e323afa2e": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "template--15329436369096__19343041-49f3-4eb8-918f-d93e323afa2e-collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What are press-on nails and how are they different from acrylics/gels?",
+            "content": "<p>Press-on nails are pre-made artificial nails that attach to your natural nails using adhesive tabs. Acrylics or gels are usually built and cured in a salon and have intricate designs. SIYOU press-on nails combine the best of both worlds by handcrafting designs onto plastic press-on nails that you can apply at home in minutes at a fraction of the cost.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "6c6c8546-4be8-47e9-8694-d542109d388e": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do I apply press-on nails at home?",
+            "content": "<p>Each set includes a detailed instruction guide with step-by-step directions for easy at-home application. You can also refer to our <a href='https://siyounails.com/pages/tutorials' title='Tutorial Page'>tutorial page</a>.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "18a26329-3e89-409b-b175-cad7e9531a44": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How should I remove press-on nails safely?",
+            "content": "<p>To safely remove your press-on nails: soak them in warm, soapy water for 10-15 minutes to loosen the adhesive, gently lift the edges with a cuticle stick, clean off any remaining adhesive residue, and moisturize your nails afterward. Never force or pry them off, as this can damage your natural nails. You can also refer to our <a href='https://siyounails.com/pages/tutorials' title='Tutorial Page'>tutorial page</a>.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "1587700a-5ee8-43f8-a35f-d929db42fb22": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How long will press-on nails last?",
+            "content": "<p>With proper application and care, our adhesive tab press-on nails typically last up to 3 days depending on your activities. Shorter nail lengths tend to be more durable than longer styles. To maximize wear time, ensure thorough nail preparation and avoid water exposure.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "bb27c4f2-0c26-45bf-8b45-d680bea4e03c": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Why do you use adhesive tabs instead of glue?",
+            "content": "<p>Adhesive tabs are fast and convenient, and you can re-use the nails.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "2c2aaa13-82fb-4138-aa8a-37f18b412379": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can press-on nails be reused?",
+            "content": "<p>Absolutely! Our press-on nails are designed for multiple uses when removed with care. After removal, clean off any adhesive residue with rubbing alcohol, sanitize the nails, and let them dry completely. Simply apply fresh adhesive tabs for your next wear. With proper care and storage, you can enjoy several applications from each set.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "a7b8c9d0-e1f2-3456-1234-567890123456": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Will press-on nails damage my natural nails?",
+            "content": "<p>When applied and removed properly, press-on nails will not damage your natural nails. In fact, they're significantly gentler than acrylics or gel extensions. The key to maintaining healthy nails is proper removal—never force or pry them off. Always soak and gently remove them, then moisturize afterward. We recommend giving your natural nails occasional breaks between applications to maintain optimal nail health.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "e5f6a7b8-c9d0-1234-ef12-345678901234": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do I choose the right size for my nails?",
+            "content": "<p>To find the best fit, measure your natural nail at its widest point and refer to the sizing guide included in every package. You can also find our size guide <a href='https://siyounails.com/pages/size-guide' title='Size Guide'>here</a>. If you're between sizes, select the slightly larger option and file it down for a better fit.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "b8c9d0e1-f2a3-4567-2345-678901234567": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Can I swim, shower, or wash dishes with press-on nails?",
+            "content": "<p>It's not recommended as it may impact how long the nails stay on. After allowing the adhesive to set for at least 1 hour following application, you can resume normal activities. However, prolonged water exposure may weaken the adhesive bond over time. To extend wear time, we recommend wearing gloves when washing dishes or using harsh cleaning chemicals, and avoiding extended soaking in hot or warm water.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "c9d0e1f2-a3b4-5678-3456-789012345678": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What should I do if a nail pops off early?",
+            "content": "<p>If a nail comes off prematurely, follow these steps: (1) Clean both your natural nail and the press-on nail with rubbing alcohol, (2) Allow both surfaces to dry completely, (3) Apply a fresh adhesive tab, and (4) Press firmly for 30 seconds. We recommend storing extra nails from your set for quick replacements. If multiple nails are lifting, review your preparation process—insufficient cleaning or oily nail beds are common causes of poor adhesion.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "77e8081d-3216-4f92-9f1e-bab5a6656d97": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What's the return/exchange policy?",
+            "content": "<p>For hygiene and safety reasons, our press-on nails are final sale once opened. We can only accept returns or exchanges for unopened packages, damaged shipments, or incorrect items received. Please review our <a href='/policies/refund-policy'>Return & Exchange Policy</a> for full details.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "a1b2c3d4-e5f6-7890-abcd-ef1234567890": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What are my shipping options and delivery times?",
+            "content": "<p>We offer three shipping options: Standard Shipping (USPS Ground Advantage, 3-5 business days), Priority Shipping (USPS Priority Mail, 1-3 business days), and Express Shipping (USPS Priority Mail Express, 1-2 business days). Orders are processed within 1-2 business days. You'll receive a tracking number within 24 hours of shipment. View our <a href='/policies/shipping-policy'>Shipping Policy</a> for detailed information.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "b2c3d4e5-f6a7-8901-bcde-f12345678901": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What payment methods do you accept?",
+            "content": "<p>We accept all major credit cards (Visa, Mastercard, American Express, Discover), Apple Pay, Google Pay, and Shop Pay. All transactions are securely processed through Shopify's encrypted payment system.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "c3d4e5f6-a7b8-9012-cdef-123456789012": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How do I track my order?",
+            "content": "<p>Once your order ships, you'll receive an email with a tracking number. You can also track your order by logging into your <a href='/account'>account</a> and viewing your order history. If you haven't received tracking information within 2 business days, please <a href='/pages/contact-us'>contact us</a>.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "e1f2a3b4-c5d6-7890-5678-901234567890": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "How can I contact customer support?",
+            "content": "<p>We're here to help! Reach us via email at info@siyounails.com or through our Contact Us page. We typically respond within 24 hours on business days. For order-specific questions, please provide your order number for faster assistance.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "template--15329436369096__19343041-49f3-4eb8-918f-d93e323afa2e-collapsible_tab-1",
+        "6c6c8546-4be8-47e9-8694-d542109d388e",
+        "18a26329-3e89-409b-b175-cad7e9531a44",
+        "1587700a-5ee8-43f8-a35f-d929db42fb22",
+        "bb27c4f2-0c26-45bf-8b45-d680bea4e03c",
+        "2c2aaa13-82fb-4138-aa8a-37f18b412379",
+        "a7b8c9d0-e1f2-3456-1234-567890123456",
+        "e5f6a7b8-c9d0-1234-ef12-345678901234",
+        "b8c9d0e1-f2a3-4567-2345-678901234567",
+        "c9d0e1f2-a3b4-5678-3456-789012345678",
+        "77e8081d-3216-4f92-9f1e-bab5a6656d97",
+        "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+        "c3d4e5f6-a7b8-9012-cdef-123456789012",
+        "e1f2a3b4-c5d6-7890-5678-901234567890"
+      ],
+      "custom_css": [
+        "p {padding: 12px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 20,
+        "margin-bottom": 40
+      }
+    }
+  },
+  "order": [
+    "b1762d2f-c545-46f9-ab66-b0f6dc390c56",
+    "main",
+    "19343041-49f3-4eb8-918f-d93e323afa2e"
+  ]
+}

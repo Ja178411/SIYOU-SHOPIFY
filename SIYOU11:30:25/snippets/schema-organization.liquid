@@ -1,0 +1,11 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{ shop.url }}/#organization",
+  "name": "{{ shop.name | escape }}",
+  "url": "{{ shop.url }}",
+  "logo": "{{ shop.logo | default: shop.brand.logo | img_url: '500x' | prepend: 'https:' }}",
+  "sameAs": []
+}
+</script>

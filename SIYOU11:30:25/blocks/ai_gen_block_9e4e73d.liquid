@@ -1,0 +1,821 @@
+{% doc %}
+  @prompt
+    Create a new, visually appealing click-through “Size Guide” section for my SIYOU Nails theme.
+    The goal is to make the page more interactive and user-friendly while keeping the brand’s clean, feminine, and professional aesthetic (light pink accents, minimalist icons, and rounded buttons).
+    
+    Include these design and UX features:
+    
+    A step-by-step click-through interface that lets users select their nail shape (e.g., Short Almond, Medium Almond, Long Almond, Medium Coffin, Long Coffin, Medium Stiletto, Long Stiletto).
+    
+    When a shape is clicked, show a visual size chart and a brief description of fit and curvature tips.
+    
+    Add a “Find My Size” call-to-action button that links to a contact form or size quiz.
+    
+    Use scroll or slide animations for transitions between shapes.
+    
+    Keep typography modern and clean (e.g., Montserrat or Lato), with soft pink highlights (#f8dce2) and neutral grays
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-size-guide-{{ ai_gen_id }} {
+    padding: 60px 20px;
+    background-color: {{ block.settings.background_color }};
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-size-guide-header-{{ ai_gen_id }} {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .ai-size-guide-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 15px;
+    font-weight: 600;
+  }
+
+  .ai-size-guide-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ai-size-guide-shapes-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ai-size-guide-shape-btn-{{ ai_gen_id }} {
+    background: {{ block.settings.shape_button_bg }};
+    border: 2px solid {{ block.settings.shape_button_border }};
+    border-radius: {{ block.settings.button_radius }}px;
+    padding: 20px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: {{ block.settings.shape_button_text }};
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ai-size-guide-shape-btn-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.shape_button_hover_bg }};
+    border-color: {{ block.settings.accent_color }};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(252, 128, 159, 0.15);
+  }
+
+  .ai-size-guide-shape-btn-{{ ai_gen_id }}.active {
+    background: {{ block.settings.accent_color }};
+    border-color: {{ block.settings.accent_color }};
+    color: #ffffff;
+  }
+
+  .ai-size-guide-shape-icon-{{ ai_gen_id }} {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-size-guide-shape-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  .ai-size-guide-content-{{ ai_gen_id }} {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .ai-size-guide-content-{{ ai_gen_id }}.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ai-size-guide-chart-wrapper-{{ ai_gen_id }} {
+    background: #ffffff;
+    border-radius: {{ block.settings.content_radius }}px;
+    padding: 40px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    margin-bottom: 30px;
+  }
+
+  .ai-size-guide-chart-title-{{ ai_gen_id }} {
+    font-size: 22px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 25px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .ai-size-guide-table-{{ ai_gen_id }} {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+  }
+
+  .ai-size-guide-table-{{ ai_gen_id }} th {
+    background: {{ block.settings.table_header_bg }};
+    color: {{ block.settings.table_header_text }};
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .ai-size-guide-table-{{ ai_gen_id }} td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    color: {{ block.settings.subtitle_color }};
+    font-size: 15px;
+  }
+
+  .ai-size-guide-table-{{ ai_gen_id }} tr:last-child td {
+    border-bottom: none;
+  }
+
+  .ai-size-guide-description-{{ ai_gen_id }} {
+    background: {{ block.settings.description_bg }};
+    border-left: 4px solid {{ block.settings.accent_color }};
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .ai-size-guide-description-{{ ai_gen_id }} h4 {
+    color: {{ block.settings.title_color }};
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .ai-size-guide-description-{{ ai_gen_id }} p {
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  .ai-size-guide-cta-{{ ai_gen_id }} {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .ai-size-guide-cta-btn-{{ ai_gen_id }} {
+    display: inline-block;
+    background: {{ block.settings.cta_bg }};
+    color: {{ block.settings.cta_text_color }};
+    padding: 16px 40px;
+    border-radius: {{ block.settings.button_radius }}px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .ai-size-guide-cta-btn-{{ ai_gen_id }}:hover {
+    background: {{ block.settings.cta_hover_bg }};
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(252, 128, 159, 0.3);
+  }
+
+  .ai-size-guide-empty-state-{{ ai_gen_id }} {
+    text-align: center;
+    padding: 60px 20px;
+    color: {{ block.settings.subtitle_color }};
+  }
+
+  .ai-size-guide-empty-state-{{ ai_gen_id }} svg {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    opacity: 0.3;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-size-guide-{{ ai_gen_id }} {
+      padding: 40px 15px;
+    }
+
+    .ai-size-guide-shapes-{{ ai_gen_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .ai-size-guide-chart-wrapper-{{ ai_gen_id }} {
+      padding: 25px 20px;
+    }
+
+    .ai-size-guide-table-{{ ai_gen_id }} {
+      font-size: 13px;
+    }
+
+    .ai-size-guide-table-{{ ai_gen_id }} th,
+    .ai-size-guide-table-{{ ai_gen_id }} td {
+      padding: 12px 10px;
+    }
+
+    .ai-size-guide-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<nail-size-guide-{{ ai_gen_id }} class="ai-size-guide-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-size-guide-header-{{ ai_gen_id }}">
+    {% if block.settings.title != blank %}
+      <h2 class="ai-size-guide-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+    {% endif %}
+    {% if block.settings.subtitle != blank %}
+      <p class="ai-size-guide-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+    {% endif %}
+  </div>
+
+  <div class="ai-size-guide-shapes-{{ ai_gen_id }}">
+    {% if block.settings.enable_short_almond %}
+      <button class="ai-size-guide-shape-btn-{{ ai_gen_id }}" data-shape="short-almond">
+        <div class="ai-size-guide-shape-icon-{{ ai_gen_id }}">
+          <svg viewBox="0 0 40 60" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 5 C10 5, 5 10, 5 25 L5 45 C5 50, 10 55, 20 55 C30 55, 35 50, 35 45 L35 25 C35 10, 30 5, 20 5 Z M20 10 C25 10, 28 12, 28 20 L28 40 C28 45, 25 48, 20 48 C15 48, 12 45, 12 40 L12 20 C12 12, 15 10, 20 10 Z"/>
+          </svg>
+        </div>
+        <span>Short Almond</span>
+      </button>
+    {% endif %}
+
+    {% if block.settings.enable_medium_almond %}
+      <button class="ai-size-guide-shape-btn-{{ ai_gen_id }}" data-shape="medium-almond">
+        <div class="ai-size-guide-shape-icon-{{ ai_gen_id }}">
+          <svg viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2 C10 2, 5 8, 5 25 L5 50 C5 58, 10 65, 20 68 C30 65, 35 58, 35 50 L35 25 C35 8, 30 2, 20 2 Z"/>
+          </svg>
+        </div>
+        <span>Medium Almond</span>
+      </button>
+    {% endif %}
+
+    {% if block.settings.enable_long_almond %}
+      <button class="ai-size-guide-shape-btn-{{ ai_gen_id }}" data-shape="long-almond">
+        <div class="ai-size-guide-shape-icon-{{ ai_gen_id }}">
+          <svg viewBox="0 0 40 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 2 C10 2, 5 8, 5 25 L5 60 C5 70, 10 75, 20 78 C30 75, 35 70, 35 60 L35 25 C35 8, 30 2, 20 2 Z"/>
+          </svg>
+        </div>
+        <span>Long Almond</span>
+      </button>
+    {% endif %}
+
+    {% if block.settings.enable_medium_coffin %}
+      <button class="ai-size-guide-shape-btn-{{ ai_gen_id }}" data-shape="medium-coffin">
+        <div class="ai-size-guide-shape-icon-{{ ai_gen_id }}">
+          <svg viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5 L32 5 L35 50 L28 68 L12 68 L5 50 Z"/>
+          </svg>
+        </div>
+        <span>Medium Coffin</span>
+      </button>
+    {% endif %}
+
+    {% if block.settings.enable_long_coffin %}
+      <button class="ai-size-guide-shape-btn-{{ ai_gen_id }}" data-shape="long-coffin">
+        <div class="ai-size-guide-shape-icon-{{ ai_gen_id }}">
+          <svg viewBox="0 0 40 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5 L32 5 L35 60 L28 78 L12 78 L5 60 Z"/>
+          </svg>
+        </div>
+        <span>Long Coffin</span>
+      </button>
+    {% endif %}
+
+    {% if block.settings.enable_medium_stiletto %}
+      <button class="ai-size-guide-shape-btn-{{ ai_gen_id }}" data-shape="medium-stiletto">
+        <div class="ai-size-guide-shape-icon-{{ ai_gen_id }}">
+          <svg viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5 L32 5 L35 45 L20 68 L5 45 Z"/>
+          </svg>
+        </div>
+        <span>Medium Stiletto</span>
+      </button>
+    {% endif %}
+
+    {% if block.settings.enable_long_stiletto %}
+      <button class="ai-size-guide-shape-btn-{{ ai_gen_id }}" data-shape="long-stiletto">
+        <div class="ai-size-guide-shape-icon-{{ ai_gen_id }}">
+          <svg viewBox="0 0 40 80" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 5 L32 5 L35 55 L20 78 L5 55 Z"/>
+          </svg>
+        </div>
+        <span>Long Stiletto</span>
+      </button>
+    {% endif %}
+  </div>
+
+  <div class="ai-size-guide-content-{{ ai_gen_id }}" data-content="short-almond">
+    <div class="ai-size-guide-chart-wrapper-{{ ai_gen_id }}">
+      <h3 class="ai-size-guide-chart-title-{{ ai_gen_id }}">Short Almond Size Chart</h3>
+      <table class="ai-size-guide-table-{{ ai_gen_id }}">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Width (mm)</th>
+            <th>Length (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>15.5</td><td>18</td></tr>
+          <tr><td>1</td><td>14.5</td><td>17</td></tr>
+          <tr><td>2</td><td>13.5</td><td>16</td></tr>
+          <tr><td>3</td><td>12.5</td><td>15</td></tr>
+          <tr><td>4</td><td>11.5</td><td>14</td></tr>
+          <tr><td>5</td><td>10.5</td><td>13</td></tr>
+        </tbody>
+      </table>
+      <div class="ai-size-guide-description-{{ ai_gen_id }}">
+        <h4>Fit & Curvature Tips</h4>
+        <p>Short almond nails offer a subtle, elegant look with a gentle taper. Perfect for everyday wear, they provide a natural extension with a soft point. Ideal for those who want a feminine shape without excessive length.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-size-guide-content-{{ ai_gen_id }}" data-content="medium-almond">
+    <div class="ai-size-guide-chart-wrapper-{{ ai_gen_id }}">
+      <h3 class="ai-size-guide-chart-title-{{ ai_gen_id }}">Medium Almond Size Chart</h3>
+      <table class="ai-size-guide-table-{{ ai_gen_id }}">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Width (mm)</th>
+            <th>Length (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>15.5</td><td>22</td></tr>
+          <tr><td>1</td><td>14.5</td><td>21</td></tr>
+          <tr><td>2</td><td>13.5</td><td>20</td></tr>
+          <tr><td>3</td><td>12.5</td><td>19</td></tr>
+          <tr><td>4</td><td>11.5</td><td>18</td></tr>
+          <tr><td>5</td><td>10.5</td><td>17</td></tr>
+        </tbody>
+      </table>
+      <div class="ai-size-guide-description-{{ ai_gen_id }}">
+        <h4>Fit & Curvature Tips</h4>
+        <p>Medium almond nails feature a balanced length with a graceful taper. This versatile shape elongates fingers while maintaining practicality. The smooth curve creates a sophisticated silhouette perfect for both casual and formal occasions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-size-guide-content-{{ ai_gen_id }}" data-content="long-almond">
+    <div class="ai-size-guide-chart-wrapper-{{ ai_gen_id }}">
+      <h3 class="ai-size-guide-chart-title-{{ ai_gen_id }}">Long Almond Size Chart</h3>
+      <table class="ai-size-guide-table-{{ ai_gen_id }}">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Width (mm)</th>
+            <th>Length (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>15.5</td><td>26</td></tr>
+          <tr><td>1</td><td>14.5</td><td>25</td></tr>
+          <tr><td>2</td><td>13.5</td><td>24</td></tr>
+          <tr><td>3</td><td>12.5</td><td>23</td></tr>
+          <tr><td>4</td><td>11.5</td><td>22</td></tr>
+          <tr><td>5</td><td>10.5</td><td>21</td></tr>
+        </tbody>
+      </table>
+      <div class="ai-size-guide-description-{{ ai_gen_id }}">
+        <h4>Fit & Curvature Tips</h4>
+        <p>Long almond nails make a bold statement with dramatic length and elegant tapering. This glamorous shape creates maximum finger elongation and provides ample canvas for intricate nail art. Best suited for special occasions or those who love standout nails.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-size-guide-content-{{ ai_gen_id }}" data-content="medium-coffin">
+    <div class="ai-size-guide-chart-wrapper-{{ ai_gen_id }}">
+      <h3 class="ai-size-guide-chart-title-{{ ai_gen_id }}">Medium Coffin Size Chart</h3>
+      <table class="ai-size-guide-table-{{ ai_gen_id }}">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Width (mm)</th>
+            <th>Length (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>15.5</td><td>22</td></tr>
+          <tr><td>1</td><td>14.5</td><td>21</td></tr>
+          <tr><td>2</td><td>13.5</td><td>20</td></tr>
+          <tr><td>3</td><td>12.5</td><td>19</td></tr>
+          <tr><td>4</td><td>11.5</td><td>18</td></tr>
+          <tr><td>5</td><td>10.5</td><td>17</td></tr>
+        </tbody>
+      </table>
+      <div class="ai-size-guide-description-{{ ai_gen_id }}">
+        <h4>Fit & Curvature Tips</h4>
+        <p>Medium coffin nails feature straight sides with a squared-off tip, creating a modern, edgy look. This trendy shape offers a perfect balance between style and functionality. The flat tip provides stability while the tapered sides add elegance.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-size-guide-content-{{ ai_gen_id }}" data-content="long-coffin">
+    <div class="ai-size-guide-chart-wrapper-{{ ai_gen_id }}">
+      <h3 class="ai-size-guide-chart-title-{{ ai_gen_id }}">Long Coffin Size Chart</h3>
+      <table class="ai-size-guide-table-{{ ai_gen_id }}">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Width (mm)</th>
+            <th>Length (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>15.5</td><td>26</td></tr>
+          <tr><td>1</td><td>14.5</td><td>25</td></tr>
+          <tr><td>2</td><td>13.5</td><td>24</td></tr>
+          <tr><td>3</td><td>12.5</td><td>23</td></tr>
+          <tr><td>4</td><td>11.5</td><td>22</td></tr>
+          <tr><td>5</td><td>10.5</td><td>21</td></tr>
+        </tbody>
+      </table>
+      <div class="ai-size-guide-description-{{ ai_gen_id }}">
+        <h4>Fit & Curvature Tips</h4>
+        <p>Long coffin nails deliver maximum drama with extended length and bold squared tips. This statement shape is perfect for showcasing elaborate designs and creates a striking, fashion-forward appearance. Ideal for those who want to make an impact.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-size-guide-content-{{ ai_gen_id }}" data-content="medium-stiletto">
+    <div class="ai-size-guide-chart-wrapper-{{ ai_gen_id }}">
+      <h3 class="ai-size-guide-chart-title-{{ ai_gen_id }}">Medium Stiletto Size Chart</h3>
+      <table class="ai-size-guide-table-{{ ai_gen_id }}">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Width (mm)</th>
+            <th>Length (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>15.5</td><td>22</td></tr>
+          <tr><td>1</td><td>14.5</td><td>21</td></tr>
+          <tr><td>2</td><td>13.5</td><td>20</td></tr>
+          <tr><td>3</td><td>12.5</td><td>19</td></tr>
+          <tr><td>4</td><td>11.5</td><td>18</td></tr>
+          <tr><td>5</td><td>10.5</td><td>17</td></tr>
+        </tbody>
+      </table>
+      <div class="ai-size-guide-description-{{ ai_gen_id }}">
+        <h4>Fit & Curvature Tips</h4>
+        <p>Medium stiletto nails taper to a sharp point, creating a fierce and dramatic look. This daring shape elongates fingers beautifully while maintaining wearability. Perfect for those who want bold style with a touch of edge.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-size-guide-content-{{ ai_gen_id }}" data-content="long-stiletto">
+    <div class="ai-size-guide-chart-wrapper-{{ ai_gen_id }}">
+      <h3 class="ai-size-guide-chart-title-{{ ai_gen_id }}">Long Stiletto Size Chart</h3>
+      <table class="ai-size-guide-table-{{ ai_gen_id }}">
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Width (mm)</th>
+            <th>Length (mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>0</td><td>15.5</td><td>26</td></tr>
+          <tr><td>1</td><td>14.5</td><td>25</td></tr>
+          <tr><td>2</td><td>13.5</td><td>24</td></tr>
+          <tr><td>3</td><td>12.5</td><td>23</td></tr>
+          <tr><td>4</td><td>11.5</td><td>22</td></tr>
+          <tr><td>5</td><td>10.5</td><td>21</td></tr>
+        </tbody>
+      </table>
+      <div class="ai-size-guide-description-{{ ai_gen_id }}">
+        <h4>Fit & Curvature Tips</h4>
+        <p>Long stiletto nails are the ultimate statement piece with extreme length and sharp points. This ultra-glamorous shape commands attention and creates maximum finger elongation. Best for confident nail enthusiasts who love high-fashion looks.</p>
+      </div>
+    </div>
+  </div>
+
+  {% if block.settings.show_cta %}
+    <div class="ai-size-guide-cta-{{ ai_gen_id }}">
+      <a href="{{ block.settings.cta_link }}" class="ai-size-guide-cta-btn-{{ ai_gen_id }}">
+        {{ block.settings.cta_button_text }}
+      </a>
+    </div>
+  {% endif %}
+</nail-size-guide-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class NailSizeGuide{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.shapeButtons = this.querySelectorAll('.ai-size-guide-shape-btn-{{ ai_gen_id }}');
+        this.contentSections = this.querySelectorAll('.ai-size-guide-content-{{ ai_gen_id }}');
+        this.setupEventListeners();
+        this.showFirstAvailableShape();
+      }
+
+      setupEventListeners() {
+        this.shapeButtons.forEach((button) => {
+          button.addEventListener('click', (e) => {
+            const shape = button.getAttribute('data-shape');
+            this.showContent(shape);
+            this.setActiveButton(button);
+          });
+        });
+      }
+
+      showFirstAvailableShape() {
+        if (this.shapeButtons.length > 0) {
+          const firstButton = this.shapeButtons[0];
+          const firstShape = firstButton.getAttribute('data-shape');
+          this.showContent(firstShape);
+          this.setActiveButton(firstButton);
+        }
+      }
+
+      showContent(shape) {
+        this.contentSections.forEach((section) => {
+          section.classList.remove('active');
+        });
+
+        const targetContent = this.querySelector(`[data-content="${shape}"]`);
+        if (targetContent) {
+          setTimeout(() => {
+            targetContent.classList.add('active');
+            targetContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 100);
+        }
+      }
+
+      setActiveButton(activeButton) {
+        this.shapeButtons.forEach((button) => {
+          button.classList.remove('active');
+        });
+        activeButton.classList.add('active');
+      }
+    }
+
+    customElements.define('nail-size-guide-{{ ai_gen_id }}', NailSizeGuide{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Nail size guide",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Find Your Perfect Fit"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Select your nail shape to view our detailed size chart and fitting tips"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Title size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Nail shapes"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_short_almond",
+      "label": "Enable short almond",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_medium_almond",
+      "label": "Enable medium almond",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_long_almond",
+      "label": "Enable long almond",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_medium_coffin",
+      "label": "Enable medium coffin",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_long_coffin",
+      "label": "Enable long coffin",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_medium_stiletto",
+      "label": "Enable medium stiletto",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_long_stiletto",
+      "label": "Enable long stiletto",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show call to action",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "Button text",
+      "default": "Find My Size"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#fef9fb"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title",
+      "default": "#151515"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle",
+      "default": "#717171"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#fc809f"
+    },
+    {
+      "type": "color",
+      "id": "shape_button_bg",
+      "label": "Shape button background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "shape_button_border",
+      "label": "Shape button border",
+      "default": "#e7e7e7"
+    },
+    {
+      "type": "color",
+      "id": "shape_button_text",
+      "label": "Shape button text",
+      "default": "#151515"
+    },
+    {
+      "type": "color",
+      "id": "shape_button_hover_bg",
+      "label": "Shape button hover background",
+      "default": "#fff5f8"
+    },
+    {
+      "type": "color",
+      "id": "table_header_bg",
+      "label": "Table header background",
+      "default": "#fff0f5"
+    },
+    {
+      "type": "color",
+      "id": "table_header_text",
+      "label": "Table header text",
+      "default": "#151515"
+    },
+    {
+      "type": "color",
+      "id": "description_bg",
+      "label": "Description background",
+      "default": "#fff5f8"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg",
+      "label": "CTA button background",
+      "default": "#ff9cb5"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "CTA button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "cta_hover_bg",
+      "label": "CTA button hover background",
+      "default": "#fc809f"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "content_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Content border radius",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nail size guide"
+    }
+  ]
+}
+{% endschema %}

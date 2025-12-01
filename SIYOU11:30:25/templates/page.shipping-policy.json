@@ -1,0 +1,328 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".wt-page__title {display: none;}"
+      ],
+      "settings": {
+        "compact-size-enabled": true,
+        "size_heading": 140,
+        "size_heading_mobile": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-bg-overlay": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "page-header": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shipping Policy",
+            "disable_on_mobile": false,
+            "size_heading": 150,
+            "size_heading_mobile": 120
+          }
+        },
+        "subheading": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Effective Date: October 15, 2025 | Last Updated: November 08, 2025</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "subheading"
+      ],
+      "settings": {
+        "section_width": "short",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "#ffffff",
+        "background_color": "#ff9cb5",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "shipping-options": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "standard-shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Standard Shipping - USPS Ground Advantage (3-5 Business Days)",
+            "content": "<p><strong>Cost:</strong> $4.95 (FREE on orders $35+)<br><strong>Service:</strong> USPS Ground Advantage<br><strong>Coverage:</strong> All 50 US states<br><strong>Delivery Rate:</strong> 90% delivery success within timeframe</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "priority-shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Priority Shipping - USPS Priority Mail (1-3 Business Days)",
+            "content": "<p><strong>Cost:</strong> $8.95<br><strong>Service:</strong> USPS Priority Mail<br><strong>Coverage:</strong> All 50 US states<br><strong>Delivery Rate:</strong> 95% delivery success within timeframe</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "express-shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Express Shipping - USPS Priority Mail Express (1-2 Business Days)",
+            "content": "<p><strong>Cost:</strong> $19.95<br><strong>Service:</strong> USPS Priority Mail Express with money-back guarantee<br><strong>Coverage:</strong> All 50 US states<br><strong>Delivery Rate:</strong> 98% delivery success<br><strong>Cutoff:</strong> Orders placed before 2 PM EST ship same day</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "free-shipping": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Free Shipping Promotion",
+            "content": "<p><strong>Threshold:</strong> Orders $35 and above qualify for free standard shipping<br><strong>Method:</strong> Upgraded to standard shipping at no charge<br><strong>Timeframe:</strong> Same 3-5 business day delivery window</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "standard-shipping",
+        "priority-shipping",
+        "express-shipping",
+        "free-shipping"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "processing-info": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "processing-timeline": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Order Processing Timeline",
+            "content": "<p><strong>Order Cutoff:</strong> 2 PM EST for same-day processing<br><strong>Processing Time:</strong> 1-2 business days<br><strong>Weekend Orders:</strong> Processed next business day<br><strong>Holiday Impact:</strong> Additional processing day during peak seasons</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "tracking-info": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Order Confirmation and Tracking",
+            "content": "<p>• Order confirmation email sent within 30 minutes<br>• Shipping confirmation with tracking number within 24 hours of shipment<br>• Real-time tracking available through carrier websites</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "processing-timeline",
+        "tracking-info"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "coverage-restrictions": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "shipping-locations": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping Coverage",
+            "content": "<p><strong>We Currently Ship To:</strong><br>• All 50 United States<br>• Washington D.C.<br>• US Military addresses (APO/FPO) with extended timeframes</p><p><strong>We Do Not Currently Ship To:</strong><br>• International addresses<br>• US territories (Puerto Rico, Virgin Islands, Guam)<br>• PO Boxes for express/overnight shipping</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "hazmat-restrictions": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Hazardous Materials Shipping Compliance",
+            "content": "<p>Press-on nail products containing flammable materials are subject to special shipping requirements:</p><p>• <strong>Ground Transportation Only:</strong> Products with flammable adhesives, nail glues, or polish removers<br>• <strong>USPS Publication 52 Compliance:</strong> Proper hazmat packaging and labeling<br>• <strong>No Air Shipping:</strong> Flammable solvents restricted from air transport<br>• <strong>International Shipping:</strong> Not available for hazmat-classified products</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "regional-timeframes": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Delivery Timeframes by Region",
+            "content": "<p><strong>USPS Ground Advantage estimated delivery times:</strong></p><p>• <strong>East Coast:</strong> 2-4 business days<br>• <strong>Central US:</strong> 3-5 business days<br>• <strong>West Coast:</strong> 4-6 business days<br>• <strong>Alaska/Hawaii:</strong> 6-10 business days</p><p>All shipping estimates exclude order processing time (1-2 business days), weekends, and federal holidays.</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "shipping-locations",
+        "hazmat-restrictions",
+        "regional-timeframes"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "delays-delivery": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "delay-notification": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping Delays (FTC Mail Order Rule Compliance)",
+            "content": "<p>If we cannot ship within our stated timeframe, we will:</p><p><strong>Step 1: Immediate Notification</strong><br>• Send email notification as soon as delay is identified<br>• Provide clear explanation and new expected ship date<br>• Offer option to consent to delay or cancel order</p><p><strong>Step 2: Your Response Options</strong><br>• <strong>Consent to Delay:</strong> Reply to accept new shipping timeline<br>• <strong>Cancel Order:</strong> Request full refund processed within 7 business days<br>• <strong>No Response:</strong> Order automatically canceled if no response within 30 days</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "common-delays": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Common Delay Causes",
+            "content": "<p>• <strong>Weather Events:</strong> Severe weather affecting carrier operations<br>• <strong>Inventory Issues:</strong> Unexpected stock depletion or supplier delays<br>• <strong>Carrier Delays:</strong> Transportation disruptions beyond our control<br>• <strong>Peak Season:</strong> High volume during holidays (Black Friday, Valentine's Day)<br>• <strong>Address Issues:</strong> Delivery address verification or access problems</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "delivery-issues": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Delivery Issues & Failed Attempts",
+            "content": "<p><strong>Delivery Confirmation:</strong><br>• Signature required for orders over $100<br>• Photo delivery confirmation for contactless delivery<br>• Safe delivery instructions honored when possible</p><p><strong>Failed Delivery Attempts:</strong><br>• Carrier makes 3 delivery attempts<br>• Package held at local facility for pickup<br>• Redelivery options available through carrier</p><p><strong>Lost or Missing Packages:</strong><br>• Investigation initiated after 7 business days past expected delivery<br>• Replacement or refund provided for confirmed lost packages<br>• Cooperation required with carrier investigation process</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "delay-notification",
+        "common-delays",
+        "delivery-issues"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "holiday-schedule": {
+      "type": "collapsible_menu",
+      "blocks": {
+        "holiday-guarantees": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Holiday Delivery Guarantees",
+            "content": "<p>To ensure delivery by major holidays:</p><p>• <strong>Christmas Delivery:</strong> Order by December 20 with express shipping<br>• <strong>Valentine's Day:</strong> Order by February 12 with standard shipping<br>• <strong>Mother's Day:</strong> Order by May 8 with express shipping</p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "blackout-dates": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Holiday Blackout Dates",
+            "content": "<p>• No shipping: December 25, January 1<br>• Limited processing: December 24, December 31<br>• Extended processing: During inventory periods</p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "holiday-guarantees",
+        "blackout-dates"
+      ],
+      "custom_css": [
+        "p {padding: 8px 0;}"
+      ],
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "compact-size-enabled": true,
+        "margin-top": 0,
+        "margin-bottom": 20
+      }
+    },
+    "contact-info": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Questions About Your Order?",
+            "disable_on_mobile": false,
+            "size_heading": 120,
+            "size_heading_mobile": 100
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Camber Shops LLC d/b/a SIYOU Nails</strong><br>Email: <a href='mailto:info@siyounails.com'>info@siyounails.com</a><br>Response Time: Within 24 hours during business days</p><p>This Shipping Policy complies with the FTC Mail Order Rule and was last updated on November 08, 2025. We maintain reasonable basis documentation for all shipping timeframes and commit to transparent communication regarding any delays.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "section_width": "short",
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 40,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "page-header",
+    "main",
+    "shipping-options",
+    "processing-info",
+    "coverage-restrictions",
+    "delays-delivery",
+    "holiday-schedule",
+    "contact-info"
+  ]
+}

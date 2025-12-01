@@ -1,0 +1,768 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "blocks_UbfWdf": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_d70f4e6_WXcJJ9": {
+          "type": "ai_gen_block_d70f4e6",
+          "settings": {
+            "logo_width_mobile": 80,
+            "logo_width_desktop": 100,
+            "eyebrow_text": "24 HOURS ONLY",
+            "headline_text": "Cyber Monday Sale",
+            "subheadline_text": "25% OFF + FREE SHIPPING",
+            "cta_text": "SHOP NOW",
+            "cta_link": "shopify://collections/nail-sets",
+            "enable_countdown": false,
+            "countdown_end_date": "2025-12-02T23:59:59",
+            "section_height_mobile": 700,
+            "section_height_desktop": 860,
+            "background_image": "shopify://shop_images/SiYou4658_optimized_final.webp",
+            "bg_image_opacity": 0.5,
+            "background_color": "#000000",
+            "spotlight_color": "#ffffff",
+            "spotlight_opacity": 0,
+            "eyebrow_color": "#ffffff",
+            "eyebrow_bg_color": "#000000",
+            "eyebrow_size_mobile": 15,
+            "eyebrow_size_desktop": 30,
+            "headline_color": "#ffffff",
+            "headline_size_mobile": 38,
+            "headline_size_desktop": 62,
+            "subheadline_color": "#ffffff",
+            "subheadline_size_mobile": 22,
+            "subheadline_size_desktop": 32,
+            "timer_bg_color": "#ffffff",
+            "timer_border_color": "#ffffff",
+            "timer_border_radius": 12,
+            "timer_number_color": "#151515",
+            "timer_number_size_mobile": 32,
+            "timer_number_size_desktop": 42,
+            "timer_label_color": "#151515",
+            "timer_label_size_mobile": 10,
+            "timer_label_size_desktop": 11,
+            "cta_bg_color": "#ff9cb5",
+            "cta_text_color": "#ffffff",
+            "cta_bg_hover_color": "#ffffff",
+            "cta_text_hover_color": "#ff9cb5",
+            "cta_border_color": "rgba(0,0,0,0)",
+            "cta_border_radius": 30,
+            "cta_size_mobile": 16,
+            "cta_size_desktop": 18
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_d70f4e6_WXcJJ9"
+      ],
+      "custom_css": [],
+      "name": "Black Friday hero",
+      "settings": {
+        "section-margin": 0
+      }
+    },
+    "rich_text_with_image_T9aE3i": {
+      "type": "rich-text-with-image",
+      "blocks": {
+        "text_JJPAfx": {
+          "type": "text",
+          "settings": {
+            "text": "Handcrafted Press-On Nails",
+            "font_uppercase": "uppercase",
+            "disable_on_mobile": false,
+            "size_heading": 150,
+            "size_heading_mobile": 140,
+            "line_height": 1.7,
+            "button_link1": "",
+            "button_link2": "",
+            "button_link3": ""
+          }
+        },
+        "heading_HQixyx": {
+          "type": "heading",
+          "settings": {
+            "subheading": "<p>Salon Quality Nails For Every Occasion</p>",
+            "font_uppercase": "none",
+            "disable_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "text_JJPAfx",
+        "heading_HQixyx"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".hero__text {font-style: italic;}"
+      ],
+      "name": "Banner Text",
+      "settings": {
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "#ffffff",
+        "background_color": "#ff9cb5",
+        "margin-top": 16,
+        "margin-bottom": 8
+      }
+    },
+    "image_banner_B9ncRR": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading_4r8aVt": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Black Friday Sale",
+            "subheading_disable_on_mobile": false
+          }
+        },
+        "heading_mXPcdW": {
+          "type": "heading",
+          "settings": {
+            "heading": "35% OFF",
+            "disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100
+          }
+        },
+        "countdown_timer_khjKFE": {
+          "type": "countdown_timer",
+          "settings": {
+            "end_datetime": "2025-11-28 23:59",
+            "expired_message": "",
+            "labels_below": true,
+            "timer_style": "headline",
+            "scale_timer": 100,
+            "scale_timer_mobile": 100
+          }
+        },
+        "button_megLDt": {
+          "type": "button",
+          "settings": {
+            "button_select": "link",
+            "button_label": "Shop Now",
+            "disable_on_mobile": false,
+            "button_link": "/",
+            "second_button_select": "primary",
+            "second_button_label": "Button label",
+            "second_disable_on_mobile": false,
+            "second_button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_4r8aVt",
+        "heading_mXPcdW",
+        "countdown_timer_khjKFE",
+        "button_megLDt"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name__2",
+      "settings": {
+        "heading": "",
+        "full-width-enabled": false,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 200,
+        "mobile_fixed_height": 220,
+        "desktop_image": "shopify://shop_images/black-370118_960_720.png",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_vertical_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "color-heading": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "#ffffff",
+        "text-container-color": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 20,
+        "margin-bottom": 0
+      }
+    },
+    "1644542625dcf6daf0": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Our Best Sellers",
+        "disable_on_mobile": false,
+        "hide_empty_section": false,
+        "collection": "nail-sets",
+        "product_list": [
+          "siyou-nails-winter-stars-glow-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
+          "siyou-nails-ocean-of-stars-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
+          "siyou-nails-love-sparkle-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
+          "siyou-nails-sweet-snowflake-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
+          "siyou-nails-emerald-grace-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025"
+        ],
+        "products_to_show": 5,
+        "enable_stack_products": false,
+        "show_view_all": true,
+        "button_select": "link",
+        "number_of_column_desktop": 5,
+        "spacing_desktop": "24",
+        "make_products_full_width": false,
+        "number_of_column_mobile": 2.5,
+        "spacing_mobile": "16",
+        "text_alignment": "center",
+        "image_ratio": "adapt",
+        "show_video": false,
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "enable_vendor_link": false,
+        "show_product_rating": false,
+        "enable_quick_add_button": true,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 40,
+        "margin-bottom": 0
+      }
+    },
+    "button_6NaGjU": {
+      "type": "button",
+      "name": "View All",
+      "settings": {
+        "button_select": "link",
+        "button_horizontal_position": "center",
+        "button_label": "View All",
+        "button_link": "shopify://collections/nail-sets",
+        "margin-top": 20,
+        "margin-bottom": 24,
+        "background_color": "rgba(0,0,0,0)"
+      }
+    },
+    "separator_wBffNJ": {
+      "type": "separator",
+      "name": "Separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#b1b1b1",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "1645137069750a4751": {
+      "type": "grid-view",
+      "blocks": {
+        "1645137069a9c97a90-1": {
+          "type": "image",
+          "name": "All Nail Sets",
+          "settings": {
+            "heading": "",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Shop Nails",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/nail-sets",
+            "button_link_in_new_window": false,
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "#151515",
+            "color-overlay-opacity": 0,
+            "desktop_image": "shopify://shop_images/20251120-095916_181f7cd5-c828-4058-91d1-588a0fc43fec.png",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center"
+          }
+        },
+        "dd981072-2de5-4a9b-a045-b39d179adb7a": {
+          "type": "image",
+          "name": "Nail Accessories",
+          "settings": {
+            "heading": "",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "primary",
+            "button_label": "Shop Accessories",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://pages/nail-accessories",
+            "button_link_in_new_window": false,
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 0,
+            "desktop_image": "shopify://shop_images/Untitled_design_3_optimized.jpg",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center"
+          }
+        }
+      },
+      "block_order": [
+        "1645137069a9c97a90-1",
+        "dd981072-2de5-4a9b-a045-b39d179adb7a"
+      ],
+      "name": "Explore Products",
+      "settings": {
+        "title": "",
+        "swipe_on_mobile": false,
+        "full-width-enabled": false,
+        "image_ratio": "adapt",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "separator_RGfgdW": {
+      "type": "separator",
+      "name": "Separator",
+      "settings": {
+        "advanced_heading": false,
+        "heading": "",
+        "heading_richtext": "<h2>Separator</h2>",
+        "size_heading": 100,
+        "size_heading_mobile": 100,
+        "show-separator-line": true,
+        "full-width-line": false,
+        "color-background": "#b1b1b1",
+        "color-body-text": "rgba(0,0,0,0)",
+        "color-section-background": "#ffffff",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "grid_view_FeYXg8": {
+      "type": "grid-view",
+      "blocks": {
+        "image_QmNWTY": {
+          "type": "image",
+          "name": "Nail Accessories",
+          "settings": {
+            "heading": "New Arrivals",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": false,
+            "button_select": "link",
+            "button_label": "Shop Now",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/all-nail-care",
+            "button_link_in_new_window": false,
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "rgba(0,0,0,0)",
+            "color-overlay-opacity": 10,
+            "desktop_image": "shopify://shop_images/MJS-02132_2_508c3d11-242e-46ab-824d-789511f3ac51.png",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center"
+          }
+        },
+        "image_dnzfKT": {
+          "type": "image",
+          "name": "All Nail Sets",
+          "settings": {
+            "heading": "Fall Collection",
+            "heading_disable_on_mobile": false,
+            "size_heading": 100,
+            "size_heading_mobile": 100,
+            "text": "",
+            "text_disable_on_mobile": true,
+            "button_select": "link",
+            "button_label": "Shop Now",
+            "button_disable_on_mobile": false,
+            "button_link": "shopify://collections/nail-sets",
+            "button_link_in_new_window": false,
+            "color-body-text": "rgba(0,0,0,0)",
+            "color-overlay": "#151515",
+            "color-overlay-opacity": 15,
+            "desktop_image": "shopify://shop_images/MJS-02622_2.png",
+            "desktop_text_vertical_position": "center",
+            "desktop_text_horizontal_position": "center",
+            "mobile_text_vertical_position": "center",
+            "mobile_text_horizontal_position": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_QmNWTY",
+        "image_dnzfKT"
+      ],
+      "disabled": true,
+      "name": "Explore Products",
+      "settings": {
+        "title": "",
+        "swipe_on_mobile": false,
+        "full-width-enabled": true,
+        "image_ratio": "square",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffffff",
+        "margin-top": 40,
+        "margin-bottom": 40
+      }
+    },
+    "image_with_text_3PQpTq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_674n7e": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tutorial Guides!",
+            "disable_on_mobile": false,
+            "size_heading": 200,
+            "size_heading_mobile": 120
+          }
+        },
+        "countdown_timer_jPa3nL": {
+          "type": "countdown_timer",
+          "disabled": true,
+          "settings": {
+            "end_datetime": "2025-02-31 23:59",
+            "expired_message": "Wonder!",
+            "labels_below": true,
+            "timer_style": "text",
+            "scale_timer": 190,
+            "scale_timer_mobile": 120
+          }
+        },
+        "subheading_MYGqYH": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "WEEKLY PROMO!",
+            "subheading_disable_on_mobile": false
+          }
+        },
+        "text_84EA3L": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Learn how to properly apply and remove your nails with our step-by-step video tutorials</p>",
+            "text_style": "body",
+            "disable_on_mobile": false
+          }
+        },
+        "button_4XiPYc": {
+          "type": "button",
+          "settings": {
+            "button_select": "secondary",
+            "button_label": "Learn More",
+            "button_link": "shopify://pages/how-to-use",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_674n7e",
+        "countdown_timer_jPa3nL",
+        "subheading_MYGqYH",
+        "text_84EA3L",
+        "button_4XiPYc"
+      ],
+      "disabled": true,
+      "name": "Tutorial Guides",
+      "settings": {
+        "title": "",
+        "layout": "image_first",
+        "desktop-percentage-image-width": 50,
+        "full-width-enabled": false,
+        "slide_height": "adapt_to_first_image",
+        "desktop_fixed_height": 320,
+        "mobile_fixed_height": 460,
+        "section-color-body-text": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "#ffffff",
+        "color-overlay": "#ff9cb5",
+        "color-overlay-opacity": 100,
+        "desktop_image": "shopify://shop_images/IMG_9019-scaled.webp",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "margin-top": 24,
+        "margin-bottom": 24
+      }
+    },
+    "video_reels_BcrCN7": {
+      "type": "video-reels",
+      "blocks": {
+        "product_VKH6qY": {
+          "type": "product",
+          "settings": {
+            "featured_product": "siyou-nails-emerald-grace-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025"
+          }
+        },
+        "product_xUeA3i": {
+          "type": "product",
+          "settings": {
+            "featured_product": "siyou-nails-love-sparkle-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025"
+          }
+        },
+        "product_ct4J7X": {
+          "type": "product",
+          "settings": {
+            "featured_product": "siyou-nails-classic-gold-bloom-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025"
+          }
+        },
+        "product_nRaJFa": {
+          "type": "product",
+          "settings": {
+            "featured_product": "siyou-nails-magical-butterfly-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025"
+          }
+        },
+        "product_NqjhmK": {
+          "type": "product",
+          "settings": {
+            "featured_product": "siyou-nails-starlit-love-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025"
+          }
+        },
+        "product_ziBwC4": {
+          "type": "product",
+          "settings": {
+            "featured_product": "siyou-nails-shimmering-mermaid-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025"
+          }
+        }
+      },
+      "block_order": [
+        "product_VKH6qY",
+        "product_xUeA3i",
+        "product_ct4J7X",
+        "product_nRaJFa",
+        "product_NqjhmK",
+        "product_ziBwC4"
+      ],
+      "disabled": true,
+      "name": "Shoppable Video Reels",
+      "settings": {
+        "heading": "Top Picks",
+        "quick-add-enabled": true,
+        "hide-brand-name": true,
+        "video_button": false,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 24,
+        "margin-bottom": 24
+      }
+    },
+    "parallax_BLR3kc": {
+      "type": "parallax",
+      "blocks": {
+        "heading_gQzzg8": {
+          "type": "heading",
+          "settings": {
+            "heading": "BEAUTY AS A FORM OF SELF-LOVE",
+            "disable_on_mobile": false,
+            "size_heading": 400,
+            "size_heading_mobile": 250
+          }
+        },
+        "text_akUg3b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SIYOU was born to help you express yourself — effortlessly, unapologetically, and always your way. More than press-ons, we craft little reminders to love yourself — to embrace your softness, your boldness, your one-of-a-kind style. Because beauty begins in the tiniest details, like your fingertips. And when you learn to love the little things, the rest flows naturally.</p>",
+            "disable_on_mobile": false
+          }
+        },
+        "button_AzaDNJ": {
+          "type": "button",
+          "settings": {
+            "button_select": "primary",
+            "button_label": "About Us",
+            "button_link": "shopify://pages/about-us",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_gQzzg8",
+        "text_akUg3b",
+        "button_AzaDNJ"
+      ],
+      "disabled": true,
+      "name": "t:sections.parallax-section.settings.presets.name",
+      "settings": {
+        "desktop_text_horizontal_position": "center",
+        "rotation": 10,
+        "image_1": "shopify://shop_images/siyou-diamond-accent.jpg",
+        "button_link1": "",
+        "image_2": "shopify://shop_images/siyou-decorative-frame_0b1004a6-3043-41a8-8019-7381cb2aa7ab.jpg",
+        "button_link2": "",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "scrolling_text_banner_yAAYQr": {
+      "type": "scrolling-text-banner",
+      "blocks": {
+        "heading_3Mxn7a": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your text for scrolling",
+            "size_heading": 50,
+            "size_heading_mobile": 80
+          }
+        }
+      },
+      "block_order": [
+        "heading_3Mxn7a"
+      ],
+      "disabled": true,
+      "name": "Scrolling text banner",
+      "settings": {
+        "heading": "",
+        "full-width-enabled": true,
+        "animation_speed": 2,
+        "slide_height": "fixed_height",
+        "desktop_fixed_height": 100,
+        "mobile_fixed_height": 100,
+        "desktop_image": "shopify://shop_images/siyou-brand-story-banner.jpg",
+        "desktop_text_vertical_position": "center",
+        "desktop_text_horizontal_position": "center",
+        "mobile_text_vertical_position": "center",
+        "mobile_text_horizontal_position": "center",
+        "color-heading": "rgba(0,0,0,0)",
+        "section-color-overlay": "rgba(0,0,0,0)",
+        "section-color-overlay-opacity": 100,
+        "color-body-text": "rgba(0,0,0,0)",
+        "text-container-color": "rgba(0,0,0,0)",
+        "color-overlay-opacity": 100,
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
+    "features_banner_QDkij4": {
+      "type": "features-banner",
+      "blocks": {
+        "image_LFQdzM": {
+          "type": "image",
+          "settings": {
+            "select_icon": "search",
+            "heading": "Unique Designs",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_UFArUF": {
+          "type": "image",
+          "settings": {
+            "select_icon": "star_fill",
+            "heading": "Easy to Use",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_pcMkwX": {
+          "type": "image",
+          "settings": {
+            "select_icon": "check",
+            "heading": "Reusable",
+            "text": "",
+            "link": ""
+          }
+        },
+        "image_PBVFaK": {
+          "type": "image",
+          "settings": {
+            "select_icon": "heart",
+            "heading": "Safe",
+            "text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_LFQdzM",
+        "image_UFArUF",
+        "image_pcMkwX",
+        "image_PBVFaK"
+      ],
+      "name": "Features Banner",
+      "settings": {
+        "heading": "",
+        "size_heading_mobile": 80,
+        "size_heading": 60,
+        "icon_width_mobile": 32,
+        "icon_width_desktop": 44,
+        "icon_layout": "center",
+        "columns_desktop": "4",
+        "icon_layout_mobile": "slider",
+        "color_body_icon": "rgba(0,0,0,0)",
+        "color_background_icon": "rgba(0,0,0,0)",
+        "color_body_text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
+    "newsletter_hdezqY": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_H6U3pt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join Our Mailing List!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 160,
+            "size_heading_mobile": 150
+          }
+        },
+        "paragraph_xkwMpJ": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Be the first to know about new collections and exclusive offers. Get 10% off your next purchase.</p>",
+            "text_disable_on_mobile": false
+          }
+        },
+        "email_form_RbJNQ3": {
+          "type": "email_form",
+          "settings": {
+            "button_select": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_H6U3pt",
+        "paragraph_xkwMpJ",
+        "email_form_RbJNQ3"
+      ],
+      "name": "Email Signup",
+      "settings": {
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffe9ef",
+        "margin-top": 60,
+        "margin-bottom": 60
+      }
+    }
+  },
+  "order": [
+    "blocks_UbfWdf",
+    "rich_text_with_image_T9aE3i",
+    "image_banner_B9ncRR",
+    "1644542625dcf6daf0",
+    "button_6NaGjU",
+    "separator_wBffNJ",
+    "1645137069750a4751",
+    "separator_RGfgdW",
+    "grid_view_FeYXg8",
+    "image_with_text_3PQpTq",
+    "video_reels_BcrCN7",
+    "parallax_BLR3kc",
+    "scrolling_text_banner_yAAYQr",
+    "features_banner_QDkij4",
+    "newsletter_hdezqY"
+  ]
+}
