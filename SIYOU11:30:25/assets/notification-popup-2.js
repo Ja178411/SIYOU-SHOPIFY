@@ -1,12 +1,13 @@
-class NotificationPopup extends HTMLElement {
+class NotificationPopup2 extends HTMLElement {
   connectedCallback() {
-    this.popup = this.closest(".not-pu-section");
+    // Find the parent section element (which has the .not-pu-section class)
+    this.popup = this.closest('.not-pu-section');
     if (!this.popup) return;
 
     this.closeBtn = this.popup.querySelector(".newsletter__close-btn");
     this.hasSubscription = this.dataset.hasSubscription === "true";
     this.delay = Number(this.dataset.delay) || 0;
-    this.cookie = document.cookie.includes("hideNotificationPopup=true");
+    this.cookie = document.cookie.includes("hideNotificationPopup2=true");
 
     if (this.hasSubscription || this.cookie) return;
 
@@ -42,7 +43,7 @@ class NotificationPopup extends HTMLElement {
     if (e) e.preventDefault();
     this.popup.classList.add("hidden");
     this.popup.classList.remove("wt-popup-fade-in");
-    this.setCookie("hideNotificationPopup", "true", 7);
+    this.setCookie("hideNotificationPopup2", "true", 7);
   }
 
   handleKeydown(e) {
@@ -59,4 +60,4 @@ class NotificationPopup extends HTMLElement {
   }
 }
 
-customElements.define("notification-popup", NotificationPopup);
+customElements.define("notification-popup-2", NotificationPopup2);

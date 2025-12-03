@@ -98,7 +98,7 @@ Implemented for:
 |-------|----------|---------|
 | Critical CSS too large | High | 117KB (should be <15KB) |
 | Total CSS size | Medium | 287KB main.css + 117KB critical.css |
-| Missing GTM preconnect | Low | Add preconnect for googletagmanager.com |
+| GTM preconnect | RESOLVED | Preconnect to https://www.googletagmanager.com is now present in `layout/theme.liquid` |
 
 ### What's Working Well
 
@@ -108,6 +108,7 @@ Implemented for:
 - Responsive images with srcset
 - Lazy loading for non-critical images
 - WebP format for images
+- Preconnect to `https://www.googletagmanager.com` configured for GTM
 
 ---
 

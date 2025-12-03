@@ -6,6 +6,21 @@
   {% assign line_items_ids = line_items_ids | append: line_item.product_id | append: ', ' %}
 {% endfor %}
 
+{% comment %} Detect nail sets in cart by tag for upsell offer {% endcomment %}
+{% assign cart_has_nail_set = false %}
+{% assign upsell_nail_set_count = 0 %}
+{% assign upsell_tag = settings.upsell_product_tag | default: 'upsell-trigger' | downcase %}
+{% for item in cart.items %}
+  {% for tag in item.product.tags %}
+    {% assign tag_downcase = tag | downcase %}
+    {% if tag_downcase == upsell_tag %}
+      {% assign cart_has_nail_set = true %}
+      {% assign upsell_nail_set_count = upsell_nail_set_count | plus: item.quantity %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
 {% assign limit_products = settings.product_limit_cross_sells %}
 
 {% assign hide_brand = true %}
@@ -50,6 +65,45 @@
       </span>
     </p>
 
+    {% comment %} Enhanced Upsell banner - shows when nail set is in cart {% endcomment %}
+    {% if settings.enable_upsell_offer and cart_has_nail_set %}
+      <div class="upsell-banner" style="background: {{ settings.upsell_banner_background | default: 'linear-gradient(135deg, #ff9cb5 0%, #fc809f 100%)' }};">
+        <div class="upsell-banner__content">
+          <div class="upsell-banner__header">
+            <span class="upsell-banner__icon">{{ settings.upsell_icon | default: '🎁' }}</span>
+            <h4 class="upsell-banner__title">
+              {% if upsell_nail_set_count >= 2 %}
+                You're saving $10! 🎉
+              {% else %}
+                {{ settings.upsell_banner_text | default: 'Add another nail set & save $10!' }}
+              {% endif %}
+            </h4>
+          </div>
+          
+          <div class="upsell-banner__progress">
+            <div class="upsell-banner__progress-bar">
+              <div class="upsell-banner__progress-fill" style="width: {% if upsell_nail_set_count >= 2 %}100{% else %}50{% endif %}%;"></div>
+            </div>
+            <span class="upsell-banner__progress-text">
+              {{ upsell_nail_set_count }} of 2 nail sets
+            </span>
+          </div>
+          
+          <p class="upsell-banner__subtitle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            {% if upsell_nail_set_count >= 2 %}
+              Discount will apply at checkout
+            {% else %}
+              Add 1 more to unlock your discount
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    {% endif %}
+
     <div class="wt-cart__cross-sell__products">
       {% if cross_sell_size > 1 %}
         <script type="module" src="{{ 'slider.js' | asset_url }}" defer="defer"></script>
@@ -57,6 +111,15 @@
           <div data-swiper class="wt-slider__container" data-sound="off">
             <div data-swiper-container class="video-reels__container">
               {% for cs_product in cross_sell_products limit: limit_products %}
+                {% comment %} Check if this product has the upsell tag {% endcomment %}
+                {% assign product_is_nail_set = false %}
+                {% for tag in cs_product.tags %}
+                  {% assign tag_downcase = tag | downcase %}
+                  {% if tag_downcase == upsell_tag %}
+                    {% assign product_is_nail_set = true %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
                 <div
                   data-swiper-slide
                   data-block-id="{{ cs_product.id }}"
@@ -65,7 +128,8 @@
                   {% render 'shoppable-product-card',
                     product: cs_product,
                     customClass: 'shoppable-product-card--cross-sell',
-                    hide_brand: hide_brand
+                    hide_brand: hide_brand,
+                    show_upsell_badge: product_is_nail_set
                   %}
                 </div>
               {% endfor %}
@@ -104,10 +168,20 @@
       {% else %}
         {% for cs_product in cross_sell_products %}
           {% unless line_items_ids contains cs_product.id %}
+            {% comment %} Check if this product has the upsell tag {% endcomment %}
+            {% assign product_is_nail_set = false %}
+            {% for tag in cs_product.tags %}
+              {% assign tag_downcase = tag | downcase %}
+              {% if tag_downcase == upsell_tag %}
+                {% assign product_is_nail_set = true %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
             {% render 'shoppable-product-card',
               product: cs_product,
               customClass: 'shoppable-product-card--cross-sell shoppable-product-card--full',
-              hide_brand: hide_brand
+              hide_brand: hide_brand,
+              show_upsell_badge: product_is_nail_set
             %}
           {% endunless %}
         {% endfor %}

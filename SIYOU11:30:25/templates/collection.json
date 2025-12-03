@@ -47,81 +47,6 @@
         "margin-bottom": 40
       }
     },
-    "image_banner_d4k6xL": {
-      "type": "image-banner",
-      "blocks": {
-        "subheading_DaqNEx": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "CYBER MONDAY SALE",
-            "subheading_disable_on_mobile": false
-          }
-        },
-        "heading_p6dMAA": {
-          "type": "heading",
-          "settings": {
-            "heading": "25% OFF+ FREE SHIPPING",
-            "disable_on_mobile": false,
-            "size_heading": 100,
-            "size_heading_mobile": 100
-          }
-        },
-        "countdown_timer_6FV9qd": {
-          "type": "countdown_timer",
-          "disabled": true,
-          "settings": {
-            "end_datetime": "2025-12-02 23:59",
-            "expired_message": "",
-            "labels_below": true,
-            "timer_style": "headline",
-            "scale_timer": 100,
-            "scale_timer_mobile": 100
-          }
-        },
-        "button_MUHBWD": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_select": "link",
-            "button_label": "Shop Now",
-            "disable_on_mobile": false,
-            "button_link": "/",
-            "second_button_select": "primary",
-            "second_button_label": "Button label",
-            "second_disable_on_mobile": false,
-            "second_button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_DaqNEx",
-        "heading_p6dMAA",
-        "countdown_timer_6FV9qd",
-        "button_MUHBWD"
-      ],
-      "custom_css": [],
-      "name": "t:sections.image-banner.presets.name__2",
-      "settings": {
-        "heading": "",
-        "full-width-enabled": false,
-        "slide_height": "fixed_height",
-        "desktop_fixed_height": 200,
-        "mobile_fixed_height": 220,
-        "desktop_image": "shopify://shop_images/black-370118_960_720.png",
-        "desktop_text_vertical_position": "center",
-        "desktop_text_horizontal_position": "center",
-        "mobile_text_vertical_position": "center",
-        "mobile_text_horizontal_position": "center",
-        "color-heading": "rgba(0,0,0,0)",
-        "section-color-overlay": "rgba(0,0,0,0)",
-        "section-color-overlay-opacity": 100,
-        "color-body-text": "#ffffff",
-        "text-container-color": "rgba(0,0,0,0)",
-        "color-overlay-opacity": 100,
-        "margin-top": 20,
-        "margin-bottom": 20
-      }
-    },
     "breadcrumbs": {
       "type": "main-breadcrumbs",
       "custom_css": [
@@ -285,7 +210,6 @@
   "order": [
     "banner",
     "title",
-    "image_banner_d4k6xL",
     "breadcrumbs",
     "product-grid",
     "separator_qkXpB7",

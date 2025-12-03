@@ -14,6 +14,7 @@
       "blocks": {
         "ai_gen_block_d70f4e6_WXcJJ9": {
           "type": "ai_gen_block_d70f4e6",
+          "disabled": true,
           "settings": {
             "logo_width_mobile": 80,
             "logo_width_desktop": 100,
@@ -22,8 +23,8 @@
             "subheadline_text": "25% OFF + FREE SHIPPING",
             "cta_text": "SHOP NOW",
             "cta_link": "shopify://collections/nail-sets",
-            "enable_countdown": false,
-            "countdown_end_date": "2025-12-02T23:59:59",
+            "enable_countdown": true,
+            "countdown_end_date": "2025-12-01T23:59:59",
             "section_height_mobile": 700,
             "section_height_desktop": 860,
             "background_image": "shopify://shop_images/SiYou4658_optimized_final.webp",
@@ -196,10 +197,10 @@
         "collection": "nail-sets",
         "product_list": [
           "siyou-nails-winter-stars-glow-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
-          "siyou-nails-ocean-of-stars-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
-          "siyou-nails-love-sparkle-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
           "siyou-nails-sweet-snowflake-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
-          "siyou-nails-emerald-grace-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025"
+          "siyou-nails-emerald-grace-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
+          "siyou-nails-aurora-blush-ombre-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
+          "siyou-nails-dreamy-universe-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025"
         ],
         "products_to_show": 5,
         "enable_stack_products": false,
@@ -708,6 +709,23 @@
         "margin-bottom": 20
       }
     },
+    "17646260923156a6f0": {
+      "type": "apps",
+      "blocks": {
+        "mageplaza_instagram_feed_mp_instagram_block_XbxbzU": {
+          "type": "shopify://apps/mageplaza-instagram-feed/blocks/mp_instagram_block/2e85b90f-5da9-4654-967e-051f1942340c",
+          "settings": {
+            "mp_instagram_feed_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "mageplaza_instagram_feed_mp_instagram_block_XbxbzU"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "newsletter_hdezqY": {
       "type": "newsletter",
       "blocks": {
@@ -763,6 +781,7 @@
     "parallax_BLR3kc",
     "scrolling_text_banner_yAAYQr",
     "features_banner_QDkij4",
+    "17646260923156a6f0",
     "newsletter_hdezqY"
   ]
 }

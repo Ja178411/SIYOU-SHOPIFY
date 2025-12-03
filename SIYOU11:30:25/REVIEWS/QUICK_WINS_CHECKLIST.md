@@ -1,6 +1,6 @@
 # SIYOU Mobile Performance Quick Wins Checklist
 
-**Last Updated:** November 30, 2025
+**Last Updated:** December 3, 2025
 
 Use this checklist to implement the fastest, lowest-risk performance improvements.
 
@@ -41,21 +41,10 @@ sizes="(max-width: 599px) 45vw, (max-width: 999px) 33vw, 20vw"
 
 ---
 
-### 3. Fix Icon Font Display
-- [ ] **File:** `layout/theme.liquid`
-- [ ] **Line:** ~237
-- [ ] **Time:** 2 minutes
-- [ ] **Impact:** Low (better perceived performance)
-
-**Find:**
-```css
-font-display: block;
-```
-
-**Replace with:**
-```css
-font-display: swap;
-```
+### 3. Fix Icon Font Display (RESOLVED)
+- [x] **File:** `layout/theme.liquid`
+- [x] **Status:** Already using `font-display: swap` (no change needed)
+- [ ] **Optional:** In a future CSS refactor, consider dropping legacy EOT/SVG formats from the icon font to reduce payload.
 
 ---
 

@@ -3,7 +3,7 @@
 **Website:** https://siyounails.com  
 **Theme:** Wonder Theme v2.1.2 by Nethype  
 **Analysis Date:** November 30, 2025  
-**Document Version:** 1.0
+**Document Version:** 1.1
 
 ---
 
@@ -404,6 +404,8 @@ Add to `layout/theme.liquid` before `</head>`:
 | Google web.dev | web.dev/articles/vitals | Core Web Vitals thresholds |
 | Shopify Dev Docs | shopify.dev/docs/storefronts/themes/best-practices/performance | Theme performance guidelines |
 | MDN Web Docs | developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images | Responsive images |
+| Shopify Blog – Core Web Vitals | shopify.com/blog/how-to-improve-core-web-vitals | Practical guidance on improving LCP/INP/CLS on Shopify stores |
+| Shopify Enterprise – Web Application Performance | shopify.com/enterprise/blog/web-application-performance | 2025 Core Web Vitals context and INP/LCP/CLS focus |
 
 ### Industry Research
 
@@ -634,6 +636,7 @@ Current SIYOU scores:
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0 | November 30, 2025 | Initial comprehensive analysis |
+| 1.1 | December 3, 2025 | Added Shopify performance references and clarified research basis |
 
 ---
 

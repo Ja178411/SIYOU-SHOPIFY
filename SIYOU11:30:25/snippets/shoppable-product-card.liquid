@@ -8,23 +8,30 @@
     {% endcomment %}
     {%- if product != blank -%}
       <a href="{{ product.url }}" class="wt-dot__link" tabindex="0">
-        <picture class="wt-dot__picture">
-          <img
-            srcset="
-              {% if product.featured_image.width >= 300 %}{{ product.featured_image | image_url: width: 300 }} 300w, {% endif %}
-              {% if product.featured_image.width >= 600 %}{{ product.featured_image | image_url: width: 600 }} 600w, {% endif %}
-              {% if product.featured_image.width >= 900 %}{{ product.featured_image | image_url: width: 900 }} 900w, {% endif %}
-              {{ product.featured_image | image_url: width: 300 }} 300w
-            "
-            sizes="(min-width: 900px) 300px, 100vw"
-            src="{{ product.featured_image | image_url: width: 300 }}"
-            alt="{{ product.featured_image.alt | escape }}"
-            class="wt-dot__image"
-            width="{{ product.featured_image.width }}"
-            height="{{ product.featured_image.height }}"
-            loading="lazy"
-          >
-        </picture>
+        <div class="wt-dot__picture-wrapper">
+          <picture class="wt-dot__picture">
+            <img
+              srcset="
+                {% if product.featured_image.width >= 300 %}{{ product.featured_image | image_url: width: 300 }} 300w, {% endif %}
+                {% if product.featured_image.width >= 600 %}{{ product.featured_image | image_url: width: 600 }} 600w, {% endif %}
+                {% if product.featured_image.width >= 900 %}{{ product.featured_image | image_url: width: 900 }} 900w, {% endif %}
+                {{ product.featured_image | image_url: width: 300 }} 300w
+              "
+              sizes="(min-width: 900px) 300px, 100vw"
+              src="{{ product.featured_image | image_url: width: 300 }}"
+              alt="{{ product.featured_image.alt | escape }}"
+              class="wt-dot__image"
+              width="{{ product.featured_image.width }}"
+              height="{{ product.featured_image.height }}"
+              loading="lazy"
+            >
+          </picture>
+          {% if show_upsell_badge and settings.enable_upsell_offer %}
+            <div class="shoppable-product-card__badge shoppable-product-card__badge--upsell" style="background: {{ settings.upsell_badge_background | default: '#ff9cb5' }}; color: {{ settings.upsell_badge_text_color | default: '#ffffff' }};">
+              {{ settings.upsell_badge_text | default: '$10 OFF' }}
+            </div>
+          {% endif %}
+        </div>
         <div class="wt-dot__body">
           {% if hide_brand != true %}
             <div class="wt-dot__brand">{{ product.vendor }}</div>

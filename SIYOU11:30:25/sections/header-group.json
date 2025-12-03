@@ -27,6 +27,7 @@
       ],
       "settings": {
         "marquee": true,
+        "checkbox_enable_animation": true,
         "animation_speed": "150",
         "checkbox_close_announcement": true,
         "color-body-text": "#ffffff",
@@ -65,7 +66,6 @@
     },
     "page_header_logo_banner_DJLpfi": {
       "type": "page-header-logo-banner",
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "logo_image": "shopify://shop_images/7db09c74-ec85-4ed1-be35-643f644707d9.png",
@@ -82,11 +82,89 @@
         "color-overlay": "#000000",
         "color-overlay-opacity": 22
       }
+    },
+    "notification_popup": {
+      "type": "notification-popup",
+      "blocks": {
+        "heading_ss": {
+          "type": "heading",
+          "settings": {
+            "heading": "Special Offer!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 80,
+            "size_heading_mobile": 80
+          }
+        },
+        "paragraph_ss": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Buy any winter nail set and get $10 off any second nail set</p>",
+            "text_disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ss",
+        "paragraph_ss"
+      ],
+      "disabled": true,
+      "settings": {
+        "product_handle": "siyou-nails-sweet-snowflake-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
+        "max_width": 320,
+        "delay": 0,
+        "show_border": true,
+        "show_shadow": true,
+        "desktop_image": "shopify://shop_images/winter-stars-glow-5569645.webp",
+        "desktop_vertical_position": "bottom",
+        "desktop_horizontal_position": "right",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#ffbccd"
+      }
+    },
+    "notification_popup_2": {
+      "type": "notification-popup-2",
+      "blocks": {
+        "heading_ws": {
+          "type": "heading",
+          "settings": {
+            "heading": "Winter Special!",
+            "heading_disable_on_mobile": false,
+            "size_heading": 80,
+            "size_heading_mobile": 80
+          }
+        },
+        "paragraph_ws": {
+          "type": "paragraph",
+          "settings": {
+            "paragraph": "<p>Buy any winter nail set and get $10 off any second nail set</p>",
+            "text_disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_ws",
+        "paragraph_ws"
+      ],
+      "disabled": true,
+      "settings": {
+        "product_handle": "siyou-nails-winter-stars-glow-press-on-nails-10pcs-handmade-reusable-acrylic-fake-nails-nails-2025",
+        "max_width": 320,
+        "delay": 0,
+        "show_border": true,
+        "show_shadow": true,
+        "desktop_image": "shopify://shop_images/sweet-snowflake-4533785.webp",
+        "desktop_vertical_position": "bottom",
+        "desktop_horizontal_position": "right",
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "#b8e0ff"
+      }
     }
   },
   "order": [
     "announcement-bar",
     "header",
-    "page_header_logo_banner_DJLpfi"
+    "page_header_logo_banner_DJLpfi",
+    "notification_popup",
+    "notification_popup_2"
   ]
 }

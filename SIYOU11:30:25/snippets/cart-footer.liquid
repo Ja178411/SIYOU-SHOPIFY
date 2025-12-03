@@ -35,51 +35,78 @@
 
   {% if settings.show_view_cart and settings.hide_checkout_button %}
     {% comment %}Only view cart button{% endcomment %}
-    <button
-      aria-label="{{ 'aria-label.featured-collection' | t }}"
-      class="btn-checkout wt-cart__cta"
-      onclick='location.href="{{ routes.cart_url }}"'
-      tabindex="-1"
-      {% if cart == empty %}
-        disabled
-      {% endif %}
-    >
-      <span>{{ 'sections.cart.view_cart' | t }}</span>
-    </button>
+    <div class="wt-cart__buttons-row">
+      <button
+        aria-label="{{ 'general.continue_shopping' | t }}"
+        class="btn-continue-shopping button--continue-shopping wt-cart__drawer__close"
+        tabindex="-1"
+      >
+        {{ 'general.continue_shopping' | t }}
+      </button>
+      <button
+        aria-label="{{ 'aria-label.featured-collection' | t }}"
+        class="btn-checkout wt-cart__cta"
+        onclick='location.href="{{ routes.cart_url }}"'
+        tabindex="-1"
+        {% if cart == empty %}
+          disabled
+        {% endif %}
+      >
+        <span>{{ 'sections.cart.view_cart' | t }}</span>
+      </button>
+    </div>
   {% elsif settings.show_view_cart == false and settings.hide_checkout_button == false %}
     {% comment %}Only checkout button{% endcomment %}
-    <button
-      aria-label="{{ 'sections.cart.checkout' | t }}"
-      type="submit"
-      id="CartDrawer-Checkout"
-      class="btn-checkout wt-cart__cta"
-      name="checkout"
-      form="CartDrawer-Form"
-      {% if cart == empty %}
-        disabled
-      {% endif %}
-      tabindex="-1"
-    >
-      {{ 'sections.cart.checkout' | t }}
-      {% render 'icon-checkout-arrow' %}
-    </button>
+    <div class="wt-cart__buttons-row">
+      <button
+        aria-label="{{ 'general.continue_shopping' | t }}"
+        class="btn-continue-shopping button--continue-shopping wt-cart__drawer__close"
+        tabindex="-1"
+      >
+        {{ 'general.continue_shopping' | t }}
+      </button>
+      <button
+        aria-label="{{ 'sections.cart.checkout' | t }}"
+        type="submit"
+        id="CartDrawer-Checkout"
+        class="btn-checkout wt-cart__cta"
+        name="checkout"
+        form="CartDrawer-Form"
+        {% if cart == empty %}
+          disabled
+        {% endif %}
+        tabindex="-1"
+      >
+        {{ 'sections.cart.checkout' | t }}
+        {% render 'icon-checkout-arrow' %}
+      </button>
+    </div>
   {% else %}
     {% comment %}Both buttons{% endcomment %}
-    <button
-      aria-label="{{ 'sections.cart.checkout' | t }}"
-      type="submit"
-      id="CartDrawer-Checkout"
-      class="btn-checkout wt-cart__cta"
-      name="checkout"
-      form="CartDrawer-Form"
-      {% if cart == empty %}
-        disabled
-      {% endif %}
-      tabindex="-1"
-    >
-      {{ 'sections.cart.checkout' | t }}
-      {% render 'icon-checkout-arrow' %}
-    </button>
+    <div class="wt-cart__buttons-row">
+      <button
+        aria-label="{{ 'general.continue_shopping' | t }}"
+        class="btn-continue-shopping button--continue-shopping wt-cart__drawer__close"
+        tabindex="-1"
+      >
+        {{ 'general.continue_shopping' | t }}
+      </button>
+      <button
+        aria-label="{{ 'sections.cart.checkout' | t }}"
+        type="submit"
+        id="CartDrawer-Checkout-Both"
+        class="btn-checkout wt-cart__cta"
+        name="checkout"
+        form="CartDrawer-Form"
+        {% if cart == empty %}
+          disabled
+        {% endif %}
+        tabindex="-1"
+      >
+        {{ 'sections.cart.checkout' | t }}
+        {% render 'icon-checkout-arrow' %}
+      </button>
+    </div>
     <div class="wt-featured-collection__button-container wt-button__container">
       <button
         aria-label="{{ 'aria-label.featured-collection' | t }}"

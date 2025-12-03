@@ -87,9 +87,9 @@
     "enable-bag-icon": true,
     "enable-lock-icon": false,
     "include_tag": true,
-    "social_facebook_link": "https://www.facebook.com/profile.php?id=61580661863288",
-    "social_instagram_link": "https://www.instagram.com/siyounails_official?igsh=Z3MwdTQ5eWtwdTZ4&utm_source=qr",
-    "social_tiktok_link": "https://www.tiktok.com/@siyounails01?is_from_webapp=1&sender_device=pc",
+    "social_facebook_link": "https://www.facebook.com/share/1JGt57NmcK/?mibextid=wwXIfr",
+    "social_instagram_link": "https://www.instagram.com/siyou.nails?igsh=ZDZneTE0OTVyMmxu",
+    "social_tiktok_link": "https://www.tiktok.com/@siyou.official?_r=1&_t=ZT-91tNurVZeqU",
     "show_product_vendor": false,
     "show_product_price": true,
     "enable_color_swatch": false,
@@ -135,6 +135,16 @@
       "13768625480086291342": {
         "type": "shopify://apps/forms/blocks/forms/8744a304-fcb1-4347-b211-bb6b4759a76a",
         "disabled": true,
+        "settings": {}
+      },
+      "4651250007506174373": {
+        "type": "shopify://apps/mageplaza-instagram-feed/blocks/app_embed/2e85b90f-5da9-4654-967e-051f1942340c",
+        "disabled": false,
+        "settings": {}
+      },
+      "144831480468751239": {
+        "type": "shopify://apps/essential-upsell/blocks/app-embed/50627fd9-24fd-4250-8614-accc12826d80",
+        "disabled": false,
         "settings": {}
       }
     }

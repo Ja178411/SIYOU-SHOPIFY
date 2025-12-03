@@ -281,6 +281,7 @@ window.dataLayer.push({
       'item_category': {{ product.type | json }},
       'price': {{ product.price | divided_by: 100.0 }},
       'quantity': 1,
+      'index': 0,
       'item_variant': {{ product.selected_or_first_available_variant.title | json }}
     }]
   }
@@ -2119,6 +2120,40 @@ window.dataLayer.push({
                   {{ block.settings.content }}
                 </div>
               </div>
+            
+            {% when 'upsell_promo' %}
+              {% comment %} Only show on products with the upsell-trigger tag {% endcomment %}
+              {% assign upsell_tag = settings.upsell_product_tag | default: 'upsell-trigger' | downcase %}
+              {% assign show_upsell_block = false %}
+              {% for tag in product.tags %}
+                {% assign tag_downcase = tag | downcase %}
+                {% if tag_downcase == upsell_tag %}
+                  {% assign show_upsell_block = true %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+              
+              {% if settings.enable_upsell_offer and show_upsell_block %}
+                <div
+                  data-block-id="{{ block.id }}"
+                  class="{% if settings.animations %} scroll-trigger animate--slide-in {% endif %} {% if settings.disabled_animations_on_mobile %} disabled-on-mobile {% endif %}"
+                >
+                  <div class="upsell-product-block">
+                    <span class="upsell-product-block__icon">{{ settings.upsell_icon | default: '🎁' }}</span>
+                    <p class="upsell-product-block__text">
+                      {{ block.settings.upsell_text | default: 'Buy 2 nail sets, save $10!' }}
+                    </p>
+                    <p class="upsell-product-block__subtext">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                      Discount applies automatically at checkout
+                    </p>
+                  </div>
+                </div>
+              {% endif %}
+
             {%- when 'product_variations' -%}
               {% assign metafield = block.settings.option_value_metafield | strip | split: '.' %}
 
@@ -4538,6 +4573,22 @@ window.dataLayer.push({
           "id": "background_color",
           "default": "transparent",
           "label": "t:sections.settings.settings.background-color.label"
+        }
+      ]
+    },
+    {
+      "type": "upsell_promo",
+      "name": "Upsell Offer Banner",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "This block only shows on products tagged with the upsell trigger tag. Configure the tag in Theme Settings > Cart > Upsell offer."
+        },
+        {
+          "type": "text",
+          "id": "upsell_text",
+          "default": "Buy 2 nail sets, save $10!",
+          "label": "Banner text"
         }
       ]
     },

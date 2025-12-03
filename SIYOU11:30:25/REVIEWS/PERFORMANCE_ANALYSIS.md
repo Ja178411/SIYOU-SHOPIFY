@@ -4,13 +4,14 @@
 **Analysis Date:** November 30, 2025
 **Theme:** Wonder Theme v2.1.2 by Nethype (Shopify 2.0)
 
-> **Last Verified:** November 30, 2025
+> **Last Verified:** December 3, 2025
 > **Verification Notes:**
 > - ✅ Hero image fix (loading="eager", fetchpriority="high") confirmed implemented
 > - ✅ Swiper CSS count updated: 12 files (10 sections + 2 layouts)
 > - ✅ CSS architecture counts corrected: 73 stylesheet_tag in 39 files, 83 style blocks
 > - ✅ Added INP (Interaction to Next Paint) metric info for 2025 compliance
 > - ✅ Updated estimated improvements to reflect completed optimizations
+> - ✅ Icon font now uses `font-display: swap`; remaining recommendations are about optional payload reduction rather than a blocking issue
 
 ---
 
@@ -179,18 +180,17 @@ The SIYOU Nails website demonstrates **strong desktop performance (94/100)** but
 ### Issues Found
 
 **Icon Font (`icomoon`):**
-- Uses `font-display: block` instead of `swap`
-- Includes outdated formats (EOT, SVG)
+- Now uses `font-display: swap` (issue resolved in `layout/theme.liquid`)
+- Still includes outdated formats (EOT, SVG) kept for legacy browser support
 - Location: `layout/theme.liquid:235-245`
 
-**Recommended Fix:**
+**Optional Future Optimization:**
 ```css
 @font-face {
   font-family: 'icomoon';
   src: url(...) format('woff2'),
-       url(...) format('woff'),
-       url(...) format('truetype');
-  font-display: swap; /* Changed from 'block' */
+       url(...) format('woff');
+  font-display: swap;
 }
 ```
 

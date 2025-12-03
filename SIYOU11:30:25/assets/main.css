@@ -5876,6 +5876,45 @@ body .wt-filter__close.wt-filter__close {
   height: 1.6rem;
 }
 
+/* Cart buttons row - side by side layout */
+.wt-cart__buttons-row {
+  display: flex;
+  gap: calc(var(--gap, 8px) * 1.5);
+  width: 100%;
+}
+.wt-cart__buttons-row .wt-cart__cta,
+.wt-cart__buttons-row .btn-checkout {
+  flex: 1;
+  width: auto;
+}
+.wt-cart__buttons-row .btn-continue-shopping {
+  flex: 1;
+}
+
+/* Continue Shopping button - secondary/outline style */
+.btn-continue-shopping {
+  background: transparent;
+  color: var(--color-button-primary-background);
+  border: 1px solid var(--color-button-primary-background);
+  border-radius: var(--border-radius-button);
+  font-family: var(--font-button);
+  font-size: var(--font-button-size);
+  font-weight: var(--font-button-weight);
+  font-style: var(--font-button-style);
+  text-transform: var(--font-button-transform, none);
+  letter-spacing: var(--font-button-letter-spacing, normal);
+  padding: calc(var(--gap, 8px) * 1.5) calc(var(--gap, 8px) * 2);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+@media (hover: hover) {
+  .btn-continue-shopping:hover {
+    background: var(--color-button-primary-background);
+    color: var(--color-button-primary-text);
+    border-color: var(--color-button-primary-background);
+  }
+}
+
 .cart-item__old-price {
   text-decoration: line-through;
 }
@@ -11188,19 +11227,21 @@ main#root > .wt-featured-nav {
 /* notification popup */
 .not-pu-section {
   position: fixed;
-  bottom: 50%;
-  right: 50%;
-  transform: translate(50%, 50%);
   z-index: 1999999;
   width: 90%;
   max-width: var(--max-width, 450px);
+  /* Default to bottom-right on mobile */
+  bottom: 16px;
+  right: 16px;
+  left: auto;
+  top: auto;
 }
 @media (min-width: 1200px) {
   .not-pu-section {
-    top: var(--top, inital);
-    bottom: var(--bottom, inital);
-    left: var(--left, inital);
-    right: var(--right, inital);
+    top: var(--top, auto);
+    bottom: var(--bottom, auto);
+    left: var(--left, auto);
+    right: var(--right, auto);
     transform: translate(var(--translateX, 0), var(--translateY, 0));
   }
 }
@@ -11265,6 +11306,15 @@ main#root > .wt-featured-nav {
 }
 .not-pu-section .newsletter__nav svg {
   color: var(--color-custom-text, var(--color-text));
+}
+.not-pu-section .newsletter__close-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .not-pu-section .newsletter__fieldset {
   flex-direction: column;
@@ -13138,5 +13188,80 @@ body.no-focus-visible .wt-page-nav-mega__sublist__link:focus-visible[data-menu-l
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 8px 0px;
+  }
+}
+
+/* ========================================
+   UPSELL OFFER STYLES - SIYOU Brand Colors
+   ======================================== */
+
+/* Upsell Banner in Cart Drawer */
+.wt-cart__cross-sell .wt-cart__upsell-banner {
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 2px 8px rgba(255, 156, 181, 0.4);
+}
+
+@media (max-width: 480px) {
+  .wt-cart__cross-sell .wt-cart__upsell-banner {
+    padding: 10px 12px;
+    font-size: 13px;
+    gap: 8px;
+  }
+}
+
+.wt-cart__upsell-banner .upsell-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .wt-cart__upsell-banner .upsell-icon {
+    font-size: 18px;
+  }
+}
+
+.wt-cart__upsell-banner strong {
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Upsell Badge on Cross-Sell Product Cards */
+.wt-dot__picture-wrapper {
+  position: relative;
+  display: block;
+}
+
+.shoppable-product-card__badge {
+  position: absolute;
+  z-index: 10;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  top: 8px;
+  left: 8px;
+}
+
+.shoppable-product-card__badge--upsell {
+  box-shadow: 0 2px 6px rgba(255, 156, 181, 0.5);
+}
+
+@media (max-width: 480px) {
+  .shoppable-product-card__badge {
+    padding: 3px 6px;
+    font-size: 9px;
+    top: 6px;
+    left: 6px;
   }
 }

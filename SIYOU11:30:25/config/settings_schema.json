@@ -899,6 +899,89 @@
       },
       {
         "type": "header",
+        "content": "Upsell offer",
+        "info": "Display discount messaging when specific products are added to cart"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_upsell_offer",
+        "default": false,
+        "label": "Enable upsell discount messaging"
+      },
+      {
+        "type": "text",
+        "id": "upsell_product_tag",
+        "default": "upsell-trigger",
+        "label": "Tag that triggers upsell offer",
+        "info": "Only products with this tag will trigger the upsell banner when added to cart (case-insensitive)"
+      },
+      {
+        "type": "text",
+        "id": "upsell_badge_text",
+        "default": "$10 OFF",
+        "label": "Badge text"
+      },
+      {
+        "type": "text",
+        "id": "upsell_banner_text",
+        "default": "Add another nail set & save $10!",
+        "label": "Banner text"
+      },
+      {
+        "type": "text",
+        "id": "upsell_icon",
+        "default": "🎁",
+        "label": "Banner icon (emoji)"
+      },
+      {
+        "type": "color",
+        "id": "upsell_badge_background",
+        "default": "#ff9cb5",
+        "label": "Badge background color"
+      },
+      {
+        "type": "color",
+        "id": "upsell_badge_text_color",
+        "default": "#ffffff",
+        "label": "Badge text color"
+      },
+      {
+        "type": "color",
+        "id": "upsell_banner_background",
+        "default": "#ff9cb5",
+        "label": "Banner background color"
+      },
+      {
+        "type": "header",
+        "content": "Upsell Popup",
+        "info": "Show a popup after adding trigger products to cart"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_upsell_popup",
+        "default": true,
+        "label": "Enable upsell popup"
+      },
+      {
+        "type": "text",
+        "id": "upsell_popup_title",
+        "default": "Unlock Your $10 Discount!",
+        "label": "Popup title"
+      },
+      {
+        "type": "text",
+        "id": "upsell_popup_subtitle",
+        "default": "Add another nail set to save $10",
+        "label": "Popup subtitle"
+      },
+      {
+        "type": "collection",
+        "id": "upsell_popup_collection",
+        "label": "Products to show in popup",
+        "info": "Select a collection. Products with the trigger tag will be displayed."
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.cart.settings.header__3.content",
         "info": "t:settings_schema.cart.settings.header__3.info"
       },

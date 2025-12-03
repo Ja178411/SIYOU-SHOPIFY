@@ -180,11 +180,13 @@
     <link rel="preload" href="{{ 'main.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ 'main.css' | asset_url }}"></noscript>
     {{ 'custom.css' | asset_url | stylesheet_tag }}
+    {{ 'upsell-funnel.css' | asset_url | stylesheet_tag }}
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'base.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'upsell-funnel.js' | asset_url }}" defer="defer"></script>
 
     <script src="{{ 'color-swatch.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'localization-form.js' | asset_url }}" defer="defer"></script>
@@ -436,6 +438,10 @@
       <script src="{{ 'countdown-timer.js' | asset_url }}" defer="defer"></script>
       <script src="{{ 'img-comparison-slider-v8.js' | asset_url }}" defer="defer"></script>
     {% endif %}
+
+    {% comment %} Upsell Popup - shows after adding trigger products to cart {% endcomment %}
+    {% render 'upsell-popup' %}
+    
     <!-- Wonder Theme v2.1.2 -->
   </body>
 </html>

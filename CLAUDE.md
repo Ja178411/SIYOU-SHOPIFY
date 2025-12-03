@@ -50,8 +50,15 @@ SIYOU11:30:25/
 - `pubsub.js` - Pub/sub pattern for component communication (`subscribe()`, `publish()`)
 - `global.js` - Shopify utility functions and custom elements
 - `base.js` - Core UI Web Components (DrawerNavSection, etc.)
-- `constants.js` - Global constants
+- `constants.js` - Global constants including `PUB_SUB_EVENTS`
 - `variants.js` - Product variant selection logic
+
+**Pub/Sub Events** (defined in `constants.js`):
+- `cart-update` - Cart contents changed
+- `cart-error` - Cart operation failed
+- `variant-change` - Product variant selection changed
+- `cart-drawer-open/close` - Cart drawer state
+- `quick-buy-drawer-open/close` - Quick add modal state
 
 **Key Web Components (extend HTMLElement with connectedCallback):**
 - Cart: `cart-drawer.js`, `cart.js`, `quick-add.js`
@@ -118,10 +125,20 @@ Sections override CSS variables inline based on settings:
 ### AI-Generated Blocks
 The `blocks/` directory contains AI-generated custom blocks with naming convention `ai_gen_block_[hash].liquid`. These follow the same schema pattern as sections.
 
+### Consent Mode Pattern
+GTM Consent Mode v2 is configured at the top of `theme.liquid`:
+```liquid
+gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denied', ... });
+{% if customer_privacy %}
+  gtag('consent', 'update', { 'ad_storage': {% if customer_privacy.marketing_allowed %}'granted'{% else %}'denied'{% endif %}, ... });
+{% endif %}
+```
+This pattern ensures privacy compliance by defaulting to denied and updating based on Shopify's customer privacy settings.
+
 ## Third-Party Integrations
 
-- **Google Tag Manager** (GTM-T6TT66MQ) with Consent Mode v2
-- **Facebook Pixel** (1151744733531057) - deduplicated via `snippets/prevent-duplicate-pixels.liquid`
+- **Google Tag Manager** (GTM-T6TT66MQ) with Consent Mode v2 - defaults to denied, updates based on Shopify customer_privacy
+- **Facebook Pixel** (1151744733531057) - handled by official Facebook & Instagram app
 - **AVADA SEO Suite** - SEO optimization
 - **Swiper** - Touch slider/carousel (CSS loaded in theme.liquid)
 - **PhotoSwipe** - Image lightbox gallery
@@ -147,7 +164,6 @@ The `blocks/` directory contains AI-generated custom blocks with naming conventi
 - Hero preload: `layout/theme.liquid:72-77`
 - CSS loading: `layout/theme.liquid:178-195`
 - Font loading: `layout/theme.liquid:225-318`
-- Duplicate pixel prevention: `snippets/prevent-duplicate-pixels.liquid`
 
 ## Important Snippets
 
