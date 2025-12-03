@@ -135,14 +135,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Lighter backdrop */
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5); /* Fallback for browsers without backdrop-filter */
   z-index: 9998;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Backdrop blur for browsers that support it */
+@supports (backdrop-filter: blur(4px)) or (-webkit-backdrop-filter: blur(4px)) {
+  .upsell-popup-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
 }
 
 .upsell-popup-overlay.active {
@@ -167,6 +174,7 @@
   box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
   pointer-events: none;
   font-family: var(--font-body);
+  will-change: transform; /* Optimize for iOS rendering */
 }
 
 .upsell-popup.active {
@@ -432,7 +440,13 @@
 
 .upsell-popup__product-add:hover {
   background: #D96A85; /* Pink on hover */
-  transform: translateY(-1px);
+}
+
+/* Only apply transform hover on devices that support hover */
+@media (hover: hover) {
+  .upsell-popup__product-add:hover {
+    transform: translateY(-1px);
+  }
 }
 
 .upsell-popup__product-add:disabled {
@@ -512,4 +526,232 @@
 
 .upsell-popup__skip:hover {
   color: #151515;
+}
+
+/* ----------------------------------------
+   4. MOBILE-SPECIFIC OPTIMIZATIONS
+   ---------------------------------------- */
+
+/* Safe area support for notched devices (iPhone X+) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .upsell-popup {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .upsell-popup__footer {
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Mobile optimizations (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Reduce header padding on mobile */
+  .upsell-popup__header {
+    padding: 20px 16px 12px;
+  }
+
+  /* Larger close button touch target on mobile */
+  .upsell-popup__close {
+    width: 44px;
+    height: 44px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .upsell-popup__close svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Responsive step indicator */
+  .upsell-popup__step-indicator {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .upsell-popup__step-badge {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .upsell-popup__step-line {
+    flex: 0 0 40px;
+  }
+
+  .upsell-popup__step-check {
+    font-size: 12px;
+  }
+
+  /* Smaller title on mobile */
+  .upsell-popup__title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .upsell-popup__subtitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  /* Hint text - allow wrapping on narrow screens */
+  .upsell-popup__hint {
+    font-size: 12px;
+    padding: 6px 12px;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  /* Reduce body padding */
+  .upsell-popup__body {
+    padding: 12px 16px;
+  }
+
+  .upsell-popup__products {
+    gap: 10px;
+  }
+
+  /* Product card mobile layout */
+  .upsell-popup__product {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .upsell-popup__product-badge {
+    font-size: 9px;
+    padding: 3px 8px;
+    top: -6px;
+    left: 10px;
+  }
+
+  .upsell-popup__product-image {
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
+  }
+
+  /* Product title - handle overflow */
+  .upsell-popup__product-title {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .upsell-popup__product-price {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  /* Larger touch target for add button */
+  .upsell-popup__product-add {
+    padding: 10px 14px;
+    font-size: 11px;
+    min-height: 40px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Footer mobile */
+  .upsell-popup__footer {
+    padding: 12px 16px 20px;
+  }
+
+  /* Larger skip button touch target */
+  .upsell-popup__skip {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+
+  /* Empty state mobile */
+  .upsell-popup__empty {
+    padding: 16px 8px 24px;
+  }
+
+  .upsell-popup__empty-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+
+  .upsell-popup__empty-title {
+    font-size: 15px;
+  }
+
+  .upsell-popup__empty-text {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .upsell-popup__empty-cta {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+}
+
+/* Very small screens (iPhone SE, small Android) */
+@media (max-width: 374px) {
+  .upsell-popup__header {
+    padding: 16px 12px 10px;
+  }
+
+  .upsell-popup__step-indicator {
+    gap: 8px;
+  }
+
+  .upsell-popup__step-badge {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+
+  .upsell-popup__step-line {
+    flex: 0 0 30px;
+  }
+
+  .upsell-popup__title {
+    font-size: 16px;
+  }
+
+  .upsell-popup__subtitle {
+    font-size: 13px;
+  }
+
+  .upsell-popup__hint {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .upsell-popup__body {
+    padding: 10px 12px;
+  }
+
+  .upsell-popup__product {
+    padding: 8px;
+    gap: 10px;
+  }
+
+  .upsell-popup__product-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  .upsell-popup__product-title {
+    font-size: 12px;
+  }
+
+  .upsell-popup__product-add {
+    padding: 8px 12px;
+    font-size: 10px;
+    min-height: 40px; /* Maintain 40px touch target */
+  }
+}
+
+/* Prevent body scroll when popup is open */
+body.upsell-popup-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }

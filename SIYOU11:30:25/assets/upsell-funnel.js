@@ -118,14 +118,23 @@
       }
     }
 
+    // Store scroll position for iOS scroll lock
+    let scrollPosition = 0;
+
     /**
      * Open the popup
      */
     function openPopup() {
+      // Save scroll position before locking (for iOS)
+      scrollPosition = window.pageYOffset;
+
       popup.classList.add('active');
       overlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      
+
+      // Use class-based scroll lock (better for iOS)
+      document.body.classList.add('upsell-popup-open');
+      document.body.style.top = `-${scrollPosition}px`;
+
       // Focus first add button for accessibility
       const firstAddBtn = popup.querySelector('[data-upsell-add]:not([disabled])');
       if (firstAddBtn) {
@@ -139,7 +148,11 @@
     function closePopup() {
       popup.classList.remove('active');
       overlay.classList.remove('active');
-      document.body.style.overflow = '';
+
+      // Remove scroll lock and restore position
+      document.body.classList.remove('upsell-popup-open');
+      document.body.style.top = '';
+      window.scrollTo(0, scrollPosition);
     }
 
     /**
