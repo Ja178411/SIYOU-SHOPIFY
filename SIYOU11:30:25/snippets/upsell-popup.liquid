@@ -11,13 +11,13 @@
 
   <div id="upsell-popup-overlay" class="upsell-popup-overlay" data-upsell-overlay></div>
 
-  <div id="upsell-popup" class="upsell-popup" data-upsell-popup data-upsell-tag="{{ upsell_tag }}">
+  <div id="upsell-popup" class="upsell-popup" data-upsell-popup data-upsell-tag="{{ upsell_tag }}" role="dialog" aria-modal="true" aria-labelledby="upsell-popup-title" aria-describedby="upsell-popup-subtitle">
     <div class="upsell-popup__header">
-      <button type="button" class="upsell-popup__close" data-upsell-close aria-label="Close">
+      <button type="button" class="upsell-popup__close" data-upsell-close aria-label="Close popup">
         {% render 'icons', id: 'close' %}
       </button>
 
-      <div class="upsell-popup__step-indicator">
+      <div class="upsell-popup__step-indicator" aria-hidden="true">
         <span class="upsell-popup__step-badge">
           <span class="upsell-popup__step-check">✓</span>
           <span class="upsell-popup__step-number">1</span>
@@ -28,8 +28,8 @@
         </span>
       </div>
 
-      <h2 class="upsell-popup__title">{{ settings.upsell_popup_title | default: "Step 1 Complete!" }}</h2>
-      <p class="upsell-popup__subtitle">{{ settings.upsell_popup_subtitle | default: 'Add any nail set to save $10' }}</p>
+      <h2 id="upsell-popup-title" class="upsell-popup__title">{{ settings.upsell_popup_title | default: "Step 1 Complete!" }}</h2>
+      <p id="upsell-popup-subtitle" class="upsell-popup__subtitle">{{ settings.upsell_popup_subtitle | default: 'Add any nail set to save $10' }}</p>
       <p class="upsell-popup__hint">Your Winter Set qualifies you for this discount. Pick another set below!</p>
     </div>
 
@@ -90,6 +90,22 @@
           {% endif %}
         {% endfor %}
 
+        {% comment %} View All section - shows when products are displayed {% endcomment %}
+        {% if shown_count > 0 %}
+          {% assign view_all_url = settings.upsell_view_all_collection.url | default: '/collections/all' %}
+          {% assign view_all_text = settings.upsell_view_all_text | default: 'Browse All Nail Sets →' %}
+
+          <div class="upsell-popup__view-all">
+            <p class="upsell-popup__view-all-note">
+              <span class="upsell-popup__view-all-icon">✨</span>
+              Any nail set qualifies for $10 off!
+            </p>
+            <a href="{{ view_all_url }}" class="upsell-popup__view-all-link" data-upsell-close>
+              {{ view_all_text }}
+            </a>
+          </div>
+        {% endif %}
+
         {% comment %} Improved empty state {% endcomment %}
         {% if shown_count == 0 %}
           <div class="upsell-popup__empty">
@@ -101,7 +117,7 @@
             </div>
             <p class="upsell-popup__empty-title">Browse Our Collection</p>
             <p class="upsell-popup__empty-text">Add any nail set to complete Step 2 and save $10 at checkout</p>
-            <a href="/collections/all" class="upsell-popup__empty-cta">
+            <a href="/collections/all" class="upsell-popup__empty-cta" data-upsell-close>
               Shop All Nail Sets
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7"/>

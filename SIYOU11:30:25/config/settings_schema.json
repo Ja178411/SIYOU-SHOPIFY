@@ -985,6 +985,18 @@
         "info": "Select a collection. Only products with 'nail-set' tag (excluding trigger products) will show."
       },
       {
+        "type": "collection",
+        "id": "upsell_view_all_collection",
+        "label": "View All collection link",
+        "info": "Collection page to link to from 'Browse All' button. Defaults to /collections/all if not set."
+      },
+      {
+        "type": "text",
+        "id": "upsell_view_all_text",
+        "label": "Browse All button text",
+        "default": "Browse All Nail Sets →"
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.cart.settings.header__3.content",
         "info": "t:settings_schema.cart.settings.header__3.info"

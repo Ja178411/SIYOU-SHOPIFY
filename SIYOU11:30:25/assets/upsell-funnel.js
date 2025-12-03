@@ -40,11 +40,15 @@
 
     // Close button handlers
     closeButtons.forEach(btn => {
-      btn.addEventListener('click', closePopup);
+      btn.addEventListener('click', (e) => {
+        // If this is a link (View All), skip scroll restoration since we're navigating
+        const isNavigationLink = btn.tagName === 'A' && btn.href;
+        closePopup(isNavigationLink);
+      });
     });
 
     // Overlay click to close
-    overlay.addEventListener('click', closePopup);
+    overlay.addEventListener('click', () => closePopup());
 
     // Escape key to close
     document.addEventListener('keydown', (e) => {
@@ -53,9 +57,57 @@
       }
     });
 
-    // Add to cart buttons in popup
-    addButtons.forEach(btn => {
-      btn.addEventListener('click', handlePopupAddToCart);
+    // Add to cart buttons in popup - SIMPLE APPROACH
+    // Use pointerup instead of click for immediate mobile response
+    addButtons.forEach((btn, index) => {
+      let isProcessing = false;
+      
+      // #region agent log
+      console.log('[UPSELL DEBUG] Setting up button', index, 'variantId:', btn.dataset.variantId);
+      // #endregion
+      
+      // Use pointerup for immediate response on both touch and mouse
+      btn.addEventListener('pointerup', async (e) => {
+        // #region agent log
+        console.log('[UPSELL DEBUG] pointerup on button', index, 'pointerType:', e.pointerType, 'isProcessing:', isProcessing);
+        // #endregion
+        
+        // Prevent any other handlers
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (isProcessing || btn.disabled) {
+          console.log('[UPSELL DEBUG] Skipping - already processing or disabled');
+          return;
+        }
+        
+        isProcessing = true;
+        
+        try {
+          await handlePopupAddToCart({
+            currentTarget: btn,
+            type: e.type,
+            stopPropagation: () => {},
+            stopImmediatePropagation: () => {}
+          });
+        } finally {
+          isProcessing = false;
+        }
+      });
+      
+      // Prevent click from firing (pointerup handles it)
+      btn.addEventListener('click', (e) => {
+        // #region agent log
+        console.log('[UPSELL DEBUG] click blocked on button', index);
+        // #endregion
+        e.preventDefault();
+        e.stopPropagation();
+      }, true);
+      
+      // Prevent touchend from causing issues
+      btn.addEventListener('touchend', (e) => {
+        e.stopPropagation();
+      }, { passive: true });
     });
 
     /**
@@ -126,14 +178,18 @@
      */
     function openPopup() {
       // Save scroll position before locking (for iOS)
-      scrollPosition = window.pageYOffset;
+      scrollPosition = window.scrollY || window.pageYOffset;
 
       popup.classList.add('active');
       overlay.classList.add('active');
 
-      // Use class-based scroll lock (better for iOS)
+      // Simple scroll lock - avoid position:fixed to prevent conflicts with cart drawer
       document.body.classList.add('upsell-popup-open');
-      document.body.style.top = `-${scrollPosition}px`;
+
+      // Only use position:fixed trick if cart drawer is NOT open
+      if (!document.body.classList.contains('page-overlay-cart-on')) {
+        document.body.style.top = `-${scrollPosition}px`;
+      }
 
       // Focus first add button for accessibility
       const firstAddBtn = popup.querySelector('[data-upsell-add]:not([disabled])');
@@ -144,27 +200,50 @@
 
     /**
      * Close the popup
+     * @param {boolean} skipScrollRestore - Skip scroll restoration (for navigation clicks)
      */
-    function closePopup() {
+    function closePopup(skipScrollRestore = false) {
       popup.classList.remove('active');
       overlay.classList.remove('active');
 
-      // Remove scroll lock and restore position
+      // Check if we applied the position:fixed scroll lock
+      const hadPositionLock = document.body.style.top !== '';
+
+      // Remove scroll lock
       document.body.classList.remove('upsell-popup-open');
       document.body.style.top = '';
-      window.scrollTo(0, scrollPosition);
+
+      // Only restore scroll if we had position lock and not skipping
+      if (hadPositionLock && !skipScrollRestore) {
+        window.scrollTo(0, scrollPosition);
+      }
     }
 
     /**
      * Handle add to cart from popup
      */
     async function handlePopupAddToCart(e) {
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/98f7ec45-d329-4318-ac83-ac0b0bc5854e',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'upsell-funnel.js:191',message:'handlePopupAddToCart ENTRY',data:{type:e.type,timeStamp:e.timeStamp,buttonDisabled:e.currentTarget.disabled},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+      // #endregion
+      
+      // Stop event from propagating to parent elements (prevents swipe handlers)
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+      
       const button = e.currentTarget;
       const variantId = button.dataset.variantId;
       const productTitle = button.dataset.productTitle;
       const productCard = button.closest('.upsell-popup__product');
 
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/98f7ec45-d329-4318-ac83-ac0b0bc5854e',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'upsell-funnel.js:201',message:'Before validation check',data:{variantId:variantId||'MISSING',buttonDisabled:button.disabled},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+
       if (!variantId || button.disabled) {
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/98f7ec45-d329-4318-ac83-ac0b0bc5854e',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'upsell-funnel.js:202',message:'EARLY RETURN',data:{reason:!variantId?'no variantId':'button disabled'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
         return;
       }
 
@@ -174,7 +253,12 @@
       const originalText = button.textContent;
       button.textContent = 'Adding...';
 
+      // #region agent log
+      fetch('http://127.0.0.1:7242/ingest/98f7ec45-d329-4318-ac83-ac0b0bc5854e',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'upsell-funnel.js:210',message:'Before fetch',data:{variantId},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+      // #endregion
+
       try {
+        const fetchStartTime = Date.now();
         const response = await fetch('/cart/add.js', {
           method: 'POST',
           headers: {
@@ -186,6 +270,10 @@
           })
         });
 
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/98f7ec45-d329-4318-ac83-ac0b0bc5854e',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'upsell-funnel.js:223',message:'After fetch',data:{ok:response.ok,status:response.status,fetchDuration:Date.now()-fetchStartTime},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
+
         if (!response.ok) {
           throw new Error('Failed to add to cart');
         }
@@ -196,35 +284,44 @@
         button.style.background = '#28a745';
         productCard.classList.add('added');
 
-        // Publish cart update event
-        if (typeof publish === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
-          publish(PUB_SUB_EVENTS.cartUpdate, {
-            source: 'upsell-popup',
-            productVariantId: variantId
-          });
-        }
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/98f7ec45-d329-4318-ac83-ac0b0bc5854e',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'upsell-funnel.js:235',message:'Success state set, before setTimeout',data:{timestamp:Date.now()},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+        // #endregion
 
-        // Dispatch cart-drawer:refresh event to update the cart drawer HTML
-        // This is necessary to re-render the progress bar with updated count
-        document.dispatchEvent(new CustomEvent('cart-drawer:refresh', {
-          bubbles: true,
-          detail: { source: 'upsell-popup' }
-        }));
-
-        // Close popup after brief delay to show success
+        // Close popup first with short delay to show success, THEN update cart
+        // This prevents race conditions with cart drawer's body class
         setTimeout(() => {
+          // #region agent log
+          fetch('http://127.0.0.1:7242/ingest/98f7ec45-d329-4318-ac83-ac0b0bc5854e',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'upsell-funnel.js:236',message:'setTimeout callback fired',data:{timestamp:Date.now()},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+          // #endregion
           closePopup();
 
-          // Reset button state for next time
-          setTimeout(() => {
-            button.textContent = originalText;
-            button.style.background = '';
-            button.disabled = false;
-            productCard.classList.remove('added');
-          }, 500);
-        }, 1200);
+          // Reset button state for next time (in case popup reopens)
+          button.textContent = originalText;
+          button.style.background = '';
+          button.disabled = false;
+          productCard.classList.remove('added');
+
+          // Now dispatch cart events AFTER popup is closed
+          // This prevents the mobile opacity conflict
+          if (typeof publish === 'function' && typeof PUB_SUB_EVENTS !== 'undefined') {
+            publish(PUB_SUB_EVENTS.cartUpdate, {
+              source: 'upsell-popup',
+              productVariantId: variantId
+            });
+          }
+
+          // Dispatch cart-drawer:refresh event to update the cart drawer HTML
+          document.dispatchEvent(new CustomEvent('cart-drawer:refresh', {
+            bubbles: true,
+            detail: { source: 'upsell-popup' }
+          }));
+        }, 600);
 
       } catch (error) {
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/98f7ec45-d329-4318-ac83-ac0b0bc5854e',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'upsell-funnel.js:260',message:'CATCH ERROR',data:{error:error.message,stack:error.stack?.substring(0,200)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
         console.error('Upsell: Error adding to cart', error);
         button.classList.remove('loading');
         button.textContent = 'Error - Try Again';

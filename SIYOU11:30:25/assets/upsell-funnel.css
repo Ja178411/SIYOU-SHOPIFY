@@ -175,6 +175,8 @@
   pointer-events: none;
   font-family: var(--font-body);
   will-change: transform; /* Optimize for iOS rendering */
+  /* Prevent horizontal swipe gestures */
+  touch-action: pan-y;
 }
 
 .upsell-popup.active {
@@ -354,6 +356,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  /* Prevent swipe gestures on product list */
+  touch-action: pan-y;
 }
 
 /* Product card */
@@ -367,6 +371,8 @@
   position: relative;
   transition: all 0.2s ease;
   align-items: center;
+  /* Prevent swipe gestures on product cards */
+  touch-action: pan-y;
 }
 
 .upsell-popup__product:hover {
@@ -436,10 +442,38 @@
   letter-spacing: 1px;
   font-family: var(--font-button);
   width: auto;
+  /* Prevent swipe gestures on buttons */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .upsell-popup__product-add:hover {
   background: #D96A85; /* Pink on hover */
+}
+
+.upsell-popup__product-add.loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+
+.upsell-popup__product-add.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: upsell-spinner 0.6s linear infinite;
+}
+
+@keyframes upsell-spinner {
+  to { transform: rotate(360deg); }
 }
 
 /* Only apply transform hover on devices that support hover */
@@ -454,6 +488,53 @@
   color: #999;
   cursor: not-allowed;
   transform: none;
+}
+
+/* View All Section */
+.upsell-popup__view-all {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed #eee;
+  text-align: center;
+}
+
+.upsell-popup__view-all-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.upsell-popup__view-all-icon {
+  font-size: 14px;
+}
+
+.upsell-popup__view-all-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  color: #151515;
+  border: 1px solid #151515;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-height: 44px;
+}
+
+.upsell-popup__view-all-link:hover {
+  background: #151515;
+  color: #fff;
 }
 
 /* Empty state */
@@ -653,6 +734,23 @@
     letter-spacing: 0.5px;
   }
 
+  /* View All section mobile */
+  .upsell-popup__view-all {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .upsell-popup__view-all-note {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .upsell-popup__view-all-link {
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 100%;
+  }
+
   /* Footer mobile */
   .upsell-popup__footer {
     padding: 12px 16px 20px;
@@ -746,12 +844,61 @@
     font-size: 10px;
     min-height: 40px; /* Maintain 40px touch target */
   }
+
+  /* View All section on very small screens */
+  .upsell-popup__view-all {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .upsell-popup__view-all-note {
+    font-size: 11px;
+  }
+
+  .upsell-popup__view-all-link {
+    padding: 10px 16px;
+    font-size: 11px;
+  }
 }
 
 /* Prevent body scroll when popup is open */
 body.upsell-popup-open {
   overflow: hidden;
+}
+
+/* Only use position:fixed when cart drawer is NOT open
+   (cart drawer already handles scroll lock) */
+body.upsell-popup-open:not(.page-overlay-cart-on) {
   position: fixed;
   width: 100%;
   height: 100%;
+}
+
+/* ----------------------------------------
+   5. CRITICAL FIX: Cart Drawer Opacity Conflict
+   ----------------------------------------
+   The cart drawer CSS has: body.page-overlay-cart-on > * { opacity: 0 }
+   on mobile, which hides ALL direct children of body except cart-drawer.
+   We MUST override this for the upsell popup to remain visible.
+   ---------------------------------------- */
+
+@media (max-width: 599px) {
+  /* Keep upsell popup and overlay visible when cart drawer is open */
+  body.page-overlay-cart-on > #upsell-popup-overlay,
+  body.page-overlay-cart-on > #upsell-popup {
+    opacity: 1 !important;
+  }
+
+  /* When upsell popup is active, ensure it's visible and interactable */
+  body.page-overlay-cart-on #upsell-popup.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+  }
+
+  body.page-overlay-cart-on #upsell-popup-overlay.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
 }
