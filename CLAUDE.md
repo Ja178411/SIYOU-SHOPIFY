@@ -135,6 +135,37 @@ gtag('consent', 'default', { 'analytics_storage': 'denied', 'ad_storage': 'denie
 ```
 This pattern ensures privacy compliance by defaulting to denied and updating based on Shopify's customer privacy settings.
 
+## Custom SIYOU Features
+
+### Upsell Funnel System
+Post-add-to-cart promotional popup triggered by product tags:
+- **Files**: `snippets/upsell-popup.liquid`, `assets/upsell-funnel.js`, `assets/upsell-funnel.css`
+- **Settings**: `settings.enable_upsell_offer`, `settings.enable_upsell_popup`, `settings.upsell_product_tag`
+- **Global Config**: `window.SIYOU_UPSELL` object (triggerTag, enabled, openPopup(), closePopup(), resetSession())
+- **Trigger**: Subscribes to `PUB_SUB_EVENTS.cartUpdate` with `source: 'product-form'`
+- **Tag Check**: Products with trigger tag (default: `upsell-trigger`) activate the popup
+
+### Custom Cart Events
+Extended event system beyond base theme:
+- `cart-drawer:refresh` - Custom event to refresh cart drawer HTML without full page reload
+  - Dispatched after upsell add-to-cart completes
+  - Listened by `cart-drawer.js` in `connectedCallback()`
+  - Usage: `document.dispatchEvent(new CustomEvent('cart-drawer:refresh', { bubbles: true, detail: { source: 'upsell-popup' } }))`
+
+### iOS Scroll Lock Pattern
+The upsell popup uses a careful scroll lock approach to handle iOS Safari quirks:
+```javascript
+// Save position before locking
+scrollPosition = window.scrollY;
+// Only use position:fixed trick if cart drawer is NOT open
+if (!document.body.classList.contains('page-overlay-cart-on')) {
+  document.body.style.top = `-${scrollPosition}px`;
+}
+```
+
+### Debug Logging Pattern
+The upsell funnel includes debug logging wrapped in `#region agent log` comments. These send telemetry to a local debug server and console logs. To disable in production, search for `#region agent log` and remove those blocks, or keep them for debugging (they fail silently in production).
+
 ## Third-Party Integrations
 
 - **Google Tag Manager** (GTM-T6TT66MQ) with Consent Mode v2 - defaults to denied, updates based on Shopify customer_privacy

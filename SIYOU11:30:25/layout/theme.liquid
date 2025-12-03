@@ -184,6 +184,7 @@
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'cart-api-interceptor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'base.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'upsell-funnel.js' | asset_url }}" defer="defer"></script>
@@ -331,7 +332,7 @@
     {% assign template_name = 'empty' | handleize %}
   {% endif %}
 
-	  <body class="template-{{ template_name }} nav-drawer-big mobile-nav" {% if settings.animations_pictures %}data-animate-picures-onhover{% endif %}>
+	  <body class="template-{{ template_name }} nav-drawer-big mobile-nav{% if settings.enable_holiday_mode %} holiday-mode{% endif %}" {% if settings.animations_pictures %}data-animate-picures-onhover{% endif %}>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6TT66MQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -441,7 +442,7 @@
 
     {% comment %} Upsell Popup - shows after adding trigger products to cart {% endcomment %}
     {% render 'upsell-popup' %}
-    
+
     <!-- Wonder Theme v2.1.2 -->
   </body>
 </html>

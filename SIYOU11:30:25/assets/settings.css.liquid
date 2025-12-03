@@ -174,6 +174,45 @@
     --color-footer-text-rgb: {{ settings['color-footer-text'] | color_to_rgb | remove: 'rgb(' | remove: ')' }};
     
 
+    /* Holiday Mode Overrides */
+    {%- if settings.enable_holiday_mode -%}
+    {%- assign holiday_accent = settings.holiday_accent_color | default: '#D4AF37' -%}
+    {%- assign holiday_brightness = holiday_accent | color_brightness -%}
+
+    --color-holiday-accent: {{ holiday_accent }};
+    --color-holiday-accent-rgb: {{ holiday_accent | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+    {%- if holiday_brightness > 160 -%}
+    --color-holiday-contrast: #000000;
+    {%- else -%}
+    --color-holiday-contrast: #ffffff;
+    {%- endif -%}
+
+    --color-action-background: var(--color-holiday-accent);
+    --color-action-background-rgb: {{ holiday_accent | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+    --color-action-text: var(--color-holiday-contrast);
+
+    --color-button-primary-background: var(--color-holiday-accent);
+    {%- if holiday_brightness > 128 -%}
+    --color-button-primary-background-hover: {{ holiday_accent | color_darken: 12 }};
+    {%- else -%}
+    --color-button-primary-background-hover: {{ holiday_accent | color_lighten: 10 }};
+    {%- endif -%}
+    --color-button-primary-text: var(--color-holiday-contrast);
+    --color-button-primary-text-hover: var(--color-holiday-contrast);
+
+    --color-button-main-bg: var(--color-holiday-accent);
+    --color-button-main-text: var(--color-holiday-contrast);
+    --color-button-cta-bg: var(--color-holiday-accent);
+    --color-button-cta-text: var(--color-holiday-contrast);
+
+    --color-sale-badge-background: var(--color-holiday-accent);
+    --color-sale-badge-text: var(--color-holiday-contrast);
+    --color-promo-badge: var(--color-holiday-accent);
+    --color-promo-badge-text: var(--color-holiday-contrast);
+
+    --swiper-theme-color: var(--color-holiday-accent);
+    {%- endif -%}
+
     /* Radius */
     {%liquid
         assign video_btn_radius = settings['button-radius']
@@ -187,13 +226,13 @@
     --flag-radius-limit: 3px;
 
     /* Swiper */
-    --swiper-theme-color: {{ settings['color-action-background'] }};
+    --swiper-theme-color: var(--color-action-background);
     --swiper-scrollbar-track-color: rgba(0, 0, 0, 0.1);
 
     .wt-slider,
     .wt-slider__container,
     .wt-cart {
-        --swiper-theme-color: {{ settings['color-action-background'] }};
+        --swiper-theme-color: var(--color-action-background);
         --swiper-scrollbar-track-color: rgba(0, 0, 0, 0.1);
     }
 

@@ -188,6 +188,53 @@
         "margin-bottom": 0
       }
     },
+    "bogo_sale_promo_banner": {
+      "type": "rich-text-with-image",
+      "blocks": {
+        "bogo_heading_1": {
+          "type": "text",
+          "settings": {
+            "text": "❄️ BOGO $10 ❄️",
+            "font_uppercase": "uppercase",
+            "disable_on_mobile": false,
+            "size_heading": 280,
+            "size_heading_mobile": 150,
+            "line_height": 1.1,
+            "button_link1": "",
+            "button_link2": "",
+            "button_link3": ""
+          }
+        },
+        "bogo_subtext_1": {
+          "type": "heading",
+          "settings": {
+            "subheading": "<p>Winter Holiday Special — Buy Any Set, Get a 2nd for Just $10 ✨</p>",
+            "font_uppercase": "none",
+            "disable_on_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "bogo_heading_1",
+        "bogo_subtext_1"
+      ],
+      "custom_css": [
+        ".rich-text {padding: 32px 20px;}",
+        ".hero__text {font-weight: 800; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.15);}",
+        ".hero__subheading {letter-spacing: 0.5px; margin-top: 8px;}",
+        "@media (max-width: 599px) {.rich-text {padding: 20px 12px;}}",
+        "@media (max-width: 599px) {.rich-text-image__heading {font-size: clamp(2rem, 12vw, 3.5rem) !important; line-height: 1.15;}}",
+        "@media (max-width: 599px) {.hero__text p {font-size: clamp(0.85rem, 3.8vw, 1.1rem); line-height: 1.4; max-width: 90%; margin: 0 auto;}}"
+      ],
+      "name": "BOGO $10 Winter Sale Banner",
+      "settings": {
+        "desktop_text_horizontal_position": "center",
+        "color-body-text": "#ffffff",
+        "background_color": "#ff9cb5",
+        "margin-top": 0,
+        "margin-bottom": 0
+      }
+    },
     "1644542625dcf6daf0": {
       "type": "featured-collection",
       "settings": {
@@ -770,6 +817,7 @@
     "blocks_UbfWdf",
     "rich_text_with_image_T9aE3i",
     "image_banner_B9ncRR",
+    "bogo_sale_promo_banner",
     "1644542625dcf6daf0",
     "button_6NaGjU",
     "separator_wBffNJ",

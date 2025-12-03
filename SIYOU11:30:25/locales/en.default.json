@@ -301,6 +301,7 @@
       "caption": "Cart items",
       "remove_title": "Remove {{ title }}",
       "subtotal": "Subtotal",
+      "total_savings": "Total Savings",
       "new_subtotal": "New subtotal",
       "note": "Add order note",
       "checkbox": "Wrap as gift",

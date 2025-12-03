@@ -1,4 +1,27 @@
 <div class="wt-cart__footer__body">
+  {%- comment -%} Calculate total savings from compare_at_price and discounts {%- endcomment -%}
+  {%- assign total_savings = 0 -%}
+
+  {%- comment -%} Savings from compare_at_price (sale items) {%- endcomment -%}
+  {%- for item in cart.items -%}
+    {%- if item.variant.compare_at_price > item.variant.price -%}
+      {%- assign item_savings = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity -%}
+      {%- assign total_savings = total_savings | plus: item_savings -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%} Savings from line-level discount allocations {%- endcomment -%}
+  {%- for item in cart.items -%}
+    {%- for discount in item.line_level_discount_allocations -%}
+      {%- assign total_savings = total_savings | plus: discount.amount -%}
+    {%- endfor -%}
+  {%- endfor -%}
+
+  {%- comment -%} Savings from cart-level discount applications {%- endcomment -%}
+  {%- for discount in cart.cart_level_discount_applications -%}
+    {%- assign total_savings = total_savings | plus: discount.total_allocated_amount -%}
+  {%- endfor -%}
+
   <div class="wt-cart__subtotal">
     <div class="wt-cart__subtotal__label">
       <span class="text">{{ 'sections.cart.subtotal' | t }}</span>
@@ -7,6 +30,18 @@
       {{ cart.total_price | money_with_currency }}
     </div>
   </div>
+
+  {%- if total_savings > 0 -%}
+    <div class="wt-cart__savings">
+      <div class="wt-cart__savings__label">
+        <span class="text">{{ 'sections.cart.total_savings' | t | default: 'Total Savings' }}</span>
+      </div>
+      <div class="wt-cart__savings__value">
+        -{{ total_savings | money_with_currency }}
+      </div>
+    </div>
+  {%- endif -%}
+
   {%- if cart.cart_level_discount_applications.size > 0 -%}
     <div>
       <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">

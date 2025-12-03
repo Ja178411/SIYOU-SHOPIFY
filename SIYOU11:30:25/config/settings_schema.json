@@ -1531,5 +1531,71 @@
         "label": "t:settings_schema.animations.settings.disabled_animation_on_mobile.label"
       }
     ]
+  },
+  {
+    "name": "🎄 Holiday Mode",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Holiday Theme Settings"
+      },
+      {
+        "type": "paragraph",
+        "content": "Add festive touches to your store for the winter holiday season. Enable these settings to add holiday color accents and snowfall effects."
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_holiday_mode",
+        "label": "Enable Holiday Mode",
+        "default": false,
+        "info": "Activates holiday color accents throughout the site"
+      },
+      {
+        "type": "color",
+        "id": "holiday_accent_color",
+        "label": "Holiday Accent Color",
+        "default": "#D4AF37",
+        "info": "Used for festive accents (default: Gold). Try #8B0000 for deep red or #2E4A3E for forest green."
+      },
+      {
+        "type": "header",
+        "content": "Snowfall Animation"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_snowfall",
+        "label": "Enable Snowfall Effect",
+        "default": false,
+        "info": "Adds a gentle snowfall animation overlay across the site"
+      },
+      {
+        "type": "range",
+        "id": "snowfall_intensity",
+        "label": "Snowfall Intensity",
+        "min": 10,
+        "max": 60,
+        "step": 5,
+        "default": 30,
+        "info": "Number of snowflakes visible at once"
+      },
+      {
+        "type": "select",
+        "id": "snowflake_style",
+        "label": "Snowflake Style",
+        "default": "mixed",
+        "options": [
+          { "value": "dots", "label": "Simple Dots" },
+          { "value": "flakes", "label": "Snowflake Symbols ❄" },
+          { "value": "mixed", "label": "Mixed (Dots + Flakes)" }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "snowflake_color",
+        "label": "Snowflake Color",
+        "default": "#ffffff",
+        "info": "Color of the snowflakes"
+      }
+    ]
   }
 ]

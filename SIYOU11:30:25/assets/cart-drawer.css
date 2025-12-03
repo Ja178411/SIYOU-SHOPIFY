@@ -752,6 +752,39 @@
   padding-right: calc(var(--gap, 8px) * 3);
   color: var(--color-body-text-light);
 }
+/* Total Savings Section */
+.wt-cart__savings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--gap, 8px) * 0.75) 0;
+  border-top: 1px dashed var(--color-border);
+  margin-top: calc(var(--gap, 8px) * 0.5);
+}
+.wt-cart__savings__label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.wt-cart__savings__label .text {
+  font-family: var(--font-base);
+  font-style: var(--font-base-style);
+  font-size: var(--font-base-size);
+  color: var(--color-sale, #c41e3a);
+  font-weight: 600;
+}
+.wt-cart__savings__value {
+  font-size: calc(var(--font-base-size) + 0.2rem);
+  font-weight: 600;
+  color: var(--color-sale, #c41e3a);
+  flex-shrink: 0;
+}
+@media (max-width: 599px) {
+  .wt-cart__savings__label .text,
+  .wt-cart__savings__value {
+    font-size: calc(var(--font-base-size) - 1px);
+  }
+}
 .wt-cart__back-link {
   width: 100%;
   justify-content: center;

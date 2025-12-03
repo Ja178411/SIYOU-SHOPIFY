@@ -180,6 +180,21 @@
               </div>
             {% endif %}
 
+            {% comment %} BOGO $10 OFF badge for all nail sets {% endcomment %}
+            {% assign is_nail_set = false %}
+            {% for tag in product.tags %}
+              {% assign tag_downcase = tag | downcase %}
+              {% if tag_downcase == 'nail-set' or tag_downcase == 'nail sets' or tag_downcase == 'nail set' %}
+                {% assign is_nail_set = true %}
+              {% endif %}
+            {% endfor %}
+
+            {% if is_nail_set and product.available %}
+              <div class="card__badges--item" data-custom-badge="bogo" style="background-color: #E91E63; color: #FFFFFF;">
+                BOGO $10 OFF
+              </div>
+            {% endif %}
+
             {% for tag in product.tags %}
                 {% assign downcase_tag = tag | downcase %}
                 {% if downcase_tag == custom-badge-1-input %}

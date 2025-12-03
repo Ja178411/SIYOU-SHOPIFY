@@ -70,6 +70,11 @@
           </form>
         </cart-drawer-items>
       </div>
+      {%- comment -%} Essential Upsell & Cross Sell App Block {%- endcomment -%}
+      {% if cart != empty %}
+        <div class="essential-upsell-cross-sell-block"></div>
+      {% endif %}
+
       {% if settings.enable_cross_sells and cart != empty %}
         {% render 'cart-cross-sell' %}
       {% endif %}

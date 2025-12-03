@@ -152,12 +152,19 @@ class CartDrawerSection extends HTMLElement {
       );
     });
 
-    if (isClosedCart) {
+    // Only open the drawer if it was closed AND we want to open it
+    // If drawer is already open, just update content without toggling (which would close it)
+    if (isClosedCart && !this.isOpen) {
       setTimeout(() => {
         this.toggleDrawerClasses();
         if (this.isOpen) {
           this.closeButton().focus();
         }
+      });
+    } else if (this.isOpen) {
+      // Drawer is already open - just focus the close button
+      setTimeout(() => {
+        this.closeButton().focus();
       });
     }
   }

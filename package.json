@@ -1,0 +1,23 @@
+{
+  "name": "siyou-shopify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ja178411/SIYOU-SHOPIFY.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ja178411/SIYOU-SHOPIFY/issues"
+  },
+  "homepage": "https://github.com/Ja178411/SIYOU-SHOPIFY#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0"
+  }
+}

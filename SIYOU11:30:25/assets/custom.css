@@ -61,3 +61,127 @@
 .wt-product__gallery .wt-slider__nav-next {
   right: 12px !important;
 }
+
+/* Winter Special Snowflake Icon Badge */
+.card__winter-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #8FD8E7 0%, #A8E4F0 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(143, 216, 231, 0.5), 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: winter-shimmer 3s ease-in-out infinite;
+}
+
+.card__winter-badge svg {
+  width: 18px;
+  height: 18px;
+  fill: #FFFFFF;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes winter-shimmer {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(143, 216, 231, 0.5), 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 2px 12px rgba(143, 216, 231, 0.8), 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 767px) {
+  .card__winter-badge {
+    width: 24px;
+    height: 24px;
+    top: auto;
+    bottom: 8px;
+    right: 8px;
+  }
+  .card__winter-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* ================================================
+   Mobile Navigation Drawer Fixes
+   ================================================ */
+
+/* Fix: Make drawer content a flex container so login anchors to bottom */
+.wt-drawer--nav .wt-drawer__content {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+/* Fix: Drawer title should not grow */
+.wt-drawer--nav .wt-drawer__title {
+  flex-shrink: 0;
+}
+
+/* Fix: mega-menu-section fills remaining space */
+.wt-drawer--nav mega-menu-section.mega-menu {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* Fix: nav section should not grow, aside takes remaining space */
+.wt-drawer--nav .wt-page-nav-mega {
+  flex-shrink: 0;
+}
+
+/* Enhanced login bar styling - stick to bottom */
+.wt-drawer--nav .wt-page-nav-mega__aside {
+  margin-top: auto !important;
+  background: var(--color-body-text, #1a1a1a);
+  color: var(--color-background, #fff);
+}
+
+.wt-page-nav-mega__aside-list__link {
+  color: inherit;
+  gap: 8px;
+}
+
+.wt-page-nav-mega__aside-list__link:hover {
+  opacity: 0.8;
+}
+
+/* ================================================
+   Footer - Remove bottom margin whitespace
+   ================================================ */
+
+.wt-footer__aside {
+  margin-bottom: 0;
+}
+
+/* ================================================
+   Scroll Lock - Prevent body scroll when drawer is open
+   ================================================ */
+
+/* Base scroll lock for menu drawer */
+body.menu-open {
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+/* Mobile scroll lock - more aggressive for touch devices */
+@media (max-width: 1199px) {
+  body.menu-open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    -ms-touch-action: none;
+    overscroll-behavior: none;
+  }
+}

@@ -57,7 +57,7 @@
         "show_country_selector_label": false,
         "show_country_selector_flag": false,
         "show_language_selector": false,
-        "drawer_title": "Shop by",
+        "drawer_title": "Menu",
         "enable_submenu_link_in_drawer": false,
         "typing_search": "Find a product...",
         "suggestions_title": "Top Sellers",
@@ -71,7 +71,7 @@
         "logo_image": "shopify://shop_images/7db09c74-ec85-4ed1-be35-643f644707d9.png",
         "logo_width_desktop": 100,
         "logo_width_mobile": 80,
-        "image_hosted": "shopify://shop_images/SiYou4658_optimized_final.jpg",
+        "image_hosted": "shopify://shop_images/Women_with_her_202512031629_1.jpg",
         "additional_text": "Handcrafted Press-On Nails",
         "button_style": "primary",
         "button_label": "Shop Now",
@@ -80,7 +80,7 @@
         "button_link_in_new_window": false,
         "color-body-text": "#ffffff",
         "color-overlay": "#000000",
-        "color-overlay-opacity": 22
+        "color-overlay-opacity": 45
       }
     },
     "notification_popup": {

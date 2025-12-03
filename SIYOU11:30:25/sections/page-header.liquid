@@ -599,6 +599,7 @@
                   class="wt-page-nav-mega__aside-list__link"
                   tabindex="-1"
                 >
+                  {% render 'icons', id: 'user' %}
                   {%- liquid
                     if customer
                       echo 'customer.account_fallback' | t
@@ -859,7 +860,7 @@
       "id": "drawer_title",
       "label": "t:sections.header.settings.drawer_title.label",
       "info": "t:sections.header.settings.drawer_title.info",
-      "default": "Shop by"
+      "default": "Menu"
     },
     {
       "type": "checkbox",

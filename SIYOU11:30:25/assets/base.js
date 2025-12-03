@@ -75,6 +75,13 @@ class DrawerNavSection extends HTMLElement {
     this.closeButton.setAttribute("tabindex", "0");
     this.closeButton.focus();
     this.temporaryHideFocusVisible();
+
+    // iOS scroll lock: save scroll position before position:fixed is applied
+    // Guard: only save if not already saved (prevents overwrite on double-open)
+    if (this.savedScrollPosition === undefined) {
+      this.savedScrollPosition = window.scrollY;
+      document.body.style.top = `-${this.savedScrollPosition}px`;
+    }
   }
 
   closeSubmenus() {
@@ -142,6 +149,13 @@ class DrawerNavSection extends HTMLElement {
     document.body.classList.toggle(activeNavBodyClass);
     document.body.classList.toggle(activeOverlayBodyClass);
     drawerBodeEl.style.setProperty("padding-top", drawerTopPadding);
+
+    // iOS scroll lock: restore scroll position AFTER position:fixed is removed
+    if (!this.isOpen && this.savedScrollPosition !== undefined) {
+      document.body.style.top = "";
+      window.scrollTo(0, this.savedScrollPosition);
+      this.savedScrollPosition = undefined;
+    }
   }
 
   toggleMenuButtonAttr() {
