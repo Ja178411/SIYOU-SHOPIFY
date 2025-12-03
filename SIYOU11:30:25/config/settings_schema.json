@@ -899,21 +899,25 @@
       },
       {
         "type": "header",
-        "content": "Upsell offer",
-        "info": "Display discount messaging when specific products are added to cart"
+        "content": "Winter Promo: $10 Off",
+        "info": "Buy Sweet Snowflake or Winter Stars Glow → Get $10 off any other nail set"
       },
       {
         "type": "checkbox",
         "id": "enable_upsell_offer",
         "default": false,
-        "label": "Enable upsell discount messaging"
+        "label": "Enable winter promo messaging"
       },
       {
         "type": "text",
         "id": "upsell_product_tag",
         "default": "upsell-trigger",
-        "label": "Tag that triggers upsell offer",
-        "info": "Only products with this tag will trigger the upsell banner when added to cart (case-insensitive)"
+        "label": "Trigger product tag",
+        "info": "Tag for winter sets (Sweet Snowflake, Winter Stars Glow) that UNLOCK the $10 off"
+      },
+      {
+        "type": "paragraph",
+        "content": "Also tag all nail sets with 'nail-set' to mark them as ELIGIBLE for the $10 off"
       },
       {
         "type": "text",
@@ -924,13 +928,13 @@
       {
         "type": "text",
         "id": "upsell_banner_text",
-        "default": "Add another nail set & save $10!",
-        "label": "Banner text"
+        "default": "Add any nail set to get $10 off!",
+        "label": "Cart banner text"
       },
       {
         "type": "text",
         "id": "upsell_icon",
-        "default": "🎁",
+        "default": "❄️",
         "label": "Banner icon (emoji)"
       },
       {
@@ -954,7 +958,7 @@
       {
         "type": "header",
         "content": "Upsell Popup",
-        "info": "Show a popup after adding trigger products to cart"
+        "info": "Shows after adding a trigger product (winter set) to cart"
       },
       {
         "type": "checkbox",
@@ -965,20 +969,20 @@
       {
         "type": "text",
         "id": "upsell_popup_title",
-        "default": "Unlock Your $10 Discount!",
+        "default": "Step 1 Complete!",
         "label": "Popup title"
       },
       {
         "type": "text",
         "id": "upsell_popup_subtitle",
-        "default": "Add another nail set to save $10",
+        "default": "Add any nail set to save $10",
         "label": "Popup subtitle"
       },
       {
         "type": "collection",
         "id": "upsell_popup_collection",
         "label": "Products to show in popup",
-        "info": "Select a collection. Products with the trigger tag will be displayed."
+        "info": "Select a collection. Only products with 'nail-set' tag (excluding trigger products) will show."
       },
       {
         "type": "header",

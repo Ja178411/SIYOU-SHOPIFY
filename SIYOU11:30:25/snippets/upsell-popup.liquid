@@ -1,68 +1,84 @@
 {% comment %}
-  Upsell Popup - Shows after adding a trigger product to cart
-  Displays recommended nail sets with $10 OFF badges
+  Winter Promo Popup - Shows after adding a winter set to cart
+  Displays ANY nail set with $10 OFF badge
+  Promo: Buy Sweet Snowflake or Winter Stars Glow → Get $10 off any other nail set
 {% endcomment %}
 
 {% if settings.enable_upsell_offer and settings.enable_upsell_popup %}
   {% assign upsell_tag = settings.upsell_product_tag | default: 'upsell-trigger' | downcase %}
   {% assign upsell_collection = settings.upsell_popup_collection %}
   {% assign popup_products = upsell_collection.products | default: settings.collection_cross_sells.products %}
-  
+
   <div id="upsell-popup-overlay" class="upsell-popup-overlay" data-upsell-overlay></div>
-  
+
   <div id="upsell-popup" class="upsell-popup" data-upsell-popup data-upsell-tag="{{ upsell_tag }}">
     <div class="upsell-popup__header">
       <button type="button" class="upsell-popup__close" data-upsell-close aria-label="Close">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        {% render 'icons', id: 'close' %}
       </button>
-      <span class="upsell-popup__icon">{{ settings.upsell_icon | default: '🎁' }}</span>
-      <h2 class="upsell-popup__title">{{ settings.upsell_popup_title | default: 'Unlock Your $10 Discount!' }}</h2>
-      <p class="upsell-popup__subtitle">{{ settings.upsell_popup_subtitle | default: 'Add another nail set to save $10' }}</p>
+
+      <div class="upsell-popup__step-indicator">
+        <span class="upsell-popup__step-badge">
+          <span class="upsell-popup__step-check">✓</span>
+          <span class="upsell-popup__step-number">1</span>
+        </span>
+        <span class="upsell-popup__step-line"></span>
+        <span class="upsell-popup__step-badge upsell-popup__step-badge--pending">
+          <span class="upsell-popup__step-number">2</span>
+        </span>
+      </div>
+
+      <h2 class="upsell-popup__title">{{ settings.upsell_popup_title | default: "Step 1 Complete!" }}</h2>
+      <p class="upsell-popup__subtitle">{{ settings.upsell_popup_subtitle | default: 'Add any nail set to save $10' }}</p>
+      <p class="upsell-popup__hint">Your Winter Set qualifies you for this discount. Pick another set below!</p>
     </div>
-    
+
     <div class="upsell-popup__body">
       <div class="upsell-popup__products">
         {% assign shown_count = 0 %}
-        {% for product in popup_products limit: 6 %}
-          {% assign product_is_eligible = false %}
+        {% for product in popup_products limit: 50 %}
+          {% comment %} Show any nail set that's NOT a winter set {% endcomment %}
+          {% assign is_nail_set = false %}
+          {% assign is_winter_set = false %}
           {% for tag in product.tags %}
             {% assign tag_downcase = tag | downcase %}
+            {% comment %} Check for nail set tags (multiple formats) {% endcomment %}
+            {% if tag_downcase == 'nail-set' or tag_downcase == 'nail sets' or tag_downcase == 'nail set' %}
+              {% assign is_nail_set = true %}
+            {% endif %}
             {% if tag_downcase == upsell_tag %}
-              {% assign product_is_eligible = true %}
-              {% break %}
+              {% assign is_winter_set = true %}
             {% endif %}
           {% endfor %}
-          
-          {% if product_is_eligible and shown_count < 3 %}
+
+          {% comment %} Show nail sets that are NOT winter sets {% endcomment %}
+          {% if is_nail_set and is_winter_set == false and shown_count < 3 %}
             {% assign shown_count = shown_count | plus: 1 %}
             <div class="upsell-popup__product" data-product-id="{{ product.id }}">
-              <span class="upsell-popup__product-badge">{{ settings.upsell_badge_text | default: '$10 OFF' }}</span>
-              
-              <img 
-                src="{{ product.featured_image | image_url: width: 160 }}" 
+              <span class="upsell-popup__product-badge">$10 OFF</span>
+
+              <img
+                src="{{ product.featured_image | image_url: width: 160 }}"
                 alt="{{ product.featured_image.alt | escape }}"
                 class="upsell-popup__product-image"
                 width="80"
                 height="80"
                 loading="lazy"
               >
-              
+
               <div class="upsell-popup__product-info">
                 <h3 class="upsell-popup__product-title">{{ product.title }}</h3>
                 <p class="upsell-popup__product-price">{{ product.price | money }}</p>
-                
+
                 {% if product.available %}
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     class="upsell-popup__product-add"
                     data-upsell-add
                     data-variant-id="{{ product.selected_or_first_available_variant.id }}"
                     data-product-title="{{ product.title | escape }}"
                   >
-                    Add to Cart
+                    Add & Save $10
                   </button>
                 {% else %}
                   <button type="button" class="upsell-popup__product-add" disabled>
@@ -73,23 +89,36 @@
             </div>
           {% endif %}
         {% endfor %}
-        
-        {% comment %} Fallback if no products found {% endcomment %}
+
+        {% comment %} Improved empty state {% endcomment %}
         {% if shown_count == 0 %}
-          <p style="text-align: center; color: #888; padding: 20px;">
-            Check out our <a href="/collections/all" style="color: #ff9cb5;">nail sets collection</a> to find your perfect match!
-          </p>
+          <div class="upsell-popup__empty">
+            <div class="upsell-popup__empty-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 8C18.7 8 8 18.7 8 32s10.7 24 24 24 24-10.7 24-24S45.3 8 32 8z" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M22 26c0-2.2 1.8-4 4-4s4 1.8 4 4M34 26c0-2.2 1.8-4 4-4s4 1.8 4 4M20 38s4 6 12 6 12-6 12-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="upsell-popup__empty-title">Browse Our Collection</p>
+            <p class="upsell-popup__empty-text">Add any nail set to complete Step 2 and save $10 at checkout</p>
+            <a href="/collections/all" class="upsell-popup__empty-cta">
+              Shop All Nail Sets
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
         {% endif %}
       </div>
     </div>
-    
+
     <div class="upsell-popup__footer">
       <button type="button" class="upsell-popup__skip" data-upsell-close>
-        No thanks, continue shopping
+        Maybe later
       </button>
     </div>
   </div>
-  
+
   <script>
     // Pass upsell trigger tag to JavaScript
     window.SIYOU_UPSELL = window.SIYOU_UPSELL || {};

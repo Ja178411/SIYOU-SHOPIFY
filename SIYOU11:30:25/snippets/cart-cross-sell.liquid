@@ -6,20 +6,67 @@
   {% assign line_items_ids = line_items_ids | append: line_item.product_id | append: ', ' %}
 {% endfor %}
 
-{% comment %} Detect nail sets in cart by tag for upsell offer {% endcomment %}
-{% assign cart_has_nail_set = false %}
-{% assign upsell_nail_set_count = 0 %}
+{% comment %}
+  Winter Promo Detection:
+  - Winter sets (Sweet Snowflake, Winter Stars Glow) have "upsell-trigger" tag
+  - Any nail set has "nail-set" tag
+  - Promo: Buy a winter set → get $10 off ANY other nail set
+{% endcomment %}
+{% assign cart_has_winter_set = false %}
+{% assign cart_has_other_nail_set = false %}
+{% assign winter_set_count = 0 %}
+{% assign other_nail_set_count = 0 %}
 {% assign upsell_tag = settings.upsell_product_tag | default: 'upsell-trigger' | downcase %}
+
+{% assign total_nail_sets_in_cart = 0 %}
+
 {% for item in cart.items %}
+  {% assign is_winter_set = false %}
+  {% assign is_nail_set = false %}
+
   {% for tag in item.product.tags %}
     {% assign tag_downcase = tag | downcase %}
     {% if tag_downcase == upsell_tag %}
-      {% assign cart_has_nail_set = true %}
-      {% assign upsell_nail_set_count = upsell_nail_set_count | plus: item.quantity %}
-      {% break %}
+      {% assign is_winter_set = true %}
+    {% endif %}
+    {% comment %} Check for both "nail-set" and "nail sets" tag formats {% endcomment %}
+    {% if tag_downcase == 'nail-set' or tag_downcase == 'nail sets' or tag_downcase == 'nail set' %}
+      {% assign is_nail_set = true %}
     {% endif %}
   {% endfor %}
+
+  {% if is_winter_set %}
+    {% assign cart_has_winter_set = true %}
+    {% assign winter_set_count = winter_set_count | plus: item.quantity %}
+  {% endif %}
+  
+  {% comment %} Count ALL nail sets (including winter sets) {% endcomment %}
+  {% if is_nail_set %}
+    {% assign total_nail_sets_in_cart = total_nail_sets_in_cart | plus: item.quantity %}
+  {% endif %}
+  
+  {% comment %} Track non-winter nail sets separately {% endcomment %}
+  {% if is_nail_set and is_winter_set == false %}
+    {% assign cart_has_other_nail_set = true %}
+    {% assign other_nail_set_count = other_nail_set_count | plus: item.quantity %}
+  {% endif %}
 {% endfor %}
+
+{% comment %} For backward compatibility {% endcomment %}
+{% assign cart_has_nail_set = cart_has_winter_set %}
+
+{% comment %} 
+  Discount is unlocked when:
+  - Cart has at least 1 winter set AND at least 1 other nail set (any type)
+  - OR cart has 2+ winter sets (buying 2 winter sets also qualifies)
+{% endcomment %}
+{% assign discount_unlocked = false %}
+{% if cart_has_winter_set and cart_has_other_nail_set %}
+  {% assign discount_unlocked = true %}
+{% elsif cart_has_winter_set and winter_set_count >= 2 %}
+  {% comment %} 2+ winter sets also unlocks the discount {% endcomment %}
+  {% assign discount_unlocked = true %}
+{% endif %}
 
 {% assign limit_products = settings.product_limit_cross_sells %}
 
@@ -65,41 +112,40 @@
       </span>
     </p>
 
-    {% comment %} Enhanced Upsell banner - shows when nail set is in cart {% endcomment %}
-    {% if settings.enable_upsell_offer and cart_has_nail_set %}
-      <div class="upsell-banner" style="background: {{ settings.upsell_banner_background | default: 'linear-gradient(135deg, #ff9cb5 0%, #fc809f 100%)' }};">
+    {% comment %}
+      Winter Promo Banner - shows when winter set is in cart
+      Two states:
+      1. Winter set in cart, no other nail set → Step 1 of 2 complete
+      2. Winter set + another nail set → Both steps complete, $10 saved
+    {% endcomment %}
+    {% if settings.enable_upsell_offer and cart_has_winter_set %}
+      <div class="upsell-banner {% if discount_unlocked %}upsell-banner--success{% endif %}">
         <div class="upsell-banner__content">
-          <div class="upsell-banner__header">
-            <span class="upsell-banner__icon">{{ settings.upsell_icon | default: '🎁' }}</span>
-            <h4 class="upsell-banner__title">
-              {% if upsell_nail_set_count >= 2 %}
-                You're saving $10! 🎉
-              {% else %}
-                {{ settings.upsell_banner_text | default: 'Add another nail set & save $10!' }}
-              {% endif %}
-            </h4>
-          </div>
-          
-          <div class="upsell-banner__progress">
-            <div class="upsell-banner__progress-bar">
-              <div class="upsell-banner__progress-fill" style="width: {% if upsell_nail_set_count >= 2 %}100{% else %}50{% endif %}%;"></div>
+          {% if discount_unlocked %}
+            <div class="upsell-banner__header">
+              <div class="upsell-banner__step-indicator">
+                <span class="upsell-banner__step upsell-banner__step--complete">✓</span>
+                <span class="upsell-banner__step-line" style="background: rgba(255, 255, 255, 0.8);"></span>
+                <span class="upsell-banner__step upsell-banner__step--complete">✓</span>
+              </div>
+              <div class="upsell-banner__text">
+                <h4 class="upsell-banner__title">You're Saving $10!</h4>
+                <p class="upsell-banner__subtitle">Discount applies automatically at checkout</p>
+              </div>
             </div>
-            <span class="upsell-banner__progress-text">
-              {{ upsell_nail_set_count }} of 2 nail sets
-            </span>
-          </div>
-          
-          <p class="upsell-banner__subtitle">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-            {% if upsell_nail_set_count >= 2 %}
-              Discount will apply at checkout
-            {% else %}
-              Add 1 more to unlock your discount
-            {% endif %}
-          </p>
+          {% else %}
+            <div class="upsell-banner__header">
+              <div class="upsell-banner__step-indicator">
+                <span class="upsell-banner__step upsell-banner__step--complete">✓</span>
+                <span class="upsell-banner__step-line"></span>
+                <span class="upsell-banner__step upsell-banner__step--pending">2</span>
+              </div>
+              <div class="upsell-banner__text">
+                <h4 class="upsell-banner__title">Step 1 of 2 Complete!</h4>
+                <p class="upsell-banner__subtitle">Add any nail set below to save $10</p>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
     {% endif %}
@@ -111,15 +157,20 @@
           <div data-swiper class="wt-slider__container" data-sound="off">
             <div data-swiper-container class="video-reels__container">
               {% for cs_product in cross_sell_products limit: limit_products %}
-                {% comment %} Check if this product has the upsell tag {% endcomment %}
+                {% comment %} Check if this product is a nail set (eligible for $10 off) {% endcomment %}
                 {% assign product_is_nail_set = false %}
                 {% for tag in cs_product.tags %}
                   {% assign tag_downcase = tag | downcase %}
-                  {% if tag_downcase == upsell_tag %}
+                  {% if tag_downcase == 'nail-set' or tag_downcase == 'nail sets' or tag_downcase == 'nail set' %}
                     {% assign product_is_nail_set = true %}
                     {% break %}
                   {% endif %}
                 {% endfor %}
+                {% comment %} Only show badge if winter set is in cart {% endcomment %}
+                {% assign show_badge = false %}
+                {% if cart_has_winter_set and product_is_nail_set %}
+                  {% assign show_badge = true %}
+                {% endif %}
                 <div
                   data-swiper-slide
                   data-block-id="{{ cs_product.id }}"
@@ -129,7 +180,7 @@
                     product: cs_product,
                     customClass: 'shoppable-product-card--cross-sell',
                     hide_brand: hide_brand,
-                    show_upsell_badge: product_is_nail_set
+                    show_upsell_badge: show_badge
                   %}
                 </div>
               {% endfor %}
@@ -168,20 +219,25 @@
       {% else %}
         {% for cs_product in cross_sell_products %}
           {% unless line_items_ids contains cs_product.id %}
-            {% comment %} Check if this product has the upsell tag {% endcomment %}
+            {% comment %} Check if this product is a nail set (eligible for $10 off) {% endcomment %}
             {% assign product_is_nail_set = false %}
             {% for tag in cs_product.tags %}
               {% assign tag_downcase = tag | downcase %}
-              {% if tag_downcase == upsell_tag %}
+              {% if tag_downcase == 'nail-set' or tag_downcase == 'nail sets' or tag_downcase == 'nail set' %}
                 {% assign product_is_nail_set = true %}
                 {% break %}
               {% endif %}
             {% endfor %}
+            {% comment %} Only show badge if winter set is in cart {% endcomment %}
+            {% assign show_badge = false %}
+            {% if cart_has_winter_set and product_is_nail_set %}
+              {% assign show_badge = true %}
+            {% endif %}
             {% render 'shoppable-product-card',
               product: cs_product,
               customClass: 'shoppable-product-card--cross-sell shoppable-product-card--full',
               hide_brand: hide_brand,
-              show_upsell_badge: product_is_nail_set
+              show_upsell_badge: show_badge
             %}
           {% endunless %}
         {% endfor %}

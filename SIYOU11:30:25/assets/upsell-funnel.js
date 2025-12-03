@@ -191,10 +191,17 @@
           });
         }
 
+        // Dispatch cart-drawer:refresh event to update the cart drawer HTML
+        // This is necessary to re-render the progress bar with updated count
+        document.dispatchEvent(new CustomEvent('cart-drawer:refresh', {
+          bubbles: true,
+          detail: { source: 'upsell-popup' }
+        }));
+
         // Close popup after brief delay to show success
         setTimeout(() => {
           closePopup();
-          
+
           // Reset button state for next time
           setTimeout(() => {
             button.textContent = originalText;

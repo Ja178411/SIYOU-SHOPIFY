@@ -2122,7 +2122,11 @@ window.dataLayer.push({
               </div>
             
             {% when 'upsell_promo' %}
-              {% comment %} Only show on products with the upsell-trigger tag {% endcomment %}
+              {% comment %}
+                Winter Promo - TRIGGER Products
+                Shows on Sweet Snowflake, Winter Stars Glow (products with upsell-trigger tag)
+                Tells customers: "Buy THIS and get $10 off ANY other nail set"
+              {% endcomment %}
               {% assign upsell_tag = settings.upsell_product_tag | default: 'upsell-trigger' | downcase %}
               {% assign show_upsell_block = false %}
               {% for tag in product.tags %}
@@ -2132,24 +2136,88 @@ window.dataLayer.push({
                   {% break %}
                 {% endif %}
               {% endfor %}
-              
+
               {% if settings.enable_upsell_offer and show_upsell_block %}
                 <div
                   data-block-id="{{ block.id }}"
                   class="{% if settings.animations %} scroll-trigger animate--slide-in {% endif %} {% if settings.disabled_animations_on_mobile %} disabled-on-mobile {% endif %}"
                 >
-                  <div class="upsell-product-block">
-                    <span class="upsell-product-block__icon">{{ settings.upsell_icon | default: '🎁' }}</span>
-                    <p class="upsell-product-block__text">
-                      {{ block.settings.upsell_text | default: 'Buy 2 nail sets, save $10!' }}
-                    </p>
-                    <p class="upsell-product-block__subtext">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  <div class="upsell-product-block upsell-product-block--trigger">
+                    <div class="upsell-product-block__badge">
+                      <span class="upsell-product-block__badge-amount">$10</span>
+                      <span class="upsell-product-block__badge-text">OFF</span>
+                    </div>
+                    <div class="upsell-product-block__content">
+                      <p class="upsell-product-block__text">
+                        {{ block.settings.upsell_text | default: 'Winter Set Bonus!' }}
+                      </p>
+                      <p class="upsell-product-block__subtext">
+                        {{ block.settings.upsell_subtext | default: 'Buy this set → Add any other nail set → Save $10 at checkout' }}
+                      </p>
+                    </div>
+                    <div class="upsell-product-block__icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"></path>
                       </svg>
-                      Discount applies automatically at checkout
-                    </p>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+
+            {% when 'upsell_eligible' %}
+              {% comment %}
+                Winter Promo - ELIGIBLE Products
+                Shows on all nail sets (products with nail-set tag but NOT upsell-trigger tag)
+                Tells customers: "Get $10 OFF this set when you buy a winter set"
+              {% endcomment %}
+              {% assign upsell_tag = settings.upsell_product_tag | default: 'upsell-trigger' | downcase %}
+              {% assign nail_set_tag = 'nail-set' %}
+              {% assign is_trigger_product = false %}
+              {% assign is_eligible_product = false %}
+
+              {% for tag in product.tags %}
+                {% assign tag_downcase = tag | downcase %}
+                {% if tag_downcase == upsell_tag %}
+                  {% assign is_trigger_product = true %}
+                {% endif %}
+                {% if tag_downcase == nail_set_tag %}
+                  {% assign is_eligible_product = true %}
+                {% endif %}
+              {% endfor %}
+
+              {% comment %} Show only on nail sets that are NOT trigger products {% endcomment %}
+              {% if settings.enable_upsell_offer and is_eligible_product and is_trigger_product == false %}
+                <div
+                  data-block-id="{{ block.id }}"
+                  class="{% if settings.animations %} scroll-trigger animate--slide-in {% endif %} {% if settings.disabled_animations_on_mobile %} disabled-on-mobile {% endif %}"
+                >
+                  <div class="upsell-product-block upsell-product-block--eligible">
+                    <div class="upsell-product-block__badge upsell-product-block__badge--eligible">
+                      <span class="upsell-product-block__badge-amount">$10</span>
+                      <span class="upsell-product-block__badge-text">OFF</span>
+                    </div>
+                    <div class="upsell-product-block__content">
+                      <p class="upsell-product-block__text">
+                        {{ block.settings.eligible_text | default: 'Save $10 on This Set!' }}
+                      </p>
+                      <p class="upsell-product-block__subtext">
+                        {% if block.settings.trigger_product_url != blank %}
+                          <a href="{{ block.settings.trigger_product_url }}" class="upsell-product-block__link">
+                            {{ block.settings.eligible_subtext | default: 'Buy Sweet Snowflake or Winter Stars Glow first, then add this set' }}
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                              <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                          </a>
+                        {% else %}
+                          {{ block.settings.eligible_subtext | default: 'Buy Sweet Snowflake or Winter Stars Glow first, then add this set' }}
+                        {% endif %}
+                      </p>
+                    </div>
+                    <div class="upsell-product-block__icon upsell-product-block__icon--eligible">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               {% endif %}
@@ -4576,19 +4644,52 @@ window.dataLayer.push({
         }
       ]
     },
-    {
-      "type": "upsell_promo",
-      "name": "Upsell Offer Banner",
-      "settings": [
+      {
+        "type": "upsell_promo",
+        "name": "Winter Promo (Trigger)",
+        "settings": [
         {
           "type": "paragraph",
-          "content": "This block only shows on products tagged with the upsell trigger tag. Configure the tag in Theme Settings > Cart > Upsell offer."
+          "content": "Shows on winter sets (Sweet Snowflake, Winter Stars Glow) that TRIGGER the $10 off promo. Tag products with the trigger tag in Theme Settings > Cart > Upsell offer."
         },
         {
           "type": "text",
           "id": "upsell_text",
-          "default": "Buy 2 nail sets, save $10!",
-          "label": "Banner text"
+          "default": "Winter Set Bonus!",
+          "label": "Main text"
+        },
+        {
+          "type": "text",
+          "id": "upsell_subtext",
+          "default": "Buy this set → Add any other nail set → Save $10 at checkout",
+          "label": "Subtext"
+        }
+      ]
+    },
+      {
+        "type": "upsell_eligible",
+        "name": "Winter Promo (Eligible)",
+        "settings": [
+        {
+          "type": "paragraph",
+          "content": "Shows on nail sets that are ELIGIBLE for the $10 off (not the trigger products). Tag products with 'nail-set' tag."
+        },
+        {
+          "type": "text",
+          "id": "eligible_text",
+          "default": "Save $10 on This Set!",
+          "label": "Main text"
+        },
+        {
+          "type": "text",
+          "id": "eligible_subtext",
+          "default": "Buy Sweet Snowflake or Winter Stars Glow first, then add this set",
+          "label": "Subtext"
+        },
+        {
+          "type": "url",
+          "id": "trigger_product_url",
+          "label": "Link to trigger product (optional)"
         }
       ]
     },
