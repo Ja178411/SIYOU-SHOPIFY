@@ -94,7 +94,7 @@
     "enable-lock-icon": false,
     "include_tag": true,
     "social_facebook_link": "https://www.facebook.com/share/1JGt57NmcK/?mibextid=wwXIfr",
-    "social_instagram_link": "https://www.instagram.com/siyou.nails?igsh=ZDZneTE0OTVyMmxu",
+    "social_instagram_link": "https://www.instagram.com/siyou.nails/",
     "social_tiktok_link": "https://www.tiktok.com/@siyou.official?_r=1&_t=ZT-91tNurVZeqU",
     "show_product_vendor": false,
     "show_product_price": true,
@@ -149,6 +149,11 @@
       },
       "4651250007506174373": {
         "type": "shopify://apps/mageplaza-instagram-feed/blocks/app_embed/2e85b90f-5da9-4654-967e-051f1942340c",
+        "disabled": false,
+        "settings": {}
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
       }

@@ -1406,6 +1406,44 @@
       },
       {
         "type": "header",
+        "content": "Sold Out Badge"
+      },
+      {
+        "type": "color",
+        "id": "sold-out-badge-text",
+        "default": "#FFFFFF",
+        "label": "Text color"
+      },
+      {
+        "type": "color",
+        "id": "sold-out-badge-background",
+        "default": "#6B7280",
+        "label": "Background color"
+      },
+      {
+        "type": "header",
+        "content": "BOGO Badge"
+      },
+      {
+        "type": "color",
+        "id": "bogo-badge-text",
+        "default": "#FFFFFF",
+        "label": "Text color"
+      },
+      {
+        "type": "color",
+        "id": "bogo-badge-background",
+        "default": "#E91E63",
+        "label": "Background color"
+      },
+      {
+        "type": "text",
+        "id": "bogo-badge-label",
+        "default": "BOGO $10 OFF",
+        "label": "Badge text"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.product-badges.settings.badge__1.content"
       },
       {

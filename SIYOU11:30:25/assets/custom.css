@@ -185,3 +185,48 @@ body.menu-open {
     overscroll-behavior: none;
   }
 }
+
+/* ================================================
+   Drawer Social Icons
+   ================================================ */
+
+.wt-drawer__social {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wt-drawer__social .social-links {
+  justify-content: flex-start;
+  gap: 12px; /* Reduced gap since touch targets have padding */
+}
+
+.wt-drawer__social .social-link {
+  color: var(--color-footer-text, #fff);
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  /* WCAG 2.2 touch target: min 44x44px */
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wt-drawer__social .social-link:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Keyboard focus state for accessibility */
+.wt-drawer__social .social-link:focus-visible {
+  opacity: 1;
+  outline: 2px solid var(--color-footer-text, #fff);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.wt-drawer__social .svg-icon {
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}

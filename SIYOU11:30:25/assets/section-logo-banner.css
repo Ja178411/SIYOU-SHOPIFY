@@ -117,7 +117,7 @@ page-header-logo-banner::after {
 }
 .wt-logo-banner__additional {
   position: absolute;
-  bottom: calc(var(--gap, 8px) * 2);
+  bottom: calc(var(--gap, 8px) * 16);
   width: 60%;
   left: 50%;
   transform: translateX(-50%);
@@ -128,7 +128,7 @@ page-header-logo-banner::after {
 }
 @media (min-width: 1200px) {
   .wt-logo-banner__additional {
-    bottom: calc(var(--gap, 8px) * 2);
+    bottom: calc(var(--gap, 8px) * 14);
   }
 }
 .wt-logo-banner--vanishing .wt-logo-banner__additional {

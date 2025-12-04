@@ -277,6 +277,14 @@
 
     {% endstyle %}
     <style>
+      [data-custom-badge="sold-out"]{
+        background-color: {{ settings.sold-out-badge-background }};
+        color: {{ settings.sold-out-badge-text }};
+        }
+      [data-custom-badge="bogo"]{
+        background-color: {{ settings.bogo-badge-background }};
+        color: {{ settings.bogo-badge-text }};
+        }
       [data-custom-badge="{{ settings.custom-badge-1-input }}"]{
         background-color: {{ settings.custom-badge-1-background }};
         color: {{ settings.custom-badge-1-text }};

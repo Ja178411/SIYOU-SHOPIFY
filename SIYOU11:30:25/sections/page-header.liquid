@@ -587,6 +587,10 @@
         if section.settings.show_country_selector or section.settings.show_language_selector
           assign show_menu_footer = true
         endif
+
+        if section.settings.show_social_in_drawer
+          assign show_menu_footer = true
+        endif
       %}
 
       {% if show_menu_footer %}
@@ -637,6 +641,11 @@
               </li>
             {% endif %}
           </ul>
+          {% if section.settings.show_social_in_drawer %}
+            <div class="wt-drawer__social">
+              {% render 'social-links' %}
+            </div>
+          {% endif %}
         </aside>
       {% endif %}
     </mega-menu-section>
@@ -868,6 +877,12 @@
       "default": false,
       "label": "t:sections.header.settings.enable_submenu_link_in_drawer.label",
       "info": "t:sections.header.settings.enable_submenu_link_in_drawer.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_in_drawer",
+      "default": true,
+      "label": "Show social icons in menu drawer"
     },
     {
       "type": "header",

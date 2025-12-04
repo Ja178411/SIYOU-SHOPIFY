@@ -25,8 +25,8 @@
             "cta_link": "shopify://collections/nail-sets",
             "enable_countdown": true,
             "countdown_end_date": "2025-12-01T23:59:59",
-            "section_height_mobile": 700,
-            "section_height_desktop": 860,
+            "section_height_mobile": 560,
+            "section_height_desktop": 700,
             "background_image": "shopify://shop_images/SiYou4658_optimized_final.webp",
             "bg_image_opacity": 0.5,
             "background_color": "#000000",
@@ -194,12 +194,12 @@
         "bogo_heading_1": {
           "type": "text",
           "settings": {
-            "text": "❄️ BOGO $10 ❄️",
+            "text": "❄️ Check Out Our Holiday Deals! ❄️",
             "font_uppercase": "uppercase",
             "disable_on_mobile": false,
-            "size_heading": 280,
-            "size_heading_mobile": 150,
-            "line_height": 1.1,
+            "size_heading": 110,
+            "size_heading_mobile": 90,
+            "line_height": 1.2,
             "button_link1": "",
             "button_link2": "",
             "button_link3": ""
@@ -208,7 +208,7 @@
         "bogo_subtext_1": {
           "type": "heading",
           "settings": {
-            "subheading": "<p>Winter Holiday Special — Buy Any Set, Get a 2nd for Just $10 ✨</p>",
+            "subheading": "<p>Shop our exclusive holiday collection and save big this season ✨</p>",
             "font_uppercase": "none",
             "disable_on_mobile": false
           }
@@ -220,11 +220,11 @@
       ],
       "custom_css": [
         ".rich-text {padding: 32px 20px;}",
-        ".hero__text {font-weight: 800; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.15);}",
+        ".hero__text {font-weight: 800; letter-spacing: 2px; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);}",
         ".hero__subheading {letter-spacing: 0.5px; margin-top: 8px;}",
-        "@media (max-width: 599px) {.rich-text {padding: 20px 12px;}}",
-        "@media (max-width: 599px) {.rich-text-image__heading {font-size: clamp(2rem, 12vw, 3.5rem) !important; line-height: 1.15;}}",
-        "@media (max-width: 599px) {.hero__text p {font-size: clamp(0.85rem, 3.8vw, 1.1rem); line-height: 1.4; max-width: 90%; margin: 0 auto;}}"
+        "@media (max-width: 599px) {.rich-text {padding: 20px 12px; }}",
+        "@media (max-width: 599px) {.rich-text-image__heading {font-size: clamp(2rem, 12vw, 3.5rem) !important; line-height: 1.15; }}",
+        "@media (max-width: 599px) {.hero__text p {font-size: clamp(0.85rem, 3.8vw, 1.1rem); line-height: 1.4; max-width: 90%; margin: 0 auto; }}"
       ],
       "name": "BOGO $10 Winter Sale Banner",
       "settings": {
@@ -756,6 +756,66 @@
         "margin-bottom": 20
       }
     },
+    "video_reels_EUqpQn": {
+      "type": "video-reels",
+      "blocks": {
+        "product_grhwgJ": {
+          "type": "product",
+          "settings": {
+            "featured_product": ""
+          }
+        },
+        "product_TtFYcT": {
+          "type": "product",
+          "settings": {
+            "featured_product": ""
+          }
+        },
+        "product_4hNXPY": {
+          "type": "product",
+          "settings": {
+            "featured_product": ""
+          }
+        },
+        "product_mXfjVb": {
+          "type": "product",
+          "settings": {
+            "featured_product": ""
+          }
+        },
+        "product_AFpPmR": {
+          "type": "product",
+          "settings": {
+            "featured_product": ""
+          }
+        },
+        "product_7HQgYD": {
+          "type": "product",
+          "settings": {
+            "featured_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_grhwgJ",
+        "product_TtFYcT",
+        "product_4hNXPY",
+        "product_mXfjVb",
+        "product_AFpPmR",
+        "product_7HQgYD"
+      ],
+      "name": "t:sections.shoppable-video-reels.name",
+      "settings": {
+        "heading": "Shoppable video reels",
+        "quick-add-enabled": false,
+        "hide-brand-name": false,
+        "video_button": false,
+        "color-body-text": "rgba(0,0,0,0)",
+        "background_color": "rgba(0,0,0,0)",
+        "margin-top": 20,
+        "margin-bottom": 20
+      }
+    },
     "17646260923156a6f0": {
       "type": "apps",
       "blocks": {
@@ -764,11 +824,20 @@
           "settings": {
             "mp_instagram_feed_id": ""
           }
+        },
+        "mageplaza_instagram_feed_mp_instagram_block_ePU9F6": {
+          "type": "shopify://apps/mageplaza-instagram-feed/blocks/mp_instagram_block/2e85b90f-5da9-4654-967e-051f1942340c",
+          "disabled": true,
+          "settings": {
+            "mp_instagram_feed_id": "Kt764805276"
+          }
         }
       },
       "block_order": [
-        "mageplaza_instagram_feed_mp_instagram_block_XbxbzU"
+        "mageplaza_instagram_feed_mp_instagram_block_XbxbzU",
+        "mageplaza_instagram_feed_mp_instagram_block_ePU9F6"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
@@ -829,6 +898,7 @@
     "parallax_BLR3kc",
     "scrolling_text_banner_yAAYQr",
     "features_banner_QDkij4",
+    "video_reels_EUqpQn",
     "17646260923156a6f0",
     "newsletter_hdezqY"
   ]
