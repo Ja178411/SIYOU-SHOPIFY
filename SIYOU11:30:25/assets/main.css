@@ -5117,6 +5117,13 @@ body .wt-filter__close.wt-filter__close {
   align-items: center;
   gap: 4px;
   margin: 4px 0;
+  font-size: 11px;
+  color: #e53935;
+}
+.wt-cart__item-discount svg {
+  width: 12px;
+  height: 12px;
+  color: #e53935;
 }
 .wt-cart .cart-item__discounted-prices {
   display: flex;
@@ -5620,6 +5627,9 @@ body .wt-filter__close.wt-filter__close {
 }
 .wt-cart__item .price--end-sale {
   color: var(--color-sale-price);
+}
+.wt-cart__item .cart-item__discounted-prices .price--end:not(.cart-item__old-price) {
+  color: #e53935;
 }
 .wt-cart__footer {
   margin-left: calc(var(--gap, 8px) * -2);
@@ -12813,10 +12823,10 @@ body.no-focus-visible .wt-page-nav-mega__sublist__link:focus-visible[data-menu-l
 }
 
 .icon-discount {
-  width: 100%;
-  height: 15px;
-  max-width: 15px;
-  color: var(--color-body-text-light);
+  width: 12px;
+  height: 12px;
+  max-width: 12px;
+  color: #e53935;
 }
 
 .template-empty main {

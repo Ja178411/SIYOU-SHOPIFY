@@ -31,16 +31,7 @@
     </div>
   </div>
 
-  {%- if total_savings > 0 -%}
-    <div class="wt-cart__savings">
-      <div class="wt-cart__savings__label">
-        <span class="text">{{ 'sections.cart.total_savings' | t | default: 'Total Savings' }}</span>
-      </div>
-      <div class="wt-cart__savings__value">
-        -{{ total_savings | money_with_currency }}
-      </div>
-    </div>
-  {%- endif -%}
+
 
   {%- if cart.cart_level_discount_applications.size > 0 -%}
     <div>

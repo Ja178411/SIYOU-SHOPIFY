@@ -10,12 +10,12 @@ page-header-logo-banner::after {
 }
 
 .wt-logo-banner {
-  height: 100svh;
+  height: calc(100svh - 50px);
   position: relative;
 }
 @media (min-width: 1200px) {
   .wt-logo-banner {
-    height: 100vh;
+    height: calc(100vh - 40px);
   }
 }
 .wt-logo-banner low-power-video {
@@ -117,7 +117,7 @@ page-header-logo-banner::after {
 }
 .wt-logo-banner__additional {
   position: absolute;
-  bottom: calc(var(--gap, 8px) * 16);
+  bottom: calc(var(--gap, 8px) * 4);
   width: 60%;
   left: 50%;
   transform: translateX(-50%);
@@ -128,7 +128,7 @@ page-header-logo-banner::after {
 }
 @media (min-width: 1200px) {
   .wt-logo-banner__additional {
-    bottom: calc(var(--gap, 8px) * 14);
+    bottom: calc(var(--gap, 8px) * 5);
   }
 }
 .wt-logo-banner--vanishing .wt-logo-banner__additional {

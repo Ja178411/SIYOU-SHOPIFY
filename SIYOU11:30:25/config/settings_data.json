@@ -101,6 +101,8 @@
     "enable_color_swatch": false,
     "enable_color_swatch_in_filters": false,
     "enable_round_color_swatches": false,
+    "bogo-badge-background": "#3e9a22",
+    "bogo-badge-label": "BOGO $10 OFF",
     "custom-badge-1-text": "#151515",
     "custom-badge-1-background": "#e3f2e6",
     "custom-badge-1-input": "New",

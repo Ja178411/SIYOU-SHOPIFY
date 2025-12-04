@@ -15,6 +15,13 @@
   align-items: center;
   gap: 4px;
   margin: 4px 0;
+  font-size: 11px;
+  color: #e53935;
+}
+.wt-cart__item-discount svg {
+  width: 12px;
+  height: 12px;
+  color: #e53935;
 }
 .wt-cart .cart-item__discounted-prices {
   display: flex;
